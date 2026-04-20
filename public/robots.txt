@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://metric.page/sitemap.xml
