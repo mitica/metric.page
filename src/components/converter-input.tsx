@@ -86,7 +86,7 @@ export function ConverterResult({ results, lang, animate }: ConverterResultProps
   const t = localesProvider.lang(lang);
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3" aria-live="polite" aria-atomic="true" role="region" aria-label={localesProvider.lang(lang).common_results()}>
       {results.map((result, i) => {
         const label = translate(t, result.labelKey);
         const displayValue = String(result.value);

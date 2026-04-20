@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="108" fill="#0a84ff"/>
+  <g fill="white">
+    <!-- M letter stylized as metric ruler -->
+    <text x="256" y="340" font-family="system-ui,-apple-system,sans-serif" font-size="280" font-weight="800" text-anchor="middle" fill="white">M</text>
+    <!-- Ruler ticks at bottom -->
+    <rect x="96" y="400" width="320" height="4" rx="2"/>
+    <rect x="136" y="386" width="3" height="18" rx="1"/>
+    <rect x="176" y="380" width="3" height="24" rx="1"/>
+    <rect x="216" y="386" width="3" height="18" rx="1"/>
+    <rect x="256" y="374" width="3" height="30" rx="1"/>
+    <rect x="296" y="386" width="3" height="18" rx="1"/>
+    <rect x="336" y="380" width="3" height="24" rx="1"/>
+    <rect x="376" y="386" width="3" height="18" rx="1"/>
+  </g>
+</svg>

@@ -65,6 +65,14 @@ export class LocalizyLocales {
         return this.v('common_reset');
     }
 
+    common_select_language() {
+        return this.v('common_select_language');
+    }
+
+    common_go_to_converter(_p1: number) {
+        return this.v('common_go_to_converter', Array.from(arguments));
+    }
+
     common_yes() {
         return this.v('common_yes');
     }
@@ -2133,6 +2141,8 @@ export type LocalesKey = 'site_title'
     | 'common_open'
     | 'common_calculate'
     | 'common_reset'
+    | 'common_select_language'
+    | 'common_go_to_converter'
     | 'common_yes'
     | 'common_no'
     | 'common_minutes'

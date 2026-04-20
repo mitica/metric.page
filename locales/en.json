@@ -6,6 +6,8 @@
   "common_open": "Open",
   "common_calculate": "Calculate",
   "common_reset": "Reset",
+  "common_select_language": "Select language",
+  "common_go_to_converter": "Go to converter %d",
   "common_yes": "Yes",
   "common_no": "No",
   "common_minutes": "minutes",

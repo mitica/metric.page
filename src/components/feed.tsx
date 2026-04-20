@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { ConverterConfig } from "@/converters/types";
 import ConverterCard from "./converter-card";
 import { getRecents } from "@/lib/recents";
+import { localesProvider } from "@/lib/locales";
 
 interface FeedProps {
   converters: ConverterConfig[];
@@ -89,7 +90,7 @@ export default function Feed({ converters, lang }: FeedProps) {
                 ? "w-1.5 bg-text-tertiary/50"
                 : "w-1 bg-text-tertiary/20"
             }`}
-            aria-label={`Go to converter ${index + 1}`}
+            aria-label={localesProvider.lang(lang).common_go_to_converter(index + 1)}
           />
         ))}
       </div>

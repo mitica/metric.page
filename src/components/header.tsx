@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { languages } from "@/lib/locales";
+import { languages, localesProvider } from "@/lib/locales";
 
 interface HeaderProps {
   lang: string;
@@ -36,6 +36,7 @@ export default function Header({ lang }: HeaderProps) {
               const newPath = switchLangPath(e.target.value);
               window.location.href = newPath;
             }}
+            aria-label={localesProvider.lang(lang).common_select_language()}
             className="!bg-surface/80 !py-1.5 !pl-3 !pr-8 !text-sm !border-border/50 !rounded-lg appearance-none cursor-pointer"
           >
             {languages.map((l) => (
