@@ -47,13 +47,13 @@ export const downloadTime: ConverterConfig = {
   descriptionKey: "converter_download_time_description",
   inputs: [
     { id: "fileSize", type: "number", labelKey: "converter_download_time_file_size", min: 0, step: 0.1, defaultValue: 4.7, unitOptions: [
-      { value: "GB", labelKey: "GB", multiplier: 1 },
-      { value: "MB", labelKey: "MB", multiplier: 1 / 1024, step: 1 },
-      { value: "TB", labelKey: "TB", multiplier: 1024, step: 0.01 },
+      { value: "GB", labelKey: "common_unit_gb", multiplier: 1 },
+      { value: "MB", labelKey: "common_unit_mb", multiplier: 1 / 1024, step: 1 },
+      { value: "TB", labelKey: "common_unit_tb", multiplier: 1024, step: 0.01 },
     ] },
     { id: "speed", type: "number", labelKey: "converter_download_time_speed", min: 0.1, step: 0.1, defaultValue: 100, unitOptions: [
-      { value: "Mbps", labelKey: "Mbps", multiplier: 1 },
-      { value: "Gbps", labelKey: "Gbps", multiplier: 1000, step: 0.01 },
+      { value: "Mbps", labelKey: "common_unit_mbps", multiplier: 1 },
+      { value: "Gbps", labelKey: "common_unit_gbps", multiplier: 1000, step: 0.01 },
     ] },
   ],
   calculate: (inputs) => {
@@ -94,9 +94,9 @@ export const screenPPI: ConverterConfig = {
     const ppi = diagonalPx / d;
     const dotPitch = 25.4 / ppi;
     return [
-      { labelKey: "converter_screen_ppi_result_ppi", value: Math.round(ppi * 10) / 10, unit: "PPI" },
-      { labelKey: "converter_screen_ppi_dot_pitch", value: Math.round(dotPitch * 1000) / 1000, unit: "mm" },
-      { labelKey: "converter_screen_ppi_total_pixels", value: (w * h / 1000000).toFixed(2), unit: "MP" },
+      { labelKey: "converter_screen_ppi_result_ppi", value: Math.round(ppi * 10) / 10, unit: "common_unit_ppi" },
+      { labelKey: "converter_screen_ppi_dot_pitch", value: Math.round(dotPitch * 1000) / 1000, unit: "common_unit_mm" },
+      { labelKey: "converter_screen_ppi_total_pixels", value: (w * h / 1000000).toFixed(2), unit: "common_unit_mp" },
     ];
   },
 };
@@ -150,12 +150,12 @@ export const dataStorage: ConverterConfig = {
       return val >= 1 ? val.toLocaleString("en", { maximumFractionDigits: 4 }) : val.toExponential(3);
     };
     return [
-      { labelKey: "converter_data_storage_bytes", value: format(bytes, "B"), unit: "B" },
-      { labelKey: "converter_data_storage_kb", value: format(bytes, "KB"), unit: "KB" },
-      { labelKey: "converter_data_storage_mb", value: format(bytes, "MB"), unit: "MB" },
-      { labelKey: "converter_data_storage_gb", value: format(bytes, "GB"), unit: "GB" },
-      { labelKey: "converter_data_storage_tb", value: format(bytes, "TB"), unit: "TB" },
-      { labelKey: "converter_data_storage_pb", value: format(bytes, "PB"), unit: "PB" },
+      { labelKey: "converter_data_storage_bytes", value: format(bytes, "B"), unit: "common_unit_bytes" },
+      { labelKey: "converter_data_storage_kb", value: format(bytes, "KB"), unit: "common_unit_kb" },
+      { labelKey: "converter_data_storage_mb", value: format(bytes, "MB"), unit: "common_unit_mb" },
+      { labelKey: "converter_data_storage_gb", value: format(bytes, "GB"), unit: "common_unit_gb" },
+      { labelKey: "converter_data_storage_tb", value: format(bytes, "TB"), unit: "common_unit_tb" },
+      { labelKey: "converter_data_storage_pb", value: format(bytes, "PB"), unit: "common_unit_pb" },
     ];
   },
 };
@@ -174,10 +174,10 @@ export const bandwidth: ConverterConfig = {
     const mbytes = mbps / 8;
     const gbPerHour = (mbytes * 3600) / 1024;
     return [
-      { labelKey: "converter_bandwidth_mbps", value: mbps, unit: "Mbps" },
-      { labelKey: "converter_bandwidth_mbytes_s", value: Math.round(mbytes * 100) / 100, unit: "MB/s" },
-      { labelKey: "converter_bandwidth_gb_hour", value: Math.round(gbPerHour * 100) / 100, unit: "GB/h" },
-      { labelKey: "converter_bandwidth_gb_minute", value: Math.round(gbPerHour / 60 * 1000) / 1000, unit: "GB/min" },
+      { labelKey: "converter_bandwidth_mbps", value: mbps, unit: "common_unit_mbps" },
+      { labelKey: "converter_bandwidth_mbytes_s", value: Math.round(mbytes * 100) / 100, unit: "common_unit_mb_s" },
+      { labelKey: "converter_bandwidth_gb_hour", value: Math.round(gbPerHour * 100) / 100, unit: "common_unit_gb_h" },
+      { labelKey: "converter_bandwidth_gb_minute", value: Math.round(gbPerHour / 60 * 1000) / 1000, unit: "common_unit_gb_min" },
     ];
   },
 };
@@ -201,10 +201,10 @@ export const megapixel: ConverterConfig = {
     const fileSize4k = (w * h * 3) / (1024 * 1024); // Uncompressed RGB
     const fileSizeJpeg = fileSize4k / 10; // ~10:1 compression
     return [
-      { labelKey: "converter_megapixel_result", value: Math.round(mp * 10) / 10, unit: "MP" },
+      { labelKey: "converter_megapixel_result", value: Math.round(mp * 10) / 10, unit: "common_unit_mp" },
       { labelKey: "converter_aspect_ratio_ratio", value: `${w / g}:${h / g}` },
-      { labelKey: "converter_megapixel_uncompressed", value: Math.round(fileSize4k * 10) / 10, unit: "MB" },
-      { labelKey: "converter_megapixel_jpeg_approx", value: Math.round(fileSizeJpeg * 10) / 10, unit: "MB" },
+      { labelKey: "converter_megapixel_uncompressed", value: Math.round(fileSize4k * 10) / 10, unit: "common_unit_mb" },
+      { labelKey: "converter_megapixel_jpeg_approx", value: Math.round(fileSizeJpeg * 10) / 10, unit: "common_unit_mb" },
     ];
   },
 };

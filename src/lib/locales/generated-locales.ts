@@ -65,6 +65,242 @@ export class LocalizyLocales {
         return this.v('common_unit_weeks');
     }
 
+    common_unit_km() {
+        return this.v('common_unit_km');
+    }
+
+    common_unit_miles() {
+        return this.v('common_unit_miles');
+    }
+
+    common_unit_gb() {
+        return this.v('common_unit_gb');
+    }
+
+    common_unit_mb() {
+        return this.v('common_unit_mb');
+    }
+
+    common_unit_tb() {
+        return this.v('common_unit_tb');
+    }
+
+    common_unit_mbps() {
+        return this.v('common_unit_mbps');
+    }
+
+    common_unit_gbps() {
+        return this.v('common_unit_gbps');
+    }
+
+    common_unit_percent() {
+        return this.v('common_unit_percent');
+    }
+
+    common_unit_celsius() {
+        return this.v('common_unit_celsius');
+    }
+
+    common_unit_bytes() {
+        return this.v('common_unit_bytes');
+    }
+
+    common_unit_bpm() {
+        return this.v('common_unit_bpm');
+    }
+
+    common_unit_cm() {
+        return this.v('common_unit_cm');
+    }
+
+    common_unit_cpm() {
+        return this.v('common_unit_cpm');
+    }
+
+    common_unit_fl_oz() {
+        return this.v('common_unit_fl_oz');
+    }
+
+    common_unit_g() {
+        return this.v('common_unit_g');
+    }
+
+    common_unit_gb_h() {
+        return this.v('common_unit_gb_h');
+    }
+
+    common_unit_gb_min() {
+        return this.v('common_unit_gb_min');
+    }
+
+    common_unit_in() {
+        return this.v('common_unit_in');
+    }
+
+    common_unit_kcal() {
+        return this.v('common_unit_kcal');
+    }
+
+    common_unit_kb() {
+        return this.v('common_unit_kb');
+    }
+
+    common_unit_kg() {
+        return this.v('common_unit_kg');
+    }
+
+    common_unit_km_h() {
+        return this.v('common_unit_km_h');
+    }
+
+    common_unit_km_l() {
+        return this.v('common_unit_km_l');
+    }
+
+    common_unit_kwh() {
+        return this.v('common_unit_kwh');
+    }
+
+    common_unit_l() {
+        return this.v('common_unit_l');
+    }
+
+    common_unit_l_100km() {
+        return this.v('common_unit_l_100km');
+    }
+
+    common_unit_lb() {
+        return this.v('common_unit_lb');
+    }
+
+    common_unit_mb_s() {
+        return this.v('common_unit_mb_s');
+    }
+
+    common_unit_mg() {
+        return this.v('common_unit_mg');
+    }
+
+    common_unit_m() {
+        return this.v('common_unit_m');
+    }
+
+    common_unit_m_s() {
+        return this.v('common_unit_m_s');
+    }
+
+    common_unit_mi() {
+        return this.v('common_unit_mi');
+    }
+
+    common_unit_min_km() {
+        return this.v('common_unit_min_km');
+    }
+
+    common_unit_min_mi() {
+        return this.v('common_unit_min_mi');
+    }
+
+    common_unit_ml() {
+        return this.v('common_unit_ml');
+    }
+
+    common_unit_mm() {
+        return this.v('common_unit_mm');
+    }
+
+    common_unit_mph() {
+        return this.v('common_unit_mph');
+    }
+
+    common_unit_mp() {
+        return this.v('common_unit_mp');
+    }
+
+    common_unit_mpg_uk() {
+        return this.v('common_unit_mpg_uk');
+    }
+
+    common_unit_mpg_us() {
+        return this.v('common_unit_mpg_us');
+    }
+
+    common_unit_pb() {
+        return this.v('common_unit_pb');
+    }
+
+    common_unit_ppi() {
+        return this.v('common_unit_ppi');
+    }
+
+    common_unit_w() {
+        return this.v('common_unit_w');
+    }
+
+    common_size_xs() {
+        return this.v('common_size_xs');
+    }
+
+    common_size_s() {
+        return this.v('common_size_s');
+    }
+
+    common_size_m() {
+        return this.v('common_size_m');
+    }
+
+    common_size_l() {
+        return this.v('common_size_l');
+    }
+
+    common_size_xl() {
+        return this.v('common_size_xl');
+    }
+
+    common_size_xxl() {
+        return this.v('common_size_xxl');
+    }
+
+    common_paper_a0() {
+        return this.v('common_paper_a0');
+    }
+
+    common_paper_a1() {
+        return this.v('common_paper_a1');
+    }
+
+    common_paper_a2() {
+        return this.v('common_paper_a2');
+    }
+
+    common_paper_a3() {
+        return this.v('common_paper_a3');
+    }
+
+    common_paper_a4() {
+        return this.v('common_paper_a4');
+    }
+
+    common_paper_a5() {
+        return this.v('common_paper_a5');
+    }
+
+    common_paper_a6() {
+        return this.v('common_paper_a6');
+    }
+
+    common_paper_letter() {
+        return this.v('common_paper_letter');
+    }
+
+    common_paper_legal() {
+        return this.v('common_paper_legal');
+    }
+
+    common_paper_tabloid() {
+        return this.v('common_paper_tabloid');
+    }
+
     common_open() {
         return this.v('common_open');
     }
@@ -2197,6 +2433,65 @@ export type LocalesKey = 'site_title'
     | 'common_unit_years'
     | 'common_unit_months'
     | 'common_unit_weeks'
+    | 'common_unit_km'
+    | 'common_unit_miles'
+    | 'common_unit_gb'
+    | 'common_unit_mb'
+    | 'common_unit_tb'
+    | 'common_unit_mbps'
+    | 'common_unit_gbps'
+    | 'common_unit_percent'
+    | 'common_unit_celsius'
+    | 'common_unit_bytes'
+    | 'common_unit_bpm'
+    | 'common_unit_cm'
+    | 'common_unit_cpm'
+    | 'common_unit_fl_oz'
+    | 'common_unit_g'
+    | 'common_unit_gb_h'
+    | 'common_unit_gb_min'
+    | 'common_unit_in'
+    | 'common_unit_kcal'
+    | 'common_unit_kb'
+    | 'common_unit_kg'
+    | 'common_unit_km_h'
+    | 'common_unit_km_l'
+    | 'common_unit_kwh'
+    | 'common_unit_l'
+    | 'common_unit_l_100km'
+    | 'common_unit_lb'
+    | 'common_unit_mb_s'
+    | 'common_unit_mg'
+    | 'common_unit_m'
+    | 'common_unit_m_s'
+    | 'common_unit_mi'
+    | 'common_unit_min_km'
+    | 'common_unit_min_mi'
+    | 'common_unit_ml'
+    | 'common_unit_mm'
+    | 'common_unit_mph'
+    | 'common_unit_mp'
+    | 'common_unit_mpg_uk'
+    | 'common_unit_mpg_us'
+    | 'common_unit_pb'
+    | 'common_unit_ppi'
+    | 'common_unit_w'
+    | 'common_size_xs'
+    | 'common_size_s'
+    | 'common_size_m'
+    | 'common_size_l'
+    | 'common_size_xl'
+    | 'common_size_xxl'
+    | 'common_paper_a0'
+    | 'common_paper_a1'
+    | 'common_paper_a2'
+    | 'common_paper_a3'
+    | 'common_paper_a4'
+    | 'common_paper_a5'
+    | 'common_paper_a6'
+    | 'common_paper_letter'
+    | 'common_paper_legal'
+    | 'common_paper_tabloid'
     | 'common_open'
     | 'common_browse'
     | 'common_all_converters'

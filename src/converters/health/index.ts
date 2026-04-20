@@ -1,12 +1,12 @@
-import { ConverterConfig } from "../types";
+import { ConverterConfig, InputField } from "../types";
 
 // Conversion helpers
 const lbToKg = (lb: number) => lb * 0.453592;
 const inToCm = (inches: number) => inches * 2.54;
 const kgToLb = (kg: number) => kg / 0.453592;
 
-const unitSystemInput = {
-  id: "unitSystem", type: "switcher" as const, labelKey: "common_units", defaultValue: "metric", options: [
+const unitSystemInput: InputField = {
+  id: "unitSystem", type: "switcher", labelKey: "common_units", defaultValue: "metric", options: [
     { value: "metric", labelKey: "common_metric" },
     { value: "imperial", labelKey: "common_imperial" },
   ],
@@ -22,8 +22,8 @@ function getHeight(inputs: Record<string, string | number>): number {
   return inputs.unitSystem === "imperial" ? inToCm(v) : v;
 }
 
-function weightUnit(inputs: Record<string, string | number>): string {
-  return inputs.unitSystem === "imperial" ? "lb" : "kg";
+function weightUnit(inputs: Record<string, string | number>) {
+  return inputs.unitSystem === "imperial" ? "common_unit_lb" as const : "common_unit_kg" as const;
 }
 
 function formatWeight(kg: number, inputs: Record<string, string | number>): number {
@@ -83,14 +83,14 @@ export const bodyFatCalculator: ConverterConfig = {
     const neck = isImperial ? inToCm(Number(inputs.neck) || 0) : Number(inputs.neck) || 0;
     const height = getHeight(inputs);
     const hip = isImperial ? inToCm(Number(inputs.hip) || 0) : Number(inputs.hip) || 0;
-    if (waist <= neck || height <= 0) return [{ labelKey: "converter_body_fat_result_label", value: 0, unit: "%" }];
+    if (waist <= neck || height <= 0) return [{ labelKey: "converter_body_fat_result_label", value: 0, unit: "common_unit_percent" }];
     let bf: number;
     if (gender === "male") {
       bf = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
     } else {
       bf = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
     }
-    return [{ labelKey: "converter_body_fat_result_label", value: Math.max(0, Math.round(bf * 10) / 10), unit: "%" }];
+    return [{ labelKey: "converter_body_fat_result_label", value: Math.max(0, Math.round(bf * 10) / 10), unit: "common_unit_percent" }];
   },
 };
 
@@ -255,7 +255,7 @@ export const bacCalculator: ConverterConfig = {
     else if (bac >= 0.04) status = "converter_bac_buzzed";
     else if (bac > 0) status = "converter_bac_minimal";
     return [
-      { labelKey: "converter_bac_result_label", value: Math.round(bac * 1000) / 1000, unit: "%" },
+      { labelKey: "converter_bac_result_label", value: Math.round(bac * 1000) / 1000, unit: "common_unit_percent" },
       { labelKey: "converter_bac_status", value: status },
     ];
   },
@@ -284,7 +284,7 @@ export const waterIntake: ConverterConfig = {
     const liters = base * (multipliers[activity] || 1.2);
     const isImperial = inputs.unitSystem === "imperial";
     return [
-      { labelKey: "converter_water_intake_result_label", value: isImperial ? Math.round(liters * 33.814 * 10) / 10 : Math.round(liters * 100) / 100, unit: isImperial ? "fl oz" : "L" },
+      { labelKey: "converter_water_intake_result_label", value: isImperial ? Math.round(liters * 33.814 * 10) / 10 : Math.round(liters * 100) / 100, unit: isImperial ? "common_unit_fl_oz" : "common_unit_l" },
       { labelKey: "converter_water_intake_glasses", value: Math.round(liters / 0.25) },
     ];
   },
@@ -303,12 +303,12 @@ export const heartRateZones: ConverterConfig = {
     const age = Number(inputs.age) || 30;
     const maxHR = 220 - age;
     return [
-      { labelKey: "converter_heart_rate_max_hr", value: maxHR, unit: "bpm" },
-      { labelKey: "converter_heart_rate_zone1", value: `${Math.round(maxHR * 0.5)}-${Math.round(maxHR * 0.6)}`, unit: "bpm" },
-      { labelKey: "converter_heart_rate_zone2", value: `${Math.round(maxHR * 0.6)}-${Math.round(maxHR * 0.7)}`, unit: "bpm" },
-      { labelKey: "converter_heart_rate_zone3", value: `${Math.round(maxHR * 0.7)}-${Math.round(maxHR * 0.8)}`, unit: "bpm" },
-      { labelKey: "converter_heart_rate_zone4", value: `${Math.round(maxHR * 0.8)}-${Math.round(maxHR * 0.9)}`, unit: "bpm" },
-      { labelKey: "converter_heart_rate_zone5", value: `${Math.round(maxHR * 0.9)}-${maxHR}`, unit: "bpm" },
+      { labelKey: "converter_heart_rate_max_hr", value: maxHR, unit: "common_unit_bpm" },
+      { labelKey: "converter_heart_rate_zone1", value: `${Math.round(maxHR * 0.5)}-${Math.round(maxHR * 0.6)}`, unit: "common_unit_bpm" },
+      { labelKey: "converter_heart_rate_zone2", value: `${Math.round(maxHR * 0.6)}-${Math.round(maxHR * 0.7)}`, unit: "common_unit_bpm" },
+      { labelKey: "converter_heart_rate_zone3", value: `${Math.round(maxHR * 0.7)}-${Math.round(maxHR * 0.8)}`, unit: "common_unit_bpm" },
+      { labelKey: "converter_heart_rate_zone4", value: `${Math.round(maxHR * 0.8)}-${Math.round(maxHR * 0.9)}`, unit: "common_unit_bpm" },
+      { labelKey: "converter_heart_rate_zone5", value: `${Math.round(maxHR * 0.9)}-${maxHR}`, unit: "common_unit_bpm" },
     ];
   },
 };
@@ -339,9 +339,9 @@ export const macroCalculator: ConverterConfig = {
     };
     const [protein, carbs, fat] = splits[goal] || splits.balanced;
     return [
-      { labelKey: "converter_macro_protein", value: Math.round((calories * protein) / 4), unit: "g" },
-      { labelKey: "converter_macro_carbs", value: Math.round((calories * carbs) / 4), unit: "g" },
-      { labelKey: "converter_macro_fat", value: Math.round((calories * fat) / 9), unit: "g" },
+      { labelKey: "converter_macro_protein", value: Math.round((calories * protein) / 4), unit: "common_unit_g" },
+      { labelKey: "converter_macro_carbs", value: Math.round((calories * carbs) / 4), unit: "common_unit_g" },
+      { labelKey: "converter_macro_fat", value: Math.round((calories * fat) / 9), unit: "common_unit_g" },
     ];
   },
 };

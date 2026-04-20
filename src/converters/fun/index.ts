@@ -43,8 +43,8 @@ export const lifetimeBreaths: ConverterConfig = {
     return [
       { labelKey: "converter_breaths_total", value: Math.round(breaths).toLocaleString() },
       { labelKey: "converter_breaths_per_day", value: Math.round(bpmAvg * 60 * 24).toLocaleString() },
-      { labelKey: "converter_breaths_liters_of_air", value: Math.round(litersOfAir).toLocaleString(), unit: "L" },
-      { labelKey: "converter_breaths_kg_of_air", value: Math.round(litersOfAir * 0.001225).toLocaleString(), unit: "kg" },
+      { labelKey: "converter_breaths_liters_of_air", value: Math.round(litersOfAir).toLocaleString(), unit: "common_unit_l" },
+      { labelKey: "converter_breaths_kg_of_air", value: Math.round(litersOfAir * 0.001225).toLocaleString(), unit: "common_unit_kg" },
     ];
   },
 };
@@ -68,9 +68,9 @@ export const hairGrowth: ConverterConfig = {
     const totalCm = months * cmPerMonth;
     const totalInches = totalCm / 2.54;
     return [
-      { labelKey: "converter_hair_growth_growth_cm", value: Math.round(totalCm * 100) / 100, unit: "cm" },
-      { labelKey: "converter_hair_growth_growth_inches", value: Math.round(totalInches * 100) / 100, unit: "in" },
-      { labelKey: "converter_hair_growth_per_day", value: Math.round(cmPerMonth / 30 * 10000) / 10000, unit: "cm" },
+      { labelKey: "converter_hair_growth_growth_cm", value: Math.round(totalCm * 100) / 100, unit: "common_unit_cm" },
+      { labelKey: "converter_hair_growth_growth_inches", value: Math.round(totalInches * 100) / 100, unit: "common_unit_in" },
+      { labelKey: "converter_hair_growth_per_day", value: Math.round(cmPerMonth / 30 * 10000) / 10000, unit: "common_unit_cm" },
     ];
   },
 };
@@ -100,9 +100,9 @@ export const caffeineCalculator: ConverterConfig = {
     const safeLimit = 400; // mg/day
     const percentage = (mg / safeLimit) * 100;
     return [
-      { labelKey: "converter_caffeine_total_mg", value: Math.round(mg), unit: "mg" },
-      { labelKey: "converter_caffeine_safe_limit", value: safeLimit, unit: "mg" },
-      { labelKey: "converter_caffeine_percent_limit", value: Math.round(percentage), unit: "%" },
+      { labelKey: "converter_caffeine_total_mg", value: Math.round(mg), unit: "common_unit_mg" },
+      { labelKey: "converter_caffeine_safe_limit", value: safeLimit, unit: "common_unit_mg" },
+      { labelKey: "converter_caffeine_percent_limit", value: Math.round(percentage), unit: "common_unit_percent" },
       { labelKey: "converter_caffeine_half_life", value: "5-6", unit: "common_hours" },
     ];
   },
@@ -127,7 +127,7 @@ export const typingSpeed: ConverterConfig = {
     else if (wpm >= 60) level = "converter_typing_speed_advanced";
     else if (wpm >= 40) level = "converter_typing_speed_intermediate";
     return [
-      { labelKey: "converter_typing_speed_cpm", value: cpm, unit: "CPM" },
+      { labelKey: "converter_typing_speed_cpm", value: cpm, unit: "common_unit_cpm" },
       { labelKey: "converter_typing_speed_words_hour", value: wordsPerHour.toLocaleString() },
       { labelKey: "converter_typing_speed_pages_hour", value: Math.round(pagesPerHour * 10) / 10 },
       { labelKey: "converter_typing_speed_level", value: level },

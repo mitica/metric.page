@@ -37,7 +37,7 @@ export async function generateMetadata({
     return buildMetadata({
       lang,
       title: t.v(meta.labelKey),
-      description: t.v("site_description"),
+      description: t.site_description(),
       slug,
     });
   }

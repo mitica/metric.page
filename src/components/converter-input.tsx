@@ -5,9 +5,12 @@ import { InputField, SelectOption, UnitOption } from "@/converters/types";
 import { localesProvider } from "@/lib/locales";
 import { LocalesKey } from "@/lib/locales/generated-locales";
 
-function translate(t: ReturnType<typeof localesProvider.lang>, key: string): string {
+function translate(
+  t: ReturnType<typeof localesProvider.lang>,
+  key: LocalesKey,
+): string {
   try {
-    return t.v(key as LocalesKey);
+    return t.v(key);
   } catch {
     return key;
   }
@@ -25,27 +28,45 @@ interface ConverterInputProps {
 
 const imperialUnits: Record<string, string> = { kg: "lb", cm: "in" };
 
-export default function ConverterInput({ field, value, onChange, lang, unitSystem, selectedUnit, onUnitChange }: ConverterInputProps) {
+export default function ConverterInput({
+  field,
+  value,
+  onChange,
+  lang,
+  unitSystem,
+  selectedUnit,
+  onUnitChange,
+}: ConverterInputProps) {
   const t = localesProvider.lang(lang);
   const label = translate(t, field.labelKey);
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-      const val = field.type === "number" ? Number(e.target.value) : e.target.value;
+      const val =
+        field.type === "number" ? Number(e.target.value) : e.target.value;
       onChange(field.id, val);
     },
-    [field.id, field.type, onChange]
+    [field.id, field.type, onChange],
   );
 
-  const activeUnit = selectedUnit || (field.unitOptions ? field.unitOptions[0] : undefined);
+  const activeUnit =
+    selectedUnit || (field.unitOptions ? field.unitOptions[0] : undefined);
   const step = activeUnit?.step ?? field.step;
-  const min = field.min != null && activeUnit ? field.min / activeUnit.multiplier : field.min;
-  const max = field.max != null && activeUnit ? field.max / activeUnit.multiplier : field.max;
+  const min =
+    field.min != null && activeUnit
+      ? field.min / activeUnit.multiplier
+      : field.min;
+  const max =
+    field.max != null && activeUnit
+      ? field.max / activeUnit.multiplier
+      : field.max;
 
   if (field.type === "select" && field.options) {
     return (
       <div className="space-y-2">
-        <label className="block text-sm font-medium text-text-secondary">{label}</label>
+        <label className="block text-sm font-medium text-text-secondary">
+          {label}
+        </label>
         <select value={value} onChange={handleChange} className="w-full">
           {field.options.map((opt: SelectOption) => (
             <option key={opt.value} value={opt.value}>
@@ -60,7 +81,9 @@ export default function ConverterInput({ field, value, onChange, lang, unitSyste
   if (field.type === "switcher" && field.options) {
     return (
       <div className="space-y-2">
-        <label className="block text-sm font-medium text-text-secondary">{label}</label>
+        <label className="block text-sm font-medium text-text-secondary">
+          {label}
+        </label>
         <div
           className="inline-flex w-full rounded-lg p-0.5"
           style={{ backgroundColor: "#2c2c2e" }}
@@ -97,20 +120,40 @@ export default function ConverterInput({ field, value, onChange, lang, unitSyste
   if (field.type === "date") {
     return (
       <div className="space-y-2">
-        <label className="block text-sm font-medium text-text-secondary">{label}</label>
-        <input type="date" value={value} onChange={handleChange} className="w-full" />
+        <label className="block text-sm font-medium text-text-secondary">
+          {label}
+        </label>
+        <input
+          type="date"
+          value={value}
+          onChange={handleChange}
+          className="w-full"
+        />
       </div>
     );
   }
 
-  const hasUnits = !!(field.unitOptions && field.unitOptions.length > 1 && activeUnit && onUnitChange);
+  const hasUnits = !!(
+    field.unitOptions &&
+    field.unitOptions.length > 1 &&
+    activeUnit &&
+    onUnitChange
+  );
 
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <label className="text-sm font-medium text-text-secondary">
           {label}
-          {field.unit && !field.unitOptions && <span className="ml-1 text-text-tertiary">({unitSystem === "imperial" && imperialUnits[field.unit] ? imperialUnits[field.unit] : field.unit})</span>}
+          {field.unit && !field.unitOptions && (
+            <span className="ml-1 text-text-tertiary">
+              (
+              {unitSystem === "imperial" && imperialUnits[field.unit]
+                ? imperialUnits[field.unit]
+                : field.unit}
+              )
+            </span>
+          )}
         </label>
         {hasUnits && (
           <UnitPills
@@ -134,7 +177,12 @@ export default function ConverterInput({ field, value, onChange, lang, unitSyste
   );
 }
 
-function UnitPills({ options, selectedValue, onSelect, lang }: {
+function UnitPills({
+  options,
+  selectedValue,
+  onSelect,
+  lang,
+}: {
   options: UnitOption[];
   selectedValue: string;
   onSelect: (u: UnitOption) => void;
@@ -148,7 +196,8 @@ function UnitPills({ options, selectedValue, onSelect, lang }: {
     onSelect(opt);
   };
 
-  const active = selectedValue !== localSelected ? selectedValue : localSelected;
+  const active =
+    selectedValue !== localSelected ? selectedValue : localSelected;
 
   return (
     <div
@@ -189,12 +238,20 @@ function UnitPills({ options, selectedValue, onSelect, lang }: {
 }
 
 interface ConverterResultProps {
-  results: { labelKey: string; value: string | number; unit?: string }[];
+  results: {
+    labelKey: LocalesKey;
+    value: string | number;
+    unit?: LocalesKey;
+  }[];
   lang: string;
   animate?: boolean;
 }
 
-export function ConverterResult({ results, lang, animate }: ConverterResultProps) {
+export function ConverterResult({
+  results,
+  lang,
+  animate,
+}: ConverterResultProps) {
   if (results.length === 0) return null;
   const t = localesProvider.lang(lang);
   const useGrid = results.length >= 4;
@@ -217,10 +274,20 @@ export function ConverterResult({ results, lang, animate }: ConverterResultProps
             key={i}
             className={`rounded-2xl bg-surface-elevated/50 px-4 py-3 ${animate ? "result-updating" : ""} ${useGrid ? "" : "flex items-center justify-between"}`}
           >
-            <span className={`text-text-secondary ${useGrid ? "text-xs block mb-0.5" : "text-sm"}`}>{label}</span>
-            <span className={`result-value font-semibold text-accent ${useGrid ? "text-lg block" : "text-xl"}`}>
+            <span
+              className={`text-text-secondary ${useGrid ? "text-xs block mb-0.5" : "text-sm"}`}
+            >
+              {label}
+            </span>
+            <span
+              className={`result-value font-semibold text-accent ${useGrid ? "text-lg block" : "text-xl"}`}
+            >
               {displayValue}
-              {unit && <span className="ml-1 text-sm font-normal text-text-tertiary">{unit}</span>}
+              {unit && (
+                <span className="ml-1 text-sm font-normal text-text-tertiary">
+                  {unit}
+                </span>
+              )}
             </span>
           </div>
         );

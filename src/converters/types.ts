@@ -4,12 +4,12 @@ export type InputType = "number" | "select" | "switcher" | "date" | "text";
 
 export interface SelectOption {
   value: string;
-  labelKey: string;
+  labelKey: LocalesKey;
 }
 
 export interface UnitOption {
   value: string;
-  labelKey: string;
+  labelKey: LocalesKey;
   multiplier: number; // multiply display value by this to get base unit value
   step?: number;
 }
@@ -17,8 +17,8 @@ export interface UnitOption {
 export interface InputField {
   id: string;
   type: InputType;
-  labelKey: string;
-  placeholder?: string;
+  labelKey: LocalesKey;
+  placeholder?: LocalesKey;
   min?: number;
   max?: number;
   step?: number;
@@ -29,10 +29,10 @@ export interface InputField {
 }
 
 export interface ResultField {
-  labelKey: string;
+  labelKey: LocalesKey;
   value: string | number;
-  unit?: string;
-  description?: string;
+  unit?: LocalesKey;
+  description?: LocalesKey;
 }
 
 export type CalculateFn = (inputs: Record<string, string | number>) => ResultField[];

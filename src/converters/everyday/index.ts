@@ -25,7 +25,7 @@ export const shoeSize: ConverterConfig = {
       { labelKey: "converter_shoe_size_us", value: us },
       { labelKey: "converter_shoe_size_eu", value: eu },
       { labelKey: "converter_shoe_size_uk", value: uk },
-      { labelKey: "converter_shoe_size_jp_cm", value: jp, unit: "cm" },
+      { labelKey: "converter_shoe_size_jp_cm", value: jp, unit: "common_unit_cm" },
     ];
   },
 };
@@ -38,12 +38,12 @@ export const clothingSize: ConverterConfig = {
   descriptionKey: "converter_clothing_size_description",
   inputs: [
     { id: "size", type: "select", labelKey: "converter_clothing_size_us_size", defaultValue: "M", options: [
-      { value: "XS", labelKey: "XS" },
-      { value: "S", labelKey: "S" },
-      { value: "M", labelKey: "M" },
-      { value: "L", labelKey: "L" },
-      { value: "XL", labelKey: "XL" },
-      { value: "XXL", labelKey: "XXL" },
+      { value: "XS", labelKey: "common_size_xs" },
+      { value: "S", labelKey: "common_size_s" },
+      { value: "M", labelKey: "common_size_m" },
+      { value: "L", labelKey: "common_size_l" },
+      { value: "XL", labelKey: "common_size_xl" },
+      { value: "XXL", labelKey: "common_size_xxl" },
     ]},
   ],
   calculate: (inputs) => {
@@ -89,11 +89,11 @@ export const cookingMeasure: ConverterConfig = {
     const toMl: Record<string, number> = { cup: 236.588, tbsp: 14.787, tsp: 4.929, ml: 1, fl_oz: 29.574 };
     const ml = value * (toMl[unit] || 1);
     return [
-      { labelKey: "converter_cooking_ml", value: Math.round(ml * 100) / 100, unit: "ml" },
+      { labelKey: "converter_cooking_ml", value: Math.round(ml * 100) / 100, unit: "common_unit_ml" },
       { labelKey: "converter_cooking_cup", value: Math.round((ml / toMl.cup) * 1000) / 1000 },
       { labelKey: "converter_cooking_tbsp", value: Math.round((ml / toMl.tbsp) * 100) / 100 },
       { labelKey: "converter_cooking_tsp", value: Math.round((ml / toMl.tsp) * 100) / 100 },
-      { labelKey: "converter_cooking_fl_oz", value: Math.round((ml / toMl.fl_oz) * 100) / 100, unit: "fl oz" },
+      { labelKey: "converter_cooking_fl_oz", value: Math.round((ml / toMl.fl_oz) * 100) / 100, unit: "common_unit_fl_oz" },
     ];
   },
 };
@@ -154,10 +154,10 @@ export const fuelEfficiency: ConverterConfig = {
     }
     if (l100km <= 0) return [{ labelKey: "converter_fuel_efficiency_result", value: "-" }];
     return [
-      { labelKey: "converter_fuel_efficiency_l_100km", value: Math.round(l100km * 100) / 100, unit: "L/100km" },
-      { labelKey: "converter_fuel_efficiency_mpg_us", value: Math.round(235.215 / l100km * 100) / 100, unit: "mpg (US)" },
-      { labelKey: "converter_fuel_efficiency_mpg_uk", value: Math.round(282.481 / l100km * 100) / 100, unit: "mpg (UK)" },
-      { labelKey: "converter_fuel_efficiency_km_l", value: Math.round(100 / l100km * 100) / 100, unit: "km/L" },
+      { labelKey: "converter_fuel_efficiency_l_100km", value: Math.round(l100km * 100) / 100, unit: "common_unit_l_100km" },
+      { labelKey: "converter_fuel_efficiency_mpg_us", value: Math.round(235.215 / l100km * 100) / 100, unit: "common_unit_mpg_us" },
+      { labelKey: "converter_fuel_efficiency_mpg_uk", value: Math.round(282.481 / l100km * 100) / 100, unit: "common_unit_mpg_uk" },
+      { labelKey: "converter_fuel_efficiency_km_l", value: Math.round(100 / l100km * 100) / 100, unit: "common_unit_km_l" },
     ];
   },
 };
@@ -182,7 +182,7 @@ export const electricityCost: ConverterConfig = {
     const monthlyCost = dailyCost * 30;
     const yearlyCost = dailyCost * 365;
     return [
-      { labelKey: "converter_electricity_cost_kwh_day", value: Math.round(kwhPerDay * 100) / 100, unit: "kWh" },
+      { labelKey: "converter_electricity_cost_kwh_day", value: Math.round(kwhPerDay * 100) / 100, unit: "common_unit_kwh" },
       { labelKey: "converter_electricity_cost_daily_cost", value: Math.round(dailyCost * 100) / 100 },
       { labelKey: "converter_electricity_cost_monthly_cost", value: Math.round(monthlyCost * 100) / 100 },
       { labelKey: "converter_electricity_cost_yearly_cost", value: Math.round(yearlyCost * 100) / 100 },
@@ -198,16 +198,16 @@ export const paperSize: ConverterConfig = {
   descriptionKey: "converter_paper_size_description",
   inputs: [
     { id: "size", type: "select", labelKey: "converter_paper_size_select_size", defaultValue: "A4", options: [
-      { value: "A0", labelKey: "A0" },
-      { value: "A1", labelKey: "A1" },
-      { value: "A2", labelKey: "A2" },
-      { value: "A3", labelKey: "A3" },
-      { value: "A4", labelKey: "A4" },
-      { value: "A5", labelKey: "A5" },
-      { value: "A6", labelKey: "A6" },
-      { value: "Letter", labelKey: "Letter" },
-      { value: "Legal", labelKey: "Legal" },
-      { value: "Tabloid", labelKey: "Tabloid" },
+      { value: "A0", labelKey: "common_paper_a0" },
+      { value: "A1", labelKey: "common_paper_a1" },
+      { value: "A2", labelKey: "common_paper_a2" },
+      { value: "A3", labelKey: "common_paper_a3" },
+      { value: "A4", labelKey: "common_paper_a4" },
+      { value: "A5", labelKey: "common_paper_a5" },
+      { value: "A6", labelKey: "common_paper_a6" },
+      { value: "Letter", labelKey: "common_paper_letter" },
+      { value: "Legal", labelKey: "common_paper_legal" },
+      { value: "Tabloid", labelKey: "common_paper_tabloid" },
     ]},
   ],
   calculate: (inputs) => {
@@ -226,9 +226,9 @@ export const paperSize: ConverterConfig = {
     };
     const s = sizes[size] || sizes.A4;
     return [
-      { labelKey: "converter_paper_size_mm", value: `${s.mm[0]} × ${s.mm[1]}`, unit: "mm" },
-      { labelKey: "converter_paper_size_inches", value: `${s.in[0]} × ${s.in[1]}`, unit: "in" },
-      { labelKey: "converter_paper_size_cm", value: `${(s.mm[0] / 10).toFixed(1)} × ${(s.mm[1] / 10).toFixed(1)}`, unit: "cm" },
+      { labelKey: "converter_paper_size_mm", value: `${s.mm[0]} × ${s.mm[1]}`, unit: "common_unit_mm" },
+      { labelKey: "converter_paper_size_inches", value: `${s.in[0]} × ${s.in[1]}`, unit: "common_unit_in" },
+      { labelKey: "converter_paper_size_cm", value: `${(s.mm[0] / 10).toFixed(1)} × ${(s.mm[1] / 10).toFixed(1)}`, unit: "common_unit_cm" },
     ];
   },
 };
@@ -268,10 +268,10 @@ export const runningPace: ConverterConfig = {
       return h > 0 ? `${h}:${String(m).padStart(2, "0")}:${String(sc).padStart(2, "0")}` : `${m}:${String(sc).padStart(2, "0")}`;
     };
     return [
-      { labelKey: "converter_running_pace_per_km", value: fmtPace(secPerKm), unit: "min/km" },
-      { labelKey: "converter_running_pace_per_mile", value: fmtPace(secPerMile), unit: "min/mi" },
-      { labelKey: "converter_running_pace_speed_kmh", value: Math.round(kmH * 100) / 100, unit: "km/h" },
-      { labelKey: "converter_running_pace_speed_mph", value: Math.round(mph * 100) / 100, unit: "mph" },
+      { labelKey: "converter_running_pace_per_km", value: fmtPace(secPerKm), unit: "common_unit_min_km" },
+      { labelKey: "converter_running_pace_per_mile", value: fmtPace(secPerMile), unit: "common_unit_min_mi" },
+      { labelKey: "converter_running_pace_speed_kmh", value: Math.round(kmH * 100) / 100, unit: "common_unit_km_h" },
+      { labelKey: "converter_running_pace_speed_mph", value: Math.round(mph * 100) / 100, unit: "common_unit_mph" },
       { labelKey: "converter_running_pace_five_k", value: fmtTime(fiveKTime) },
       { labelKey: "converter_running_pace_ten_k", value: fmtTime(tenKTime) },
       { labelKey: "converter_running_pace_marathon", value: fmtTime(marathonTime) },

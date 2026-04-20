@@ -1,4 +1,5 @@
-import { ConverterConfig } from "../types";
+import { ConverterConfig, ResultField } from "../types";
+import type { LocalesKey } from "@/lib/locales/generated-locales";
 
 const lbToKg = (lb: number) => lb * 0.453592;
 const kgToLb = (kg: number) => kg / 0.453592;
@@ -20,17 +21,17 @@ export const weightOnPlanets: ConverterConfig = {
     const raw = Number(inputs.weight) || 70;
     const isImperial = inputs.unitSystem === "imperial";
     const weightKg = isImperial ? lbToKg(raw) : raw;
-    const unit = isImperial ? "lb" : "kg";
+    const unit = isImperial ? "common_unit_lb" as const : "common_unit_kg" as const;
     const gravity: Record<string, number> = {
       mercury: 0.378, venus: 0.907, mars: 0.377, jupiter: 2.36, saturn: 0.916, uranus: 0.889, neptune: 1.12, moon: 0.166, pluto: 0.071,
     };
     return Object.entries(gravity).map(([planet, g]) => {
       const result = weightKg * g;
       return {
-        labelKey: `converter_weight_planets_${planet}`,
+        labelKey: `converter_weight_planets_${planet}` as LocalesKey,
         value: Math.round((isImperial ? kgToLb(result) : result) * 100) / 100,
         unit,
-      };
+      } satisfies ResultField;
     });
   },
 };
@@ -43,8 +44,8 @@ export const lightTravelTime: ConverterConfig = {
   descriptionKey: "converter_light_travel_description",
   inputs: [
     { id: "distance", type: "number", labelKey: "converter_light_travel_distance", min: 0, max: 1e15, step: 1, defaultValue: 384400, unitOptions: [
-      { value: "km", labelKey: "km", multiplier: 1 },
-      { value: "miles", labelKey: "miles", multiplier: 1.60934, step: 1 },
+      { value: "km", labelKey: "common_unit_km", multiplier: 1 },
+      { value: "miles", labelKey: "common_unit_miles", multiplier: 1.60934, step: 1 },
     ] },
   ],
   calculate: (inputs) => {
@@ -91,10 +92,10 @@ export const soundDistance: ConverterConfig = {
     const distanceKm = distanceM / 1000;
     const distanceMi = distanceKm * 0.621371;
     return [
-      { labelKey: "converter_sound_distance_result_meters", value: Math.round(distanceM * 10) / 10, unit: "m" },
-      { labelKey: "converter_sound_distance_result_km", value: Math.round(distanceKm * 100) / 100, unit: "km" },
-      { labelKey: "converter_sound_distance_result_miles", value: Math.round(distanceMi * 100) / 100, unit: "mi" },
-      { labelKey: "converter_sound_distance_speed", value: Math.round(speed * 10) / 10, unit: "m/s" },
+      { labelKey: "converter_sound_distance_result_meters", value: Math.round(distanceM * 10) / 10, unit: "common_unit_m" },
+      { labelKey: "converter_sound_distance_result_km", value: Math.round(distanceKm * 100) / 100, unit: "common_unit_km" },
+      { labelKey: "converter_sound_distance_result_miles", value: Math.round(distanceMi * 100) / 100, unit: "common_unit_mi" },
+      { labelKey: "converter_sound_distance_speed", value: Math.round(speed * 10) / 10, unit: "common_unit_m_s" },
     ];
   },
 };
@@ -118,10 +119,10 @@ export const halfLife: ConverterConfig = {
     const decayed = initial - remaining;
     const halfLives = elapsed / hl;
     return [
-      { labelKey: "converter_half_life_remaining", value: Math.round(remaining * 1000) / 1000, unit: "g" },
-      { labelKey: "converter_half_life_decayed", value: Math.round(decayed * 1000) / 1000, unit: "g" },
+      { labelKey: "converter_half_life_remaining", value: Math.round(remaining * 1000) / 1000, unit: "common_unit_g" },
+      { labelKey: "converter_half_life_decayed", value: Math.round(decayed * 1000) / 1000, unit: "common_unit_g" },
       { labelKey: "converter_half_life_half_lives_passed", value: Math.round(halfLives * 100) / 100 },
-      { labelKey: "converter_half_life_percent_remaining", value: Math.round((remaining / initial) * 10000) / 100, unit: "%" },
+      { labelKey: "converter_half_life_percent_remaining", value: Math.round((remaining / initial) * 10000) / 100, unit: "common_unit_percent" },
     ];
   },
 };
