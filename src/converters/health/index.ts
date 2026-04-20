@@ -1,5 +1,35 @@
 import { ConverterConfig } from "../types";
 
+// Conversion helpers
+const lbToKg = (lb: number) => lb * 0.453592;
+const inToCm = (inches: number) => inches * 2.54;
+const kgToLb = (kg: number) => kg / 0.453592;
+
+const unitSystemInput = {
+  id: "unitSystem", type: "select" as const, labelKey: "common_units", defaultValue: "metric", options: [
+    { value: "metric", labelKey: "common_metric" },
+    { value: "imperial", labelKey: "common_imperial" },
+  ],
+};
+
+function getWeight(inputs: Record<string, string | number>): number {
+  const v = Number(inputs.weight) || 0;
+  return inputs.unitSystem === "imperial" ? lbToKg(v) : v;
+}
+
+function getHeight(inputs: Record<string, string | number>): number {
+  const v = Number(inputs.height) || 0;
+  return inputs.unitSystem === "imperial" ? inToCm(v) : v;
+}
+
+function weightUnit(inputs: Record<string, string | number>): string {
+  return inputs.unitSystem === "imperial" ? "lb" : "kg";
+}
+
+function formatWeight(kg: number, inputs: Record<string, string | number>): number {
+  return inputs.unitSystem === "imperial" ? Math.round(kgToLb(kg) * 10) / 10 : Math.round(kg * 10) / 10;
+}
+
 export const bmiCalculator: ConverterConfig = {
   slug: "bmi-calculator",
   category: "health",
@@ -7,12 +37,13 @@ export const bmiCalculator: ConverterConfig = {
   titleKey: "converter_bmi_title",
   descriptionKey: "converter_bmi_description",
   inputs: [
+    unitSystemInput,
     { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 1, max: 500, step: 0.1, defaultValue: 70, unit: "kg" },
     { id: "height", type: "number", labelKey: "converter_bmi_height_label", min: 50, max: 300, step: 1, defaultValue: 170, unit: "cm" },
   ],
   calculate: (inputs) => {
-    const weight = Number(inputs.weight) || 0;
-    const heightCm = Number(inputs.height) || 0;
+    const weight = getWeight(inputs);
+    const heightCm = getHeight(inputs);
     const heightM = heightCm / 100;
     if (heightM <= 0 || weight <= 0) return [{ labelKey: "converter_bmi_result_label", value: 0 }];
     const bmi = weight / (heightM * heightM);
@@ -35,21 +66,23 @@ export const bodyFatCalculator: ConverterConfig = {
   titleKey: "converter_body_fat_title",
   descriptionKey: "converter_body_fat_description",
   inputs: [
+    unitSystemInput,
     { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},
-    { id: "waist", type: "number", labelKey: "converter_body_fat_waist", min: 40, max: 200, step: 0.5, defaultValue: 85, unit: "cm" },
-    { id: "neck", type: "number", labelKey: "converter_body_fat_neck", min: 20, max: 80, step: 0.5, defaultValue: 38, unit: "cm" },
-    { id: "height", type: "number", labelKey: "converter_bmi_height_label", min: 100, max: 250, step: 1, defaultValue: 175, unit: "cm" },
-    { id: "hip", type: "number", labelKey: "converter_body_fat_hip", min: 50, max: 200, step: 0.5, defaultValue: 95, unit: "cm" },
+    { id: "waist", type: "number", labelKey: "converter_body_fat_waist", min: 15, max: 80, step: 0.5, defaultValue: 85, unit: "cm" },
+    { id: "neck", type: "number", labelKey: "converter_body_fat_neck", min: 8, max: 30, step: 0.5, defaultValue: 38, unit: "cm" },
+    { id: "height", type: "number", labelKey: "converter_bmi_height_label", min: 40, max: 100, step: 1, defaultValue: 175, unit: "cm" },
+    { id: "hip", type: "number", labelKey: "converter_body_fat_hip", min: 20, max: 80, step: 0.5, defaultValue: 95, unit: "cm" },
   ],
   calculate: (inputs) => {
     const gender = String(inputs.gender || "male");
-    const waist = Number(inputs.waist) || 0;
-    const neck = Number(inputs.neck) || 0;
-    const height = Number(inputs.height) || 0;
-    const hip = Number(inputs.hip) || 0;
+    const isImperial = inputs.unitSystem === "imperial";
+    const waist = isImperial ? inToCm(Number(inputs.waist) || 0) : Number(inputs.waist) || 0;
+    const neck = isImperial ? inToCm(Number(inputs.neck) || 0) : Number(inputs.neck) || 0;
+    const height = getHeight(inputs);
+    const hip = isImperial ? inToCm(Number(inputs.hip) || 0) : Number(inputs.hip) || 0;
     if (waist <= neck || height <= 0) return [{ labelKey: "converter_body_fat_result_label", value: 0, unit: "%" }];
     let bf: number;
     if (gender === "male") {
@@ -68,6 +101,7 @@ export const idealWeight: ConverterConfig = {
   titleKey: "converter_ideal_weight_title",
   descriptionKey: "converter_ideal_weight_description",
   inputs: [
+    unitSystemInput,
     { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
@@ -76,18 +110,19 @@ export const idealWeight: ConverterConfig = {
   ],
   calculate: (inputs) => {
     const gender = String(inputs.gender || "male");
-    const heightCm = Number(inputs.height) || 0;
+    const heightCm = getHeight(inputs);
     const heightIn = heightCm / 2.54;
     const over60 = Math.max(0, heightIn - 60);
     const robinson = gender === "male" ? 52 + 1.9 * over60 : 49 + 1.7 * over60;
     const miller = gender === "male" ? 56.2 + 1.41 * over60 : 53.1 + 1.36 * over60;
     const devine = gender === "male" ? 50 + 2.3 * over60 : 45.5 + 2.3 * over60;
     const avg = (robinson + miller + devine) / 3;
+    const u = weightUnit(inputs);
     return [
-      { labelKey: "converter_ideal_weight_robinson", value: Math.round(robinson * 10) / 10, unit: "kg" },
-      { labelKey: "converter_ideal_weight_miller", value: Math.round(miller * 10) / 10, unit: "kg" },
-      { labelKey: "converter_ideal_weight_devine", value: Math.round(devine * 10) / 10, unit: "kg" },
-      { labelKey: "converter_ideal_weight_average", value: Math.round(avg * 10) / 10, unit: "kg" },
+      { labelKey: "converter_ideal_weight_robinson", value: formatWeight(robinson, inputs), unit: u },
+      { labelKey: "converter_ideal_weight_miller", value: formatWeight(miller, inputs), unit: u },
+      { labelKey: "converter_ideal_weight_devine", value: formatWeight(devine, inputs), unit: u },
+      { labelKey: "converter_ideal_weight_average", value: formatWeight(avg, inputs), unit: u },
     ];
   },
 };
@@ -99,6 +134,7 @@ export const bmrCalculator: ConverterConfig = {
   titleKey: "converter_bmr_title",
   descriptionKey: "converter_bmr_description",
   inputs: [
+    unitSystemInput,
     { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
@@ -109,8 +145,8 @@ export const bmrCalculator: ConverterConfig = {
   ],
   calculate: (inputs) => {
     const gender = String(inputs.gender || "male");
-    const weight = Number(inputs.weight) || 0;
-    const height = Number(inputs.height) || 0;
+    const weight = getWeight(inputs);
+    const height = getHeight(inputs);
     const age = Number(inputs.age) || 0;
     let bmr: number;
     if (gender === "male") {
@@ -129,6 +165,7 @@ export const tdeeCalculator: ConverterConfig = {
   titleKey: "converter_tdee_title",
   descriptionKey: "converter_tdee_description",
   inputs: [
+    unitSystemInput,
     { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
@@ -146,8 +183,8 @@ export const tdeeCalculator: ConverterConfig = {
   ],
   calculate: (inputs) => {
     const gender = String(inputs.gender || "male");
-    const weight = Number(inputs.weight) || 0;
-    const height = Number(inputs.height) || 0;
+    const weight = getWeight(inputs);
+    const height = getHeight(inputs);
     const age = Number(inputs.age) || 0;
     const activity = String(inputs.activity || "moderate");
     let bmr: number;
@@ -196,17 +233,18 @@ export const bacCalculator: ConverterConfig = {
   titleKey: "converter_bac_title",
   descriptionKey: "converter_bac_description",
   inputs: [
+    unitSystemInput,
     { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},
-    { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 30, max: 200, step: 0.5, defaultValue: 75, unit: "kg" },
+    { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 30, max: 500, step: 0.5, defaultValue: 75, unit: "kg" },
     { id: "drinks", type: "number", labelKey: "converter_bac_drinks", min: 0, max: 30, step: 0.5, defaultValue: 2 },
     { id: "hours", type: "number", labelKey: "converter_bac_hours", min: 0, max: 24, step: 0.5, defaultValue: 1 },
   ],
   calculate: (inputs) => {
     const gender = String(inputs.gender || "male");
-    const weight = Number(inputs.weight) || 75;
+    const weight = getWeight(inputs);
     const drinks = Number(inputs.drinks) || 0;
     const hours = Number(inputs.hours) || 0;
     const r = gender === "male" ? 0.68 : 0.55;
@@ -230,7 +268,8 @@ export const waterIntake: ConverterConfig = {
   titleKey: "converter_water_intake_title",
   descriptionKey: "converter_water_intake_description",
   inputs: [
-    { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 20, max: 200, step: 0.5, defaultValue: 70, unit: "kg" },
+    unitSystemInput,
+    { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 20, max: 500, step: 0.5, defaultValue: 70, unit: "kg" },
     { id: "activity", type: "select", labelKey: "converter_tdee_activity_label", defaultValue: "moderate", options: [
       { value: "sedentary", labelKey: "converter_tdee_sedentary" },
       { value: "moderate", labelKey: "converter_tdee_moderate" },
@@ -238,13 +277,14 @@ export const waterIntake: ConverterConfig = {
     ]},
   ],
   calculate: (inputs) => {
-    const weight = Number(inputs.weight) || 70;
+    const weight = getWeight(inputs);
     const activity = String(inputs.activity || "moderate");
     const base = weight * 0.033;
     const multipliers: Record<string, number> = { sedentary: 1, moderate: 1.2, active: 1.5 };
     const liters = base * (multipliers[activity] || 1.2);
+    const isImperial = inputs.unitSystem === "imperial";
     return [
-      { labelKey: "converter_water_intake_result_label", value: Math.round(liters * 100) / 100, unit: "L" },
+      { labelKey: "converter_water_intake_result_label", value: isImperial ? Math.round(liters * 33.814 * 10) / 10 : Math.round(liters * 100) / 100, unit: isImperial ? "fl oz" : "L" },
       { labelKey: "converter_water_intake_glasses", value: Math.round(liters / 0.25) },
     ];
   },

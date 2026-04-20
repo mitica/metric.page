@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useCallback, useMemo, useEffect } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { ConverterConfig, ResultField } from "@/converters/types";
 import ConverterInput, { ConverterResult } from "./converter-input";
 import { addRecent } from "@/lib/recents";
 import { localesProvider } from "@/lib/locales";
-import Link from "next/link";
 
 interface ConverterCardProps {
   converter: ConverterConfig;
@@ -13,7 +12,7 @@ interface ConverterCardProps {
   isFullPage?: boolean;
 }
 
-export default function ConverterCard({ converter, lang, isFullPage }: ConverterCardProps) {
+export default function ConverterCard({ converter, lang }: ConverterCardProps) {
   const t = localesProvider.lang(lang);
 
   const initialValues = useMemo(() => {
@@ -24,19 +23,17 @@ export default function ConverterCard({ converter, lang, isFullPage }: Converter
     return vals;
   }, [converter.inputs]);
 
-  const [values, setValues] = useState(initialValues);
-  const [results, setResults] = useState<ResultField[]>([]);
-  const [animate, setAnimate] = useState(false);
-
-  // Calculate on initial load
-  useEffect(() => {
+  const initialResults = useMemo(() => {
     try {
-      const r = converter.calculate(initialValues);
-      setResults(r);
+      return converter.calculate(initialValues);
     } catch {
-      setResults([]);
+      return [];
     }
   }, [converter, initialValues]);
+
+  const [values, setValues] = useState(initialValues);
+  const [results, setResults] = useState<ResultField[]>(initialResults);
+  const [animate, setAnimate] = useState(false);
 
   const handleChange = useCallback(
     (id: string, value: string | number) => {
@@ -58,16 +55,14 @@ export default function ConverterCard({ converter, lang, isFullPage }: Converter
   const title = t.v(converter.titleKey);
   const description = t.v(converter.descriptionKey);
 
-  const content = (
-    <>
+  return (
+    <div className="mx-auto w-full max-w-lg px-4 py-8">
       {/* Header */}
       <div className="mb-6 text-center">
         <span className="text-4xl" role="img" aria-label={title}>
           {converter.icon}
         </span>
-        <h2 className={`mt-3 font-bold text-text-primary ${isFullPage ? "text-2xl" : "text-xl"}`}>
-          {title}
-        </h2>
+        <h1 className="mt-3 text-2xl font-bold text-text-primary">{title}</h1>
         <p className="mt-1 text-sm text-text-secondary">{description}</p>
       </div>
 
@@ -80,6 +75,7 @@ export default function ConverterCard({ converter, lang, isFullPage }: Converter
             value={values[field.id]}
             onChange={handleChange}
             lang={lang}
+            unitSystem={values.unitSystem as string | undefined}
           />
         ))}
       </div>
@@ -93,31 +89,8 @@ export default function ConverterCard({ converter, lang, isFullPage }: Converter
           <ConverterResult results={results} lang={lang} animate={animate} />
         </div>
       )}
-    </>
-  );
 
-  if (isFullPage) {
-    return (
-      <div className="mx-auto w-full max-w-lg px-4 py-8">
-        {content}
-      </div>
-    );
-  }
-
-  return (
-    <div className="feed-card flex items-center justify-center p-4">
-      <div className="glass-card relative w-full max-w-lg p-6">
-        {content}
-        <Link
-          href={`/${lang}/${converter.slug}/`}
-          className="mt-4 flex items-center justify-center gap-1 text-sm text-accent hover:text-accent-hover transition-colors"
-        >
-          {t.common_open()}
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M5 3L9 7L5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
-      </div>
+      <hr className="mt-8 border-border/50" />
     </div>
   );
 }

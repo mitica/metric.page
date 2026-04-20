@@ -18,9 +18,12 @@ interface ConverterInputProps {
   value: string | number;
   onChange: (id: string, value: string | number) => void;
   lang: string;
+  unitSystem?: string;
 }
 
-export default function ConverterInput({ field, value, onChange, lang }: ConverterInputProps) {
+const imperialUnits: Record<string, string> = { kg: "lb", cm: "in" };
+
+export default function ConverterInput({ field, value, onChange, lang, unitSystem }: ConverterInputProps) {
   const t = localesProvider.lang(lang);
   const label = translate(t, field.labelKey);
 
@@ -60,7 +63,7 @@ export default function ConverterInput({ field, value, onChange, lang }: Convert
     <div className="space-y-2">
       <label className="block text-sm font-medium text-text-secondary">
         {label}
-        {field.unit && <span className="ml-1 text-text-tertiary">({field.unit})</span>}
+        {field.unit && <span className="ml-1 text-text-tertiary">({unitSystem === "imperial" && imperialUnits[field.unit] ? imperialUnits[field.unit] : field.unit})</span>}
       </label>
       <input
         type={field.type === "number" ? "number" : "text"}
@@ -84,9 +87,16 @@ interface ConverterResultProps {
 export function ConverterResult({ results, lang, animate }: ConverterResultProps) {
   if (results.length === 0) return null;
   const t = localesProvider.lang(lang);
+  const useGrid = results.length >= 4;
 
   return (
-    <div className="space-y-3" aria-live="polite" aria-atomic="true" role="region" aria-label={localesProvider.lang(lang).common_results()}>
+    <div
+      className={useGrid ? "grid grid-cols-2 gap-2" : "space-y-2"}
+      aria-live="polite"
+      aria-atomic="true"
+      role="region"
+      aria-label={localesProvider.lang(lang).common_results()}
+    >
       {results.map((result, i) => {
         const label = translate(t, result.labelKey);
         const displayValue = String(result.value);
@@ -95,10 +105,10 @@ export function ConverterResult({ results, lang, animate }: ConverterResultProps
         return (
           <div
             key={i}
-            className={`flex items-center justify-between rounded-2xl bg-surface-elevated/50 px-4 py-3 ${animate ? "result-updating" : ""}`}
+            className={`rounded-2xl bg-surface-elevated/50 px-4 py-3 ${animate ? "result-updating" : ""} ${useGrid ? "" : "flex items-center justify-between"}`}
           >
-            <span className="text-sm text-text-secondary">{label}</span>
-            <span className="result-value text-lg font-semibold text-accent">
+            <span className={`text-text-secondary ${useGrid ? "text-xs block mb-0.5" : "text-sm"}`}>{label}</span>
+            <span className={`result-value font-semibold text-accent ${useGrid ? "text-lg block" : "text-xl"}`}>
               {displayValue}
               {unit && <span className="ml-1 text-sm font-normal text-text-tertiary">{unit}</span>}
             </span>

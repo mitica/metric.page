@@ -1,5 +1,8 @@
 import { ConverterConfig } from "../types";
 
+const lbToKg = (lb: number) => lb * 0.453592;
+const kgToLb = (kg: number) => kg / 0.453592;
+
 export const weightOnPlanets: ConverterConfig = {
   slug: "weight-on-planets",
   category: "space-science",
@@ -7,18 +10,28 @@ export const weightOnPlanets: ConverterConfig = {
   titleKey: "converter_weight_planets_title",
   descriptionKey: "converter_weight_planets_description",
   inputs: [
+    { id: "unitSystem", type: "select", labelKey: "common_units", defaultValue: "metric", options: [
+      { value: "metric", labelKey: "common_metric" },
+      { value: "imperial", labelKey: "common_imperial" },
+    ]},
     { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 1, max: 500, step: 0.1, defaultValue: 70, unit: "kg" },
   ],
   calculate: (inputs) => {
-    const weight = Number(inputs.weight) || 70;
+    const raw = Number(inputs.weight) || 70;
+    const isImperial = inputs.unitSystem === "imperial";
+    const weightKg = isImperial ? lbToKg(raw) : raw;
+    const unit = isImperial ? "lb" : "kg";
     const gravity: Record<string, number> = {
       mercury: 0.378, venus: 0.907, mars: 0.377, jupiter: 2.36, saturn: 0.916, uranus: 0.889, neptune: 1.12, moon: 0.166, pluto: 0.071,
     };
-    return Object.entries(gravity).map(([planet, g]) => ({
-      labelKey: `converter_weight_planets_${planet}`,
-      value: Math.round(weight * g * 100) / 100,
-      unit: "kg",
-    }));
+    return Object.entries(gravity).map(([planet, g]) => {
+      const result = weightKg * g;
+      return {
+        labelKey: `converter_weight_planets_${planet}`,
+        value: Math.round((isImperial ? kgToLb(result) : result) * 100) / 100,
+        unit,
+      };
+    });
   },
 };
 

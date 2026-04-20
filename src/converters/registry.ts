@@ -37,3 +37,7 @@ export function getAllSlugs(): string[] {
 export function getConvertersByCategory(category: string): ConverterConfig[] {
   return allConverters.filter((c) => c.category === category);
 }
+
+export function getAllCategories(): string[] {
+  return [...new Set(allConverters.map((c) => c.category))];
+}

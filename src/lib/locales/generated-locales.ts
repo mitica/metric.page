@@ -57,6 +57,18 @@ export class LocalizyLocales {
         return this.v('common_open');
     }
 
+    common_browse() {
+        return this.v('common_browse');
+    }
+
+    common_all_converters() {
+        return this.v('common_all_converters');
+    }
+
+    common_converters_count(_p1: number) {
+        return this.v('common_converters_count', Array.from(arguments));
+    }
+
     common_calculate() {
         return this.v('common_calculate');
     }
@@ -71,6 +83,38 @@ export class LocalizyLocales {
 
     common_go_to_converter(_p1: number) {
         return this.v('common_go_to_converter', Array.from(arguments));
+    }
+
+    common_units() {
+        return this.v('common_units');
+    }
+
+    common_metric() {
+        return this.v('common_metric');
+    }
+
+    common_imperial() {
+        return this.v('common_imperial');
+    }
+
+    common_weight_lb() {
+        return this.v('common_weight_lb');
+    }
+
+    common_height_in() {
+        return this.v('common_height_in');
+    }
+
+    common_waist_in() {
+        return this.v('common_waist_in');
+    }
+
+    common_neck_in() {
+        return this.v('common_neck_in');
+    }
+
+    common_hip_in() {
+        return this.v('common_hip_in');
     }
 
     common_yes() {
@@ -2139,10 +2183,21 @@ export type LocalesKey = 'site_title'
     | 'common_results'
     | 'common_back'
     | 'common_open'
+    | 'common_browse'
+    | 'common_all_converters'
+    | 'common_converters_count'
     | 'common_calculate'
     | 'common_reset'
     | 'common_select_language'
     | 'common_go_to_converter'
+    | 'common_units'
+    | 'common_metric'
+    | 'common_imperial'
+    | 'common_weight_lb'
+    | 'common_height_in'
+    | 'common_waist_in'
+    | 'common_neck_in'
+    | 'common_hip_in'
     | 'common_yes'
     | 'common_no'
     | 'common_minutes'

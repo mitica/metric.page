@@ -10,6 +10,7 @@ interface HeaderProps {
 
 export default function Header({ lang }: HeaderProps) {
   const pathname = usePathname();
+  const t = localesProvider.lang(lang);
 
   // Build path for language switch
   const switchLangPath = (newLang: string) => {
@@ -28,8 +29,9 @@ export default function Header({ lang }: HeaderProps) {
           <span className="text-lg font-light text-text-secondary">.page</span>
         </Link>
 
-        {/* Language Switcher */}
-        <div className="relative">
+        <div className="flex items-center gap-3">
+          {/* Language Switcher */}
+          <div className="relative">
           <select
             value={lang}
             onChange={(e) => {
@@ -49,6 +51,7 @@ export default function Header({ lang }: HeaderProps) {
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M3 5L6 8L9 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
+          </div>
           </div>
         </div>
       </div>

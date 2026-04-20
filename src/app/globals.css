@@ -17,9 +17,11 @@
   --font-sans: var(--font-inter);
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-surface-elevated) transparent;
+@media (pointer: fine) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-surface-elevated) transparent;
+  }
 }
 
 html {
@@ -32,20 +34,6 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Scroll snap for TikTok-style feed */
-.feed-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: auto;
-  height: 100dvh;
-  -webkit-overflow-scrolling: touch;
-}
-
-.feed-card {
-  scroll-snap-align: start;
-  height: 100dvh;
-  min-height: 100dvh;
 }
 
 /* iOS-style input styling */
