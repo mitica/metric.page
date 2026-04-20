@@ -6,7 +6,7 @@ const inToCm = (inches: number) => inches * 2.54;
 const kgToLb = (kg: number) => kg / 0.453592;
 
 const unitSystemInput = {
-  id: "unitSystem", type: "select" as const, labelKey: "common_units", defaultValue: "metric", options: [
+  id: "unitSystem", type: "switcher" as const, labelKey: "common_units", defaultValue: "metric", options: [
     { value: "metric", labelKey: "common_metric" },
     { value: "imperial", labelKey: "common_imperial" },
   ],
@@ -67,7 +67,7 @@ export const bodyFatCalculator: ConverterConfig = {
   descriptionKey: "converter_body_fat_description",
   inputs: [
     unitSystemInput,
-    { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
+    { id: "gender", type: "switcher", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},
@@ -102,7 +102,7 @@ export const idealWeight: ConverterConfig = {
   descriptionKey: "converter_ideal_weight_description",
   inputs: [
     unitSystemInput,
-    { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
+    { id: "gender", type: "switcher", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},
@@ -135,7 +135,7 @@ export const bmrCalculator: ConverterConfig = {
   descriptionKey: "converter_bmr_description",
   inputs: [
     unitSystemInput,
-    { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
+    { id: "gender", type: "switcher", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},
@@ -166,7 +166,7 @@ export const tdeeCalculator: ConverterConfig = {
   descriptionKey: "converter_tdee_description",
   inputs: [
     unitSystemInput,
-    { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
+    { id: "gender", type: "switcher", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},
@@ -234,7 +234,7 @@ export const bacCalculator: ConverterConfig = {
   descriptionKey: "converter_bac_description",
   inputs: [
     unitSystemInput,
-    { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
+    { id: "gender", type: "switcher", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},

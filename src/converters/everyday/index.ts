@@ -7,7 +7,7 @@ export const shoeSize: ConverterConfig = {
   titleKey: "converter_shoe_size_title",
   descriptionKey: "converter_shoe_size_description",
   inputs: [
-    { id: "gender", type: "select", labelKey: "converter_common_gender", defaultValue: "male", options: [
+    { id: "gender", type: "switcher", labelKey: "converter_common_gender", defaultValue: "male", options: [
       { value: "male", labelKey: "converter_common_male" },
       { value: "female", labelKey: "converter_common_female" },
     ]},
@@ -242,7 +242,7 @@ export const runningPace: ConverterConfig = {
   inputs: [
     { id: "minutes", type: "number", labelKey: "converter_running_pace_minutes", min: 0, max: 59, step: 1, defaultValue: 5 },
     { id: "seconds", type: "number", labelKey: "converter_running_pace_seconds", min: 0, max: 59, step: 1, defaultValue: 30 },
-    { id: "unit", type: "select", labelKey: "converter_running_pace_pace_unit", defaultValue: "km", options: [
+    { id: "unit", type: "switcher", labelKey: "converter_running_pace_pace_unit", defaultValue: "km", options: [
       { value: "km", labelKey: "converter_running_pace_per_km" },
       { value: "mile", labelKey: "converter_running_pace_per_mile" },
     ]},

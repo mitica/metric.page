@@ -56,7 +56,7 @@ export const dogYears: ConverterConfig = {
     },
     {
       id: "size",
-      type: "select",
+      type: "switcher",
       labelKey: "converter_dog_years_size_label",
       defaultValue: "medium",
       options: [

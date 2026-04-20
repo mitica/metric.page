@@ -10,7 +10,7 @@ export const weightOnPlanets: ConverterConfig = {
   titleKey: "converter_weight_planets_title",
   descriptionKey: "converter_weight_planets_description",
   inputs: [
-    { id: "unitSystem", type: "select", labelKey: "common_units", defaultValue: "metric", options: [
+    { id: "unitSystem", type: "switcher", labelKey: "common_units", defaultValue: "metric", options: [
       { value: "metric", labelKey: "common_metric" },
       { value: "imperial", labelKey: "common_imperial" },
     ]},

@@ -57,6 +57,43 @@ export default function ConverterInput({ field, value, onChange, lang, unitSyste
     );
   }
 
+  if (field.type === "switcher" && field.options) {
+    return (
+      <div className="space-y-2">
+        <label className="block text-sm font-medium text-text-secondary">{label}</label>
+        <div
+          className="inline-flex w-full rounded-lg p-0.5"
+          style={{ backgroundColor: "#2c2c2e" }}
+        >
+          {field.options.map((opt: SelectOption) => {
+            const isActive = String(value) === opt.value;
+            return (
+              <div
+                key={opt.value}
+                role="button"
+                tabIndex={0}
+                onClick={() => onChange(field.id, opt.value)}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  onChange(field.id, opt.value);
+                }}
+                className="flex-1 cursor-pointer select-none rounded-md px-3 py-2 text-center text-sm font-medium"
+                style={{
+                  backgroundColor: isActive ? "#0a84ff" : "transparent",
+                  color: isActive ? "#ffffff" : "#8e8e93",
+                  WebkitTapHighlightColor: "transparent",
+                  touchAction: "manipulation",
+                }}
+              >
+                {translate(t, opt.labelKey)}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   if (field.type === "date") {
     return (
       <div className="space-y-2">

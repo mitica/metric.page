@@ -1,6 +1,6 @@
 import { LocalesKey } from "@/lib/locales/generated-locales";
 
-export type InputType = "number" | "select" | "date" | "text";
+export type InputType = "number" | "select" | "switcher" | "date" | "text";
 
 export interface SelectOption {
   value: string;
