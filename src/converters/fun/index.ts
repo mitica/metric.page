@@ -56,7 +56,11 @@ export const hairGrowth: ConverterConfig = {
   titleKey: "converter_hair_growth_title",
   descriptionKey: "converter_hair_growth_description",
   inputs: [
-    { id: "months", type: "number", labelKey: "converter_hair_growth_months", min: 0, max: 120, step: 1, defaultValue: 6 },
+    { id: "months", type: "number", labelKey: "converter_hair_growth_months", min: 0, max: 120, step: 1, defaultValue: 6, unitOptions: [
+      { value: "months", labelKey: "common_unit_months", multiplier: 1 },
+      { value: "weeks", labelKey: "common_unit_weeks", multiplier: 1 / 4.345, step: 1 },
+      { value: "years", labelKey: "common_unit_years", multiplier: 12, step: 0.5 },
+    ] },
   ],
   calculate: (inputs) => {
     const months = Number(inputs.months) || 0;

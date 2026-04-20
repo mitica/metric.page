@@ -7,6 +7,13 @@ export interface SelectOption {
   labelKey: string;
 }
 
+export interface UnitOption {
+  value: string;
+  labelKey: string;
+  multiplier: number; // multiply display value by this to get base unit value
+  step?: number;
+}
+
 export interface InputField {
   id: string;
   type: InputType;
@@ -17,6 +24,7 @@ export interface InputField {
   step?: number;
   defaultValue?: string | number;
   unit?: string;
+  unitOptions?: UnitOption[];
   options?: SelectOption[];
 }
 

@@ -42,7 +42,10 @@ export const lightTravelTime: ConverterConfig = {
   titleKey: "converter_light_travel_title",
   descriptionKey: "converter_light_travel_description",
   inputs: [
-    { id: "distance", type: "number", labelKey: "converter_light_travel_distance", min: 0, max: 1e15, step: 1, defaultValue: 384400, unit: "km" },
+    { id: "distance", type: "number", labelKey: "converter_light_travel_distance", min: 0, max: 1e15, step: 1, defaultValue: 384400, unitOptions: [
+      { value: "km", labelKey: "km", multiplier: 1 },
+      { value: "miles", labelKey: "miles", multiplier: 1.60934, step: 1 },
+    ] },
   ],
   calculate: (inputs) => {
     const km = Number(inputs.distance) || 0;

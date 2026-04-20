@@ -15,6 +15,10 @@ export const catYears: ConverterConfig = {
       max: 30,
       step: 0.5,
       defaultValue: 3,
+      unitOptions: [
+        { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+        { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+      ],
     },
   ],
   calculate: (inputs) => {
@@ -45,6 +49,10 @@ export const dogYears: ConverterConfig = {
       max: 25,
       step: 0.5,
       defaultValue: 5,
+      unitOptions: [
+        { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+        { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+      ],
     },
     {
       id: "size",
@@ -85,7 +93,10 @@ export const horseYears: ConverterConfig = {
   titleKey: "converter_horse_years_title",
   descriptionKey: "converter_horse_years_description",
   inputs: [
-    { id: "horseAge", type: "number", labelKey: "converter_horse_years_input_label", min: 0, max: 40, step: 0.5, defaultValue: 5 },
+    { id: "horseAge", type: "number", labelKey: "converter_horse_years_input_label", min: 0, max: 40, step: 0.5, defaultValue: 5, unitOptions: [
+      { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+      { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+    ] },
   ],
   calculate: (inputs) => {
     const age = Number(inputs.horseAge) || 0;
@@ -107,7 +118,10 @@ export const rabbitYears: ConverterConfig = {
   titleKey: "converter_rabbit_years_title",
   descriptionKey: "converter_rabbit_years_description",
   inputs: [
-    { id: "rabbitAge", type: "number", labelKey: "converter_rabbit_years_input_label", min: 0, max: 15, step: 0.5, defaultValue: 3 },
+    { id: "rabbitAge", type: "number", labelKey: "converter_rabbit_years_input_label", min: 0, max: 15, step: 0.5, defaultValue: 3, unitOptions: [
+      { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+      { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+    ] },
   ],
   calculate: (inputs) => {
     const age = Number(inputs.rabbitAge) || 0;
@@ -126,7 +140,10 @@ export const hamsterYears: ConverterConfig = {
   titleKey: "converter_hamster_years_title",
   descriptionKey: "converter_hamster_years_description",
   inputs: [
-    { id: "hamsterAge", type: "number", labelKey: "converter_hamster_years_input_label", min: 0, max: 5, step: 0.25, defaultValue: 1 },
+    { id: "hamsterAge", type: "number", labelKey: "converter_hamster_years_input_label", min: 0, max: 5, step: 0.25, defaultValue: 1, unitOptions: [
+      { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+      { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+    ] },
   ],
   calculate: (inputs) => {
     const age = Number(inputs.hamsterAge) || 0;
@@ -142,7 +159,10 @@ export const parrotYears: ConverterConfig = {
   titleKey: "converter_parrot_years_title",
   descriptionKey: "converter_parrot_years_description",
   inputs: [
-    { id: "parrotAge", type: "number", labelKey: "converter_parrot_years_input_label", min: 0, max: 80, step: 1, defaultValue: 10 },
+    { id: "parrotAge", type: "number", labelKey: "converter_parrot_years_input_label", min: 0, max: 80, step: 1, defaultValue: 10, unitOptions: [
+      { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+      { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+    ] },
   ],
   calculate: (inputs) => {
     const age = Number(inputs.parrotAge) || 0;
@@ -159,7 +179,10 @@ export const fishYears: ConverterConfig = {
   titleKey: "converter_fish_years_title",
   descriptionKey: "converter_fish_years_description",
   inputs: [
-    { id: "fishAge", type: "number", labelKey: "converter_fish_years_input_label", min: 0, max: 20, step: 0.5, defaultValue: 2 },
+    { id: "fishAge", type: "number", labelKey: "converter_fish_years_input_label", min: 0, max: 20, step: 0.5, defaultValue: 2, unitOptions: [
+      { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+      { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+    ] },
   ],
   calculate: (inputs) => {
     const age = Number(inputs.fishAge) || 0;
@@ -175,7 +198,10 @@ export const turtleYears: ConverterConfig = {
   titleKey: "converter_turtle_years_title",
   descriptionKey: "converter_turtle_years_description",
   inputs: [
-    { id: "turtleAge", type: "number", labelKey: "converter_turtle_years_input_label", min: 0, max: 200, step: 1, defaultValue: 20 },
+    { id: "turtleAge", type: "number", labelKey: "converter_turtle_years_input_label", min: 0, max: 200, step: 1, defaultValue: 20, unitOptions: [
+      { value: "years", labelKey: "common_unit_years", multiplier: 1 },
+      { value: "months", labelKey: "common_unit_months", multiplier: 1 / 12, step: 1 },
+    ] },
   ],
   calculate: (inputs) => {
     const age = Number(inputs.turtleAge) || 0;

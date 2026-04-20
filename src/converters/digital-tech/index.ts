@@ -46,8 +46,15 @@ export const downloadTime: ConverterConfig = {
   titleKey: "converter_download_time_title",
   descriptionKey: "converter_download_time_description",
   inputs: [
-    { id: "fileSize", type: "number", labelKey: "converter_download_time_file_size", min: 0, step: 0.1, defaultValue: 4.7, unit: "GB" },
-    { id: "speed", type: "number", labelKey: "converter_download_time_speed", min: 0.1, step: 0.1, defaultValue: 100, unit: "Mbps" },
+    { id: "fileSize", type: "number", labelKey: "converter_download_time_file_size", min: 0, step: 0.1, defaultValue: 4.7, unitOptions: [
+      { value: "GB", labelKey: "GB", multiplier: 1 },
+      { value: "MB", labelKey: "MB", multiplier: 1 / 1024, step: 1 },
+      { value: "TB", labelKey: "TB", multiplier: 1024, step: 0.01 },
+    ] },
+    { id: "speed", type: "number", labelKey: "converter_download_time_speed", min: 0.1, step: 0.1, defaultValue: 100, unitOptions: [
+      { value: "Mbps", labelKey: "Mbps", multiplier: 1 },
+      { value: "Gbps", labelKey: "Gbps", multiplier: 1000, step: 0.01 },
+    ] },
   ],
   calculate: (inputs) => {
     const sizeGB = Number(inputs.fileSize) || 0;

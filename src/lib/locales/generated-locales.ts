@@ -53,6 +53,18 @@ export class LocalizyLocales {
         return this.v('common_back');
     }
 
+    common_unit_years() {
+        return this.v('common_unit_years');
+    }
+
+    common_unit_months() {
+        return this.v('common_unit_months');
+    }
+
+    common_unit_weeks() {
+        return this.v('common_unit_weeks');
+    }
+
     common_open() {
         return this.v('common_open');
     }
@@ -2182,6 +2194,9 @@ export type LocalesKey = 'site_title'
     | 'site_description'
     | 'common_results'
     | 'common_back'
+    | 'common_unit_years'
+    | 'common_unit_months'
+    | 'common_unit_weeks'
     | 'common_open'
     | 'common_browse'
     | 'common_all_converters'

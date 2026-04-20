@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback } from "react";
-import { InputField, SelectOption } from "@/converters/types";
+import { useCallback, useState } from "react";
+import { InputField, SelectOption, UnitOption } from "@/converters/types";
 import { localesProvider } from "@/lib/locales";
 import { LocalesKey } from "@/lib/locales/generated-locales";
 
@@ -19,11 +19,13 @@ interface ConverterInputProps {
   onChange: (id: string, value: string | number) => void;
   lang: string;
   unitSystem?: string;
+  selectedUnit?: UnitOption;
+  onUnitChange?: (id: string, unit: UnitOption) => void;
 }
 
 const imperialUnits: Record<string, string> = { kg: "lb", cm: "in" };
 
-export default function ConverterInput({ field, value, onChange, lang, unitSystem }: ConverterInputProps) {
+export default function ConverterInput({ field, value, onChange, lang, unitSystem, selectedUnit, onUnitChange }: ConverterInputProps) {
   const t = localesProvider.lang(lang);
   const label = translate(t, field.labelKey);
 
@@ -34,6 +36,11 @@ export default function ConverterInput({ field, value, onChange, lang, unitSyste
     },
     [field.id, field.type, onChange]
   );
+
+  const activeUnit = selectedUnit || (field.unitOptions ? field.unitOptions[0] : undefined);
+  const step = activeUnit?.step ?? field.step;
+  const min = field.min != null && activeUnit ? field.min / activeUnit.multiplier : field.min;
+  const max = field.max != null && activeUnit ? field.max / activeUnit.multiplier : field.max;
 
   if (field.type === "select" && field.options) {
     return (
@@ -59,21 +66,87 @@ export default function ConverterInput({ field, value, onChange, lang, unitSyste
     );
   }
 
+  const hasUnits = !!(field.unitOptions && field.unitOptions.length > 1 && activeUnit && onUnitChange);
+
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-text-secondary">
-        {label}
-        {field.unit && <span className="ml-1 text-text-tertiary">({unitSystem === "imperial" && imperialUnits[field.unit] ? imperialUnits[field.unit] : field.unit})</span>}
-      </label>
+      <div className="flex items-center justify-between">
+        <label className="text-sm font-medium text-text-secondary">
+          {label}
+          {field.unit && !field.unitOptions && <span className="ml-1 text-text-tertiary">({unitSystem === "imperial" && imperialUnits[field.unit] ? imperialUnits[field.unit] : field.unit})</span>}
+        </label>
+        {hasUnits && (
+          <UnitPills
+            options={field.unitOptions!}
+            selectedValue={activeUnit!.value}
+            onSelect={(u) => onUnitChange!(field.id, u)}
+            lang={lang}
+          />
+        )}
+      </div>
       <input
         type={field.type === "number" ? "number" : "text"}
         value={value}
         onChange={handleChange}
-        min={field.min}
-        max={field.max}
-        step={field.step}
+        min={min}
+        max={max}
+        step={step}
         placeholder={field.placeholder}
       />
+    </div>
+  );
+}
+
+function UnitPills({ options, selectedValue, onSelect, lang }: {
+  options: UnitOption[];
+  selectedValue: string;
+  onSelect: (u: UnitOption) => void;
+  lang: string;
+}) {
+  const t = localesProvider.lang(lang);
+  const [localSelected, setLocalSelected] = useState(selectedValue);
+
+  const handleTap = (opt: UnitOption) => {
+    setLocalSelected(opt.value);
+    onSelect(opt);
+  };
+
+  const active = selectedValue !== localSelected ? selectedValue : localSelected;
+
+  return (
+    <div
+      className="inline-flex rounded-lg p-0.5"
+      style={{ backgroundColor: "#2c2c2e" }}
+    >
+      {options.map((opt) => {
+        const isActive = active === opt.value;
+        return (
+          <div
+            key={opt.value}
+            role="button"
+            tabIndex={0}
+            onClick={() => handleTap(opt)}
+            onTouchEnd={(e) => {
+              e.preventDefault();
+              handleTap(opt);
+            }}
+            className="cursor-pointer select-none rounded-md px-3 py-1.5 text-xs font-medium"
+            style={{
+              backgroundColor: isActive ? "#0a84ff" : "transparent",
+              color: isActive ? "#ffffff" : "#8e8e93",
+              WebkitTapHighlightColor: "transparent",
+              touchAction: "manipulation",
+              minWidth: 44,
+              minHeight: 30,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {translate(t, opt.labelKey)}
+          </div>
+        );
+      })}
     </div>
   );
 }
