@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# metric.page
 
-## Getting Started
+metric.page is a multilingual converter and calculator web app built with Next.js App Router.
 
-First, run the development server:
+- 66 converter tools across 9 categories
+- Static export ready (`output: "export"`)
+- Localized UI with locale keys and generated locale types
+- PWA-ready manifest + icons + service worker registration
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- Next.js 16.2.4
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- localizy (`locales` -> generated typed locale file)
+
+## Features
+
+- Fast static pages suitable for CDN hosting
+- Strongly typed converter schema (`ConverterConfig`, `InputField`, `ResultField`)
+- Locale-key-driven labels, units, titles, and descriptions
+- Category grouping and slug-based converter routing
+- PWA assets:
+	- `public/manifest.webmanifest`
+	- `public/icon-192.png`
+	- `public/icon-512.png`
+	- `public/icon-maskable-512.png`
+	- `public/apple-touch-icon.png`
+	- `public/sw.js`
+
+## Project Structure
+
+```text
+src/
+	app/
+		[lang]/
+			[slug]/
+	components/
+	converters/
+		animal-age/
+		health/
+		space-science/
+		date-time/
+		math-numbers/
+		digital-tech/
+		finance/
+		everyday/
+		fun/
+		registry.ts
+		types.ts
+	lib/
+		locales/
+
+locales/
+public/
+scripts/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm install
+```
 
-## Learn More
+Start dev server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app runs on:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `http://localhost:3000`
+- `http://0.0.0.0:3000` (LAN access)
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm dev        # Run local development server
+pnpm build      # Production build + static export output
+pnpm start      # Start production server (when applicable)
+pnpm lint       # ESLint
+pnpm locales    # Regenerate typed locale bindings
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optional converter smoke test:
+
+```bash
+npx tsx scripts/test-converters.js
+```
+
+## Localization
+
+Locale files live under `locales/`.
+
+To regenerate the typed locale accessor file:
+
+```bash
+pnpm locales
+```
+
+This writes:
+
+- `src/lib/locales/generated-locales.ts`
+
+## Build and Deploy
+
+Create a production build:
+
+```bash
+pnpm build
+```
+
+Because the project uses static export (`next.config.ts` -> `output: "export"`), deploy the generated `out/` directory to static hosting.
+
+## PWA Notes
+
+The project includes manifest metadata and icon sets for installability. On local testing, PWA install behavior depends on browser rules and caching.
+
+If icon/manifest changes do not appear immediately:
+
+- hard refresh
+- clear site data
+- reopen the tab/browser
+
+## Troubleshooting
+
+- If dev cache gets corrupted:
+
+```bash
+rm -rf .next && pnpm dev
+```
+
+- If port conflicts occur, stop existing Next.js processes and restart dev.
