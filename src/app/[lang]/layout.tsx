@@ -1,5 +1,6 @@
 import { languageCodes, getLanguage } from "@/lib/locales";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export function generateStaticParams() {
   return languageCodes.map((lang) => ({ lang }));
@@ -16,9 +17,10 @@ export default async function LangLayout({
   const language = getLanguage(lang);
 
   return (
-    <div dir={language.dir} lang={lang}>
+    <div dir={language.dir} lang={lang} className="flex min-h-screen flex-col">
       <Header lang={lang} />
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
+      <Footer lang={lang} />
     </div>
   );
 }
