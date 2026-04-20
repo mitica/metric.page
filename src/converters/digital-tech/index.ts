@@ -84,7 +84,7 @@ export const screenPPI: ConverterConfig = {
   inputs: [
     { id: "widthPx", type: "number", labelKey: "converter_screen_ppi_width_px", min: 1, step: 1, defaultValue: 2560 },
     { id: "heightPx", type: "number", labelKey: "converter_screen_ppi_height_px", min: 1, step: 1, defaultValue: 1440 },
-    { id: "diagonal", type: "number", labelKey: "converter_screen_ppi_diagonal", min: 1, step: 0.1, defaultValue: 27, unit: "in" },
+    { id: "diagonal", type: "number", labelKey: "converter_screen_ppi_diagonal", min: 1, step: 0.1, defaultValue: 27, unit: "common_unit_in" },
   ],
   calculate: (inputs) => {
     const w = Number(inputs.widthPx) || 0;
@@ -167,7 +167,7 @@ export const bandwidth: ConverterConfig = {
   titleKey: "converter_bandwidth_title",
   descriptionKey: "converter_bandwidth_description",
   inputs: [
-    { id: "speed", type: "number", labelKey: "converter_bandwidth_speed", min: 0.1, step: 0.1, defaultValue: 100, unit: "Mbps" },
+    { id: "speed", type: "number", labelKey: "converter_bandwidth_speed", min: 0.1, step: 0.1, defaultValue: 100, unit: "common_unit_mbps" },
   ],
   calculate: (inputs) => {
     const mbps = Number(inputs.speed) || 0;

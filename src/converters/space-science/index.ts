@@ -15,7 +15,7 @@ export const weightOnPlanets: ConverterConfig = {
       { value: "metric", labelKey: "common_metric" },
       { value: "imperial", labelKey: "common_imperial" },
     ]},
-    { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 1, max: 500, step: 0.1, defaultValue: 70, unit: "kg" },
+    { id: "weight", type: "number", labelKey: "converter_bmi_weight_label", min: 1, max: 500, step: 0.1, defaultValue: 70, unit: "common_unit_kg" },
   ],
   calculate: (inputs) => {
     const raw = Number(inputs.weight) || 70;
@@ -82,7 +82,7 @@ export const soundDistance: ConverterConfig = {
   descriptionKey: "converter_sound_distance_description",
   inputs: [
     { id: "seconds", type: "number", labelKey: "converter_sound_distance_seconds_after", min: 0, max: 100, step: 0.1, defaultValue: 3 },
-    { id: "tempC", type: "number", labelKey: "converter_sound_distance_temp", min: -40, max: 50, step: 1, defaultValue: 20, unit: "°C" },
+    { id: "tempC", type: "number", labelKey: "converter_sound_distance_temp", min: -40, max: 50, step: 1, defaultValue: 20, unit: "common_unit_celsius" },
   ],
   calculate: (inputs) => {
     const seconds = Number(inputs.seconds) || 0;
@@ -107,7 +107,7 @@ export const halfLife: ConverterConfig = {
   titleKey: "converter_half_life_title",
   descriptionKey: "converter_half_life_description",
   inputs: [
-    { id: "initial", type: "number", labelKey: "converter_half_life_initial_amount", min: 0, max: 1e12, step: 1, defaultValue: 1000, unit: "g" },
+    { id: "initial", type: "number", labelKey: "converter_half_life_initial_amount", min: 0, max: 1e12, step: 1, defaultValue: 1000, unit: "common_unit_g" },
     { id: "halfLife", type: "number", labelKey: "converter_half_life_half_life_period", min: 0.001, max: 1e10, step: 0.1, defaultValue: 5730 },
     { id: "elapsed", type: "number", labelKey: "converter_half_life_elapsed_time", min: 0, max: 1e12, step: 1, defaultValue: 10000 },
   ],

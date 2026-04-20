@@ -8,7 +8,7 @@ export const compoundInterest: ConverterConfig = {
   descriptionKey: "converter_compound_interest_description",
   inputs: [
     { id: "principal", type: "number", labelKey: "converter_compound_interest_principal", min: 0, step: 100, defaultValue: 10000 },
-    { id: "rate", type: "number", labelKey: "converter_compound_interest_rate", min: 0, max: 100, step: 0.1, defaultValue: 5, unit: "%" },
+    { id: "rate", type: "number", labelKey: "converter_compound_interest_rate", min: 0, max: 100, step: 0.1, defaultValue: 5, unit: "common_unit_percent" },
     { id: "years", type: "number", labelKey: "converter_compound_interest_years", min: 1, max: 100, step: 1, defaultValue: 10 },
     { id: "compound", type: "select", labelKey: "converter_compound_interest_frequency", defaultValue: "12", options: [
       { value: "1", labelKey: "converter_compound_interest_annually" },
@@ -40,7 +40,7 @@ export const mortgage: ConverterConfig = {
   descriptionKey: "converter_mortgage_description",
   inputs: [
     { id: "principal", type: "number", labelKey: "converter_mortgage_loan_amount", min: 0, step: 1000, defaultValue: 300000 },
-    { id: "rate", type: "number", labelKey: "converter_mortgage_interest_rate", min: 0, max: 30, step: 0.1, defaultValue: 3.5, unit: "%" },
+    { id: "rate", type: "number", labelKey: "converter_mortgage_interest_rate", min: 0, max: 30, step: 0.1, defaultValue: 3.5, unit: "common_unit_percent" },
     { id: "years", type: "number", labelKey: "converter_mortgage_loan_term", min: 1, max: 50, step: 1, defaultValue: 30 },
   ],
   calculate: (inputs) => {
@@ -70,7 +70,7 @@ export const loanRepayment: ConverterConfig = {
   descriptionKey: "converter_loan_repayment_description",
   inputs: [
     { id: "principal", type: "number", labelKey: "converter_mortgage_loan_amount", min: 0, step: 100, defaultValue: 25000 },
-    { id: "rate", type: "number", labelKey: "converter_mortgage_interest_rate", min: 0, max: 50, step: 0.1, defaultValue: 6.5, unit: "%" },
+    { id: "rate", type: "number", labelKey: "converter_mortgage_interest_rate", min: 0, max: 50, step: 0.1, defaultValue: 6.5, unit: "common_unit_percent" },
     { id: "monthly", type: "number", labelKey: "converter_loan_repayment_monthly_payment", min: 1, step: 10, defaultValue: 500 },
   ],
   calculate: (inputs) => {
@@ -136,7 +136,7 @@ export const tipCalculator: ConverterConfig = {
   descriptionKey: "converter_tip_description",
   inputs: [
     { id: "bill", type: "number", labelKey: "converter_tip_bill_amount", min: 0, step: 0.5, defaultValue: 65 },
-    { id: "tipPercent", type: "number", labelKey: "converter_tip_tip_percent", min: 0, max: 100, step: 1, defaultValue: 18, unit: "%" },
+    { id: "tipPercent", type: "number", labelKey: "converter_tip_tip_percent", min: 0, max: 100, step: 1, defaultValue: 18, unit: "common_unit_percent" },
     { id: "people", type: "number", labelKey: "converter_tip_split_between", min: 1, max: 50, step: 1, defaultValue: 2 },
   ],
   calculate: (inputs) => {
@@ -164,7 +164,7 @@ export const inflation: ConverterConfig = {
   descriptionKey: "converter_inflation_description",
   inputs: [
     { id: "amount", type: "number", labelKey: "converter_inflation_amount", min: 0, step: 100, defaultValue: 1000 },
-    { id: "rate", type: "number", labelKey: "converter_inflation_rate", min: 0, max: 50, step: 0.1, defaultValue: 3, unit: "%" },
+    { id: "rate", type: "number", labelKey: "converter_inflation_rate", min: 0, max: 50, step: 0.1, defaultValue: 3, unit: "common_unit_percent" },
     { id: "years", type: "number", labelKey: "converter_compound_interest_years", min: 1, max: 100, step: 1, defaultValue: 10 },
   ],
   calculate: (inputs) => {
@@ -193,7 +193,7 @@ export const retirement: ConverterConfig = {
     { id: "retireAge", type: "number", labelKey: "converter_retirement_retire_age", min: 30, max: 90, step: 1, defaultValue: 65 },
     { id: "currentSavings", type: "number", labelKey: "converter_retirement_current_savings", min: 0, step: 1000, defaultValue: 50000 },
     { id: "monthlyContribution", type: "number", labelKey: "converter_retirement_monthly_contribution", min: 0, step: 50, defaultValue: 500 },
-    { id: "returnRate", type: "number", labelKey: "converter_retirement_return_rate", min: 0, max: 20, step: 0.1, defaultValue: 7, unit: "%" },
+    { id: "returnRate", type: "number", labelKey: "converter_retirement_return_rate", min: 0, max: 20, step: 0.1, defaultValue: 7, unit: "common_unit_percent" },
   ],
   calculate: (inputs) => {
     const years = Math.max(0, Number(inputs.retireAge) - Number(inputs.currentAge));
@@ -224,7 +224,7 @@ export const simpleInterest: ConverterConfig = {
   descriptionKey: "converter_simple_interest_description",
   inputs: [
     { id: "principal", type: "number", labelKey: "converter_compound_interest_principal", min: 0, step: 100, defaultValue: 10000 },
-    { id: "rate", type: "number", labelKey: "converter_compound_interest_rate", min: 0, max: 100, step: 0.1, defaultValue: 5, unit: "%" },
+    { id: "rate", type: "number", labelKey: "converter_compound_interest_rate", min: 0, max: 100, step: 0.1, defaultValue: 5, unit: "common_unit_percent" },
     { id: "years", type: "number", labelKey: "converter_compound_interest_years", min: 0, max: 100, step: 1, defaultValue: 5 },
   ],
   calculate: (inputs) => {

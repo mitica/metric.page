@@ -169,7 +169,7 @@ export const electricityCost: ConverterConfig = {
   titleKey: "converter_electricity_cost_title",
   descriptionKey: "converter_electricity_cost_description",
   inputs: [
-    { id: "watts", type: "number", labelKey: "converter_electricity_cost_watts", min: 0, step: 10, defaultValue: 1000, unit: "W" },
+    { id: "watts", type: "number", labelKey: "converter_electricity_cost_watts", min: 0, step: 10, defaultValue: 1000, unit: "common_unit_w" },
     { id: "hoursPerDay", type: "number", labelKey: "converter_electricity_cost_hours_per_day", min: 0, max: 24, step: 0.5, defaultValue: 8 },
     { id: "pricePerKwh", type: "number", labelKey: "converter_electricity_cost_price_kwh", min: 0, step: 0.01, defaultValue: 0.12 },
   ],
