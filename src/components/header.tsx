@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { languages, localesProvider } from "@/lib/locales";
@@ -11,6 +12,7 @@ interface HeaderProps {
 export default function Header({ lang }: HeaderProps) {
   const pathname = usePathname();
   const t = localesProvider.lang(lang);
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
 
   // Build path for language switch
   const switchLangPath = (newLang: string) => {
@@ -21,39 +23,55 @@ export default function Header({ lang }: HeaderProps) {
   };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-12 max-w-5xl items-center justify-between px-4">
-        {/* Logo */}
-        <Link href={`/${lang}/`} className="flex items-center gap-2">
-          <span className="text-lg font-bold text-accent">metric</span>
-          <span className="text-lg font-light text-text-secondary">.page</span>
-        </Link>
+    <header className="relative z-20 px-4 pt-2 sm:px-6 sm:pt-3">
+      <div className="mx-auto flex h-12 max-w-6xl items-center justify-between">
+        <div className="flex items-center gap-4">
+          <Link href={`/${lang}/`} className="group flex items-center gap-2.5">
+            <Image src="/icon.svg" alt="metric.page" width={20} height={20} />
+            <span className="text-[1rem] font-semibold tracking-tight text-white">
+              metric<span className="font-normal text-accent">.page</span>
+            </span>
+          </Link>
 
-        <div className="flex items-center gap-3">
-          {/* Language Switcher */}
-          <div className="relative">
-          <select
-            value={lang}
-            onChange={(e) => {
-              const newPath = switchLangPath(e.target.value);
-              window.location.href = newPath;
-            }}
-            aria-label={localesProvider.lang(lang).common_select_language()}
-            className="!bg-surface/80 !py-1.5 !pl-3 !pr-8 !text-sm !border-border/50 !rounded-lg appearance-none cursor-pointer"
-          >
-            {languages.map((l) => (
-              <option key={l.code} value={l.code}>
-                {l.nativeName}
-              </option>
-            ))}
-          </select>
-          <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-text-tertiary">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M3 5L6 8L9 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          </div>
+          {!isHome && (
+            <Link
+              href={`/${lang}/`}
+              className="hidden items-center gap-1.5 text-xs font-medium text-text-secondary transition-colors hover:text-text-primary sm:inline-flex"
+            >
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
+                <path
+                  d="M7.5 2.5L4 6L7.5 9.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              {t.common_back()}
+            </Link>
+          )}
         </div>
+
+        <nav aria-label={t.common_select_language()} className="flex items-center gap-2">
+          {languages.map((l) => {
+            const active = l.code === lang;
+            return (
+              <Link
+                key={l.code}
+                href={switchLangPath(l.code)}
+                className={`rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] transition-colors ${
+                  active
+                    ? "bg-accent text-white"
+                    : "text-text-secondary hover:bg-white/8 hover:text-white"
+                }`}
+                aria-current={active ? "page" : undefined}
+                title={l.nativeName}
+              >
+                {l.code}
+              </Link>
+            );
+          })}
+        </nav>
       </div>
     </header>
   );

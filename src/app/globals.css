@@ -29,7 +29,12 @@ html {
 }
 
 body {
-  background: var(--color-background);
+  background:
+    radial-gradient(1200px 500px at 8% -8%, rgba(10, 132, 255, 0.18), transparent 56%),
+    radial-gradient(900px 420px at 94% -14%, rgba(64, 156, 255, 0.12), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 40%),
+    var(--color-background);
+  background-attachment: fixed;
   color: var(--color-text-primary);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
