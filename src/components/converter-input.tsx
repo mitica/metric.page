@@ -26,7 +26,10 @@ interface ConverterInputProps {
   onUnitChange?: (id: string, unit: UnitOption) => void;
 }
 
-const imperialUnits: Record<string, string> = { kg: "lb", cm: "in" };
+const imperialUnits: Record<string, LocalesKey> = {
+  common_unit_kg: "common_unit_lb",
+  common_unit_cm: "common_unit_in",
+};
 
 export default function ConverterInput({
   field,
@@ -149,8 +152,8 @@ export default function ConverterInput({
             <span className="ml-1 text-text-tertiary">
               (
               {unitSystem === "imperial" && imperialUnits[field.unit]
-                ? imperialUnits[field.unit]
-                : field.unit}
+                ? translate(t, imperialUnits[field.unit])
+                : translate(t, field.unit as LocalesKey)}
               )
             </span>
           )}
@@ -266,7 +269,8 @@ export function ConverterResult({
     >
       {results.map((result, i) => {
         const label = translate(t, result.labelKey);
-        const displayValue = String(result.value);
+        const rawValue = String(result.value);
+        const displayValue = translate(t, rawValue as LocalesKey);
         const unit = result.unit ? translate(t, result.unit) : "";
 
         return (

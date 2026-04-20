@@ -23,7 +23,7 @@ export interface InputField {
   max?: number;
   step?: number;
   defaultValue?: string | number;
-  unit?: string;
+  unit?: LocalesKey;
   unitOptions?: UnitOption[];
   options?: SelectOption[];
 }
