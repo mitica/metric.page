@@ -8,8 +8,8 @@ export interface Language {
 export const languages: Language[] = [
   { code: "en", name: "English", nativeName: "English", dir: "ltr" },
   // Add more languages here when translations are ready
-  // { code: "es", name: "Spanish", nativeName: "Español", dir: "ltr" },
-  // { code: "fr", name: "French", nativeName: "Français", dir: "ltr" },
+  { code: "es", name: "Spanish", nativeName: "Español", dir: "ltr" },
+  { code: "fr", name: "French", nativeName: "Français", dir: "ltr" },
   // { code: "de", name: "German", nativeName: "Deutsch", dir: "ltr" },
   // { code: "pt", name: "Portuguese", nativeName: "Português", dir: "ltr" },
   // { code: "it", name: "Italian", nativeName: "Italiano", dir: "ltr" },
