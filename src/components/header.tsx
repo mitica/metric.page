@@ -24,8 +24,8 @@ export default function Header({ lang }: HeaderProps) {
 
   return (
     <header className="relative z-20 px-4 pt-2 sm:px-6 sm:pt-3">
-      <div className="mx-auto flex h-12 max-w-6xl items-center justify-between">
-        <div className="flex items-center gap-4">
+      <div className="mx-auto flex h-12 max-w-6xl items-center justify-between gap-4">
+        <div className="flex shrink-0 items-center gap-4">
           <Link href={`/${lang}/`} className="group flex items-center gap-2.5">
             <Image src="/icon.svg" alt="metric.page" width={20} height={20} />
             <span className="text-[1rem] font-semibold tracking-tight text-white">
@@ -52,25 +52,31 @@ export default function Header({ lang }: HeaderProps) {
           )}
         </div>
 
-        <nav aria-label={t.common_select_language()} className="flex items-center gap-2">
-          {languages.map((l) => {
-            const active = l.code === lang;
-            return (
-              <Link
-                key={l.code}
-                href={switchLangPath(l.code)}
-                className={`rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] transition-colors ${
-                  active
-                    ? "bg-accent text-white"
-                    : "text-text-secondary hover:bg-white/8 hover:text-white"
-                }`}
-                aria-current={active ? "page" : undefined}
-                title={l.nativeName}
-              >
-                {l.code}
-              </Link>
-            );
-          })}
+        <nav
+          aria-label={t.common_select_language()}
+          className="flex min-w-0 items-center"
+          style={{ WebkitMaskImage: "linear-gradient(to right, transparent, black 8px, black calc(100% - 8px), transparent)" }}
+        >
+          <div className="scrollbar-none flex items-center gap-1.5 overflow-x-auto scroll-smooth">
+            {languages.map((l) => {
+              const active = l.code === lang;
+              return (
+                <Link
+                  key={l.code}
+                  href={switchLangPath(l.code)}
+                  className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] transition-colors ${
+                    active
+                      ? "bg-accent text-white"
+                      : "text-text-secondary hover:bg-white/8 hover:text-white"
+                  }`}
+                  aria-current={active ? "page" : undefined}
+                  title={l.nativeName}
+                >
+                  {l.code}
+                </Link>
+              );
+            })}
+          </div>
         </nav>
       </div>
     </header>

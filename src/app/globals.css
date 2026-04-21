@@ -28,6 +28,14 @@ html {
   color-scheme: dark;
 }
 
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background:
     radial-gradient(1200px 500px at 8% -8%, rgba(10, 132, 255, 0.18), transparent 56%),
