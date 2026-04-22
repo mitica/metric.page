@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { InputField, SelectOption, UnitOption } from "@/converters/types";
 import { localesProvider } from "@/lib/locales";
 import { LocalesKey } from "@/lib/locales/generated-locales";
+import NumberInput from "./number-input";
 
 function translate(
   t: ReturnType<typeof localesProvider.lang>,
@@ -143,6 +144,46 @@ export default function ConverterInput({
     onUnitChange
   );
 
+  // Number input with slider and buttons
+  if (field.type === "number") {
+    return (
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <label className="text-sm font-medium text-text-secondary">
+            {label}
+            {field.unit && !field.unitOptions && (
+              <span className="ml-1 text-text-tertiary">
+                (
+                {unitSystem === "imperial" && imperialUnits[field.unit]
+                  ? translate(t, imperialUnits[field.unit])
+                  : translate(t, field.unit as LocalesKey)}
+                )
+              </span>
+            )}
+          </label>
+          {hasUnits && (
+            <UnitPills
+              options={field.unitOptions!}
+              selectedValue={activeUnit!.value}
+              onSelect={(u) => onUnitChange!(field.id, u)}
+              lang={lang}
+            />
+          )}
+        </div>
+        <NumberInput
+          value={value}
+          onChange={(newValue) => onChange(field.id, newValue)}
+          min={min}
+          max={max}
+          step={step}
+          placeholder={field.placeholder}
+          ariaLabel={label}
+        />
+      </div>
+    );
+  }
+
+  // Default for text and other input types
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
@@ -168,12 +209,9 @@ export default function ConverterInput({
         )}
       </div>
       <input
-        type={field.type === "number" ? "number" : "text"}
+        type="text"
         value={value}
         onChange={handleChange}
-        min={min}
-        max={max}
-        step={step}
         placeholder={field.placeholder}
       />
     </div>
