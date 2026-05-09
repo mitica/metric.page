@@ -1,137 +1,44 @@
 # metric.page
 
-metric.page is a multilingual converter and calculator web app built with Next.js App Router.
-
-- 66 converter tools across 9 categories
-- Static export ready (`output: "export"`)
-- Localized UI with locale keys and generated locale types
-- PWA-ready manifest + icons + service worker registration
-
-## Stack
-
-- Next.js 16.2.4
-- React 19
-- TypeScript 5
-- Tailwind CSS 4
-- localizy (`locales` -> generated typed locale file)
+metric.page is a multilingual converter and calculator web app. It offers 60+ free online converters and calculators, including tools for animal age, health, finance, science, math, and more. The app is fast, static-export ready, and fully localized in 20+ languages.
 
 ## Features
 
-- Fast static pages suitable for CDN hosting
-- Strongly typed converter schema (`ConverterConfig`, `InputField`, `ResultField`)
+- 66 converter tools across 9 categories
+- Multilingual UI (20+ languages)
+- Static export ready (CDN-friendly)
 - Locale-key-driven labels, units, titles, and descriptions
-- Category grouping and slug-based converter routing
-- PWA assets:
-	- `public/manifest.webmanifest`
-	- `public/icon-192.png`
-	- `public/icon-512.png`
-	- `public/icon-maskable-512.png`
-	- `public/apple-touch-icon.png`
-	- `public/sw.js`
+- PWA-ready: manifest, icons, service worker
+- Fast, accessible, and mobile-friendly
 
-## Project Structure
+## Languages
 
-```text
-src/
-	app/
-		[lang]/
-			[slug]/
-	components/
-	converters/
-		animal-age/
-		health/
-		space-science/
-		date-time/
-		math-numbers/
-		digital-tech/
-		finance/
-		everyday/
-		fun/
-		registry.ts
-		types.ts
-	lib/
-		locales/
+metric.page is available in the following languages:
 
-locales/
-public/
-scripts/
-```
+- [English](https://metric.page/en/)
+- [Spanish](https://metric.page/es/)
+- [French](https://metric.page/fr/)
+- [German](https://metric.page/de/)
+- [Portuguese](https://metric.page/pt/)
+- [Italian](https://metric.page/it/)
+- [Dutch](https://metric.page/nl/)
+- [Polish](https://metric.page/pl/)
+- [Romanian](https://metric.page/ro/)
+- [Swedish](https://metric.page/sv/)
+- [Czech](https://metric.page/cs/)
+- [Ukrainian](https://metric.page/uk/)
+- [Turkish](https://metric.page/tr/)
+- [Russian](https://metric.page/ru/)
+- [Japanese](https://metric.page/ja/)
+- [Korean](https://metric.page/ko/)
+- [Chinese](https://metric.page/zh/)
+- [Hindi](https://metric.page/hi/)
+- [Arabic](https://metric.page/ar/)
+- [Thai](https://metric.page/th/)
+- [Vietnamese](https://metric.page/vi/)
+- [Indonesian](https://metric.page/id/)
 
-## Development
+## More Projects
 
-Install dependencies:
+- [bestin.world](https://bestin.world)
 
-```bash
-pnpm install
-```
-
-Start dev server:
-
-```bash
-pnpm dev
-```
-
-The app runs on:
-
-- `http://localhost:3000`
-- `http://0.0.0.0:3000` (LAN access)
-
-## Scripts
-
-```bash
-pnpm dev        # Run local development server
-pnpm build      # Production build + static export output
-pnpm start      # Start production server (when applicable)
-pnpm lint       # ESLint
-pnpm locales    # Regenerate typed locale bindings
-```
-
-Optional converter smoke test:
-
-```bash
-npx tsx scripts/test-converters.js
-```
-
-## Localization
-
-Locale files live under `locales/`.
-
-To regenerate the typed locale accessor file:
-
-```bash
-pnpm locales
-```
-
-This writes:
-
-- `src/lib/locales/generated-locales.ts`
-
-## Build and Deploy
-
-Create a production build:
-
-```bash
-pnpm build
-```
-
-Because the project uses static export (`next.config.ts` -> `output: "export"`), deploy the generated `out/` directory to static hosting.
-
-## PWA Notes
-
-The project includes manifest metadata and icon sets for installability. On local testing, PWA install behavior depends on browser rules and caching.
-
-If icon/manifest changes do not appear immediately:
-
-- hard refresh
-- clear site data
-- reopen the tab/browser
-
-## Troubleshooting
-
-- If dev cache gets corrupted:
-
-```bash
-rm -rf .next && pnpm dev
-```
-
-- If port conflicts occur, stop existing Next.js processes and restart dev.
