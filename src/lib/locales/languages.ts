@@ -20,7 +20,7 @@ export const languages: Language[] = [
   // { code: "cs", name: "Czech", nativeName: "Čeština", dir: "ltr" },
   // { code: "uk", name: "Ukrainian", nativeName: "Українська", dir: "ltr" },
   // { code: "tr", name: "Turkish", nativeName: "Türkçe", dir: "ltr" },
-  // { code: "ru", name: "Russian", nativeName: "Русский", dir: "ltr" },
+  { code: "ru", name: "Russian", nativeName: "Русский", dir: "ltr" },
   // { code: "ja", name: "Japanese", nativeName: "日本語", dir: "ltr" },
   // { code: "ko", name: "Korean", nativeName: "한국어", dir: "ltr" },
   // { code: "zh", name: "Chinese", nativeName: "中文", dir: "ltr" },
