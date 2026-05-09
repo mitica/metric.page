@@ -12,7 +12,7 @@ export const languages: Language[] = [
   { code: "fr", name: "French", nativeName: "Français", dir: "ltr" },
   { code: "de", name: "German", nativeName: "Deutsch", dir: "ltr" },
   { code: "pt", name: "Portuguese", nativeName: "Português", dir: "ltr" },
-  // { code: "it", name: "Italian", nativeName: "Italiano", dir: "ltr" },
+  { code: "it", name: "Italian", nativeName: "Italiano", dir: "ltr" },
   // { code: "nl", name: "Dutch", nativeName: "Nederlands", dir: "ltr" },
   // { code: "pl", name: "Polish", nativeName: "Polski", dir: "ltr" },
   { code: "ro", name: "Romanian", nativeName: "Română", dir: "ltr" },
