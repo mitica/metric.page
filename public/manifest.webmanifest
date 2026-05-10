@@ -2,7 +2,7 @@
   "name": "metric.page - Converters and Calculators",
   "short_name": "metric.page",
   "description": "65+ instant converters and calculators for everyday use.",
-  "start_url": "/en/",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
