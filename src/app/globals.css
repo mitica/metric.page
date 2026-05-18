@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --color-background: #000000;
   --color-surface: #1c1c1e;
   --color-surface-elevated: #2c2c2e;
@@ -17,15 +17,43 @@
   --font-sans: var(--font-inter);
 }
 
+:root {
+  --glow-primary: rgba(10, 132, 255, 0.18);
+  --glow-secondary: rgba(64, 156, 255, 0.12);
+  --glow-sheen: rgba(255, 255, 255, 0.015);
+  --glass-bg: rgba(28, 28, 30, 0.8);
+  --glass-border: rgba(56, 56, 58, 0.5);
+  --focus-ring: rgba(10, 132, 255, 0.2);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #f2f2f7;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #ffffff;
+    --color-surface-hover: #e5e5ea;
+    --color-text-primary: #1c1c1e;
+    --color-text-secondary: #6c6c70;
+    --color-text-tertiary: #aeaeb2;
+    --color-border: #d1d1d6;
+
+    --glow-primary: rgba(10, 132, 255, 0.12);
+    --glow-secondary: rgba(64, 156, 255, 0.08);
+    --glow-sheen: rgba(0, 0, 0, 0.015);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(0, 0, 0, 0.08);
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
 @media (pointer: fine) {
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--color-surface-elevated) transparent;
   }
-}
-
-html {
-  color-scheme: dark;
 }
 
 .scrollbar-none {
@@ -38,9 +66,9 @@ html {
 
 body {
   background:
-    radial-gradient(1200px 500px at 8% -8%, rgba(10, 132, 255, 0.18), transparent 56%),
-    radial-gradient(900px 420px at 94% -14%, rgba(64, 156, 255, 0.12), transparent 58%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 40%),
+    radial-gradient(1200px 500px at 8% -8%, var(--glow-primary), transparent 56%),
+    radial-gradient(900px 420px at 94% -14%, var(--glow-secondary), transparent 58%),
+    linear-gradient(180deg, var(--glow-sheen), transparent 40%),
     var(--color-background);
   background-attachment: fixed;
   color: var(--color-text-primary);
@@ -72,7 +100,7 @@ input[type="text"]:focus,
 input[type="date"]:focus,
 select:focus {
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.2);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 /* Remove number input spinners */
@@ -93,10 +121,10 @@ input[type="number"] {
 
 /* Glass card effect */
 .glass-card {
-  background: rgba(28, 28, 30, 0.8);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(56, 56, 58, 0.5);
+  border: 1px solid var(--glass-border);
   border-radius: 20px;
 }
 

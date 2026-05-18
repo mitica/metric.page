@@ -28,7 +28,7 @@ export default function Header({ lang }: HeaderProps) {
         <div className="flex shrink-0 items-center gap-4">
           <Link href={`/${lang}/`} className="group flex items-center gap-2.5">
             <Image src="/icon.svg" alt="metric.page" width={20} height={20} />
-            <span className="text-[1rem] font-semibold tracking-tight text-white">
+            <span className="text-[1rem] font-semibold tracking-tight text-text-primary">
               metric<span className="font-normal text-accent">.page</span>
             </span>
           </Link>
@@ -67,7 +67,7 @@ export default function Header({ lang }: HeaderProps) {
                   className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] transition-colors ${
                     active
                       ? "bg-accent text-white"
-                      : "text-text-secondary hover:bg-white/8 hover:text-white"
+                      : "text-text-secondary hover:bg-surface-hover hover:text-text-primary"
                   }`}
                   aria-current={active ? "page" : undefined}
                   title={l.nativeName}

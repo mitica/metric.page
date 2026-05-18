@@ -90,7 +90,7 @@ export default function ConverterInput({
         </label>
         <div
           className="inline-flex w-full rounded-lg p-0.5"
-          style={{ backgroundColor: "#2c2c2e" }}
+          style={{ backgroundColor: "var(--color-surface-elevated)" }}
         >
           {field.options.map((opt: SelectOption) => {
             const isActive = String(value) === opt.value;
@@ -106,8 +106,8 @@ export default function ConverterInput({
                 }}
                 className="flex-1 cursor-pointer select-none rounded-md px-3 py-2 text-center text-sm font-medium"
                 style={{
-                  backgroundColor: isActive ? "#0a84ff" : "transparent",
-                  color: isActive ? "#ffffff" : "#8e8e93",
+                  backgroundColor: isActive ? "var(--color-accent)" : "transparent",
+                  color: isActive ? "#ffffff" : "var(--color-text-secondary)",
                   WebkitTapHighlightColor: "transparent",
                   touchAction: "manipulation",
                 }}
@@ -243,7 +243,7 @@ function UnitPills({
   return (
     <div
       className="inline-flex rounded-lg p-0.5"
-      style={{ backgroundColor: "#2c2c2e" }}
+      style={{ backgroundColor: "var(--color-surface-elevated)" }}
     >
       {options.map((opt) => {
         const isActive = active === opt.value;
@@ -259,8 +259,8 @@ function UnitPills({
             }}
             className="cursor-pointer select-none rounded-md px-3 py-1.5 text-xs font-medium"
             style={{
-              backgroundColor: isActive ? "#0a84ff" : "transparent",
-              color: isActive ? "#ffffff" : "#8e8e93",
+              backgroundColor: isActive ? "var(--color-accent)" : "transparent",
+              color: isActive ? "#ffffff" : "var(--color-text-secondary)",
               WebkitTapHighlightColor: "transparent",
               touchAction: "manipulation",
               minWidth: 44,
