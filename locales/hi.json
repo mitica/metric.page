@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "शुरुआती",
   "converter_typing_speed_intermediate": "मध्यम",
   "converter_typing_speed_advanced": "उन्नत",
-  "converter_typing_speed_professional": "पेशेवर"
+  "converter_typing_speed_professional": "पेशेवर",
+  "footer_built_with": "मोल्दोवा में ❤️ के साथ बनाया गया।",
+  "footer_home": "होम",
+  "footer_tagline": "तेज़। निजी। साइन-अप नहीं।"
 }

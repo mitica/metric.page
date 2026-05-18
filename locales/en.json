@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "Beginner",
   "converter_typing_speed_intermediate": "Intermediate",
   "converter_typing_speed_advanced": "Advanced",
-  "converter_typing_speed_professional": "Professional"
+  "converter_typing_speed_professional": "Professional",
+  "footer_built_with": "Built with ❤️ in Moldova.",
+  "footer_home": "Home",
+  "footer_tagline": "Fast. Private. No sign-up."
 }

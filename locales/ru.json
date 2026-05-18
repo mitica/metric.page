@@ -595,5 +595,8 @@
   "converter_macro_keto": "Кето",
   "converter_macro_protein": "Белки",
   "converter_macro_carbs": "Углеводы",
-  "converter_macro_fat": "Жиры"
+  "converter_macro_fat": "Жиры",
+  "footer_built_with": "Сделано с ❤️ в Молдове.",
+  "footer_home": "Главная",
+  "footer_tagline": "Быстро. Приватно. Без регистрации."
 }

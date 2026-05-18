@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "Začátečník",
   "converter_typing_speed_intermediate": "Středně pokročilý",
   "converter_typing_speed_advanced": "Pokročilý",
-  "converter_typing_speed_professional": "Profesionál"
+  "converter_typing_speed_professional": "Profesionál",
+  "footer_built_with": "Vytvořeno s ❤️ v Moldavsku.",
+  "footer_home": "Domů",
+  "footer_tagline": "Rychlé. Soukromé. Bez registrace."
 }

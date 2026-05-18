@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "초급",
   "converter_typing_speed_intermediate": "중급",
   "converter_typing_speed_advanced": "고급",
-  "converter_typing_speed_professional": "전문가"
+  "converter_typing_speed_professional": "전문가",
+  "footer_built_with": "몰도바에서 ❤️ 로 만들었습니다.",
+  "footer_home": "홈",
+  "footer_tagline": "빠름. 비공개. 가입 불필요."
 }

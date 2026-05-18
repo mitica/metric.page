@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "初学者",
   "converter_typing_speed_intermediate": "中级",
   "converter_typing_speed_advanced": "高级",
-  "converter_typing_speed_professional": "专业"
+  "converter_typing_speed_professional": "专业",
+  "footer_built_with": "用 ❤️ 在摩尔多瓦制作。",
+  "footer_home": "首页",
+  "footer_tagline": "快速。私密。无需注册。"
 }

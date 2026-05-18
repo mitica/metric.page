@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "مبتدئ",
   "converter_typing_speed_intermediate": "متوسط",
   "converter_typing_speed_advanced": "متقدم",
-  "converter_typing_speed_professional": "محترف"
+  "converter_typing_speed_professional": "محترف",
+  "footer_built_with": "صُنع بـ ❤️ في مولدوفا.",
+  "footer_home": "الرئيسية",
+  "footer_tagline": "سريع. خاص. بدون تسجيل."
 }

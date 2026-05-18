@@ -595,5 +595,8 @@
   "converter_bmi_description": "คำนวณดัชนีมวลกายจากน้ำหนักและส่วนสูง",
   "converter_bmi_weight_label": "น้ำหนัก",
   "converter_bmi_height_label": "ส่วนสูง",
-  "converter_bmi_result_label": "BMI"
+  "converter_bmi_result_label": "BMI",
+  "footer_built_with": "สร้างด้วย ❤️ ในมอลโดวา",
+  "footer_home": "หน้าแรก",
+  "footer_tagline": "เร็ว ส่วนตัว ไม่ต้องสมัคร"
 }

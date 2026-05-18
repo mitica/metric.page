@@ -595,5 +595,8 @@
   "converter_water_intake_title": "Calculator aport zilnic de apă",
   "converter_water_intake_description": "Calculează câtă apă ar trebui să bei zilnic",
   "converter_water_intake_result_label": "Aport zilnic recomandat",
-  "converter_water_intake_glasses": "Pahare (250ml fiecare)"
+  "converter_water_intake_glasses": "Pahare (250ml fiecare)",
+  "footer_built_with": "Făcut cu ❤️ în Moldova.",
+  "footer_home": "Acasă",
+  "footer_tagline": "Rapid. Privat. Fără înregistrare."
 }

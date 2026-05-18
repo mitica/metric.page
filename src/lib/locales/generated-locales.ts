@@ -2424,6 +2424,18 @@ export class LocalizyLocales {
     converter_typing_speed_professional() {
         return this.v('converter_typing_speed_professional');
     }
+
+    footer_built_with() {
+        return this.v('footer_built_with');
+    }
+
+    footer_home() {
+        return this.v('footer_home');
+    }
+
+    footer_tagline() {
+        return this.v('footer_tagline');
+    }
 }
 
 export type LocalesKey = 'site_title'
@@ -3022,4 +3034,7 @@ export type LocalesKey = 'site_title'
     | 'converter_typing_speed_beginner'
     | 'converter_typing_speed_intermediate'
     | 'converter_typing_speed_advanced'
-    | 'converter_typing_speed_professional';
+    | 'converter_typing_speed_professional'
+    | 'footer_built_with'
+    | 'footer_home'
+    | 'footer_tagline';

@@ -1,3 +1,4 @@
+import { localesProvider } from "@/lib/locales";
 import Link from "next/link";
 
 interface FooterProps {
@@ -6,17 +7,18 @@ interface FooterProps {
 
 export default function Footer({ lang }: FooterProps) {
   const year = new Date().getFullYear();
+  const t = localesProvider.lang(lang);
 
   return (
     <footer className="mt-12 border-t border-border/60 px-4 py-8 text-sm sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 text-text-secondary sm:flex-row sm:items-center sm:justify-between">
         <p className="leading-relaxed">
-          © {year} metric.page. Built with ❤️ in Moldova.
+          © {year} metric.page. {t.footer_built_with()}
         </p>
 
         <div className="flex flex-wrap items-center gap-4">
           <Link href={`/${lang}/`} className="transition-colors hover:text-text-primary">
-            Home
+            {t.footer_home()}
           </Link>
           <Link
             href="https://github.com/mitica/metric.page"
@@ -26,7 +28,7 @@ export default function Footer({ lang }: FooterProps) {
           >
             GitHub
           </Link>
-          <span className="text-text-tertiary">Fast. Private. No sign-up.</span>
+          <span className="text-text-tertiary">{t.footer_tagline()}</span>
         </div>
       </div>
     </footer>

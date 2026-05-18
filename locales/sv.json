@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "Nybörjare",
   "converter_typing_speed_intermediate": "Medel",
   "converter_typing_speed_advanced": "Avancerad",
-  "converter_typing_speed_professional": "Professionell"
+  "converter_typing_speed_professional": "Professionell",
+  "footer_built_with": "Gjord med ❤️ i Moldavien.",
+  "footer_home": "Hem",
+  "footer_tagline": "Snabbt. Privat. Ingen registrering."
 }

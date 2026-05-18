@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "Anfänger",
   "converter_typing_speed_intermediate": "Fortgeschritten",
   "converter_typing_speed_advanced": "Experte",
-  "converter_typing_speed_professional": "Profi"
+  "converter_typing_speed_professional": "Profi",
+  "footer_built_with": "Gemacht mit ❤️ in Moldau.",
+  "footer_home": "Startseite",
+  "footer_tagline": "Schnell. Privat. Keine Anmeldung."
 }

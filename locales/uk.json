@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "Початківець",
   "converter_typing_speed_intermediate": "Середній рівень",
   "converter_typing_speed_advanced": "Просунутий",
-  "converter_typing_speed_professional": "Професіонал"
+  "converter_typing_speed_professional": "Професіонал",
+  "footer_built_with": "Створено з ❤️ у Молдові.",
+  "footer_home": "Головна",
+  "footer_tagline": "Швидко. Приватно. Без реєстрації."
 }

@@ -595,5 +595,8 @@
   "converter_typing_speed_beginner": "Principiante",
   "converter_typing_speed_intermediate": "Intermedio",
   "converter_typing_speed_advanced": "Avanzado",
-  "converter_typing_speed_professional": "Profesional"
+  "converter_typing_speed_professional": "Profesional",
+  "footer_built_with": "Hecho con ❤️ en Moldavia.",
+  "footer_home": "Inicio",
+  "footer_tagline": "Rápido. Privado. Sin registro."
 }
