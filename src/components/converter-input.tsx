@@ -297,9 +297,13 @@ export function ConverterResult({
   const t = localesProvider.lang(lang);
   const useGrid = results.length >= 4;
 
+  const containerClass = useGrid
+    ? "grid grid-cols-2 gap-2"
+    : "overflow-hidden rounded-2xl bg-surface-elevated divide-y divide-border/40";
+
   return (
     <div
-      className={useGrid ? "grid grid-cols-2 gap-2" : "space-y-2"}
+      className={containerClass}
       aria-live="polite"
       aria-atomic="true"
       role="region"
@@ -311,18 +315,19 @@ export function ConverterResult({
         const displayValue = translate(t, rawValue as LocalesKey);
         const unit = result.unit ? translate(t, result.unit) : "";
 
+        const itemClass = useGrid
+          ? `rounded-2xl bg-surface-elevated px-4 py-3 ${animate ? "result-updating" : ""}`
+          : `flex items-center justify-between px-4 py-3.5 ${animate ? "result-updating" : ""}`;
+
         return (
-          <div
-            key={i}
-            className={`rounded-2xl bg-surface-elevated/50 px-4 py-3 ${animate ? "result-updating" : ""} ${useGrid ? "" : "flex items-center justify-between"}`}
-          >
+          <div key={i} className={itemClass}>
             <span
-              className={`text-text-secondary ${useGrid ? "text-xs block mb-0.5" : "text-sm"}`}
+              className={`text-text-secondary ${useGrid ? "text-xs block mb-1" : "text-sm"}`}
             >
               {label}
             </span>
             <span
-              className={`result-value font-semibold text-accent ${useGrid ? "text-lg block" : "text-xl"}`}
+              className={`truncate result-value font-bold text-accent ${useGrid ? "text-xl block" : "text-2xl"}`}
             >
               {displayValue}
               {unit && (

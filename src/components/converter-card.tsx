@@ -135,9 +135,12 @@ export default function ConverterCard({ converter, lang }: ConverterCardProps) {
 
       {/* Results */}
       {results.length > 0 && (
-        <div className="mt-6">
-          <div className="mb-3 text-xs font-medium uppercase tracking-wider text-text-tertiary">
-            {t.common_results()}
+        <div className="mt-8">
+          <div className="mb-3 flex items-center gap-2">
+            <span aria-hidden className="h-4 w-1 rounded-full bg-accent" />
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-text-primary">
+              {t.common_results()}
+            </h2>
           </div>
           <ConverterResult results={results} lang={lang} animate={animate} />
         </div>
