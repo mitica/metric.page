@@ -327,7 +327,7 @@ export function ConverterResult({
               {label}
             </span>
             <span
-              className={`truncate result-value font-bold text-accent ${useGrid ? "text-xl block" : "text-2xl"}`}
+              className={`result-value font-bold text-accent ${useGrid ? "text-xl block" : "text-2xl"}`}
             >
               {displayValue}
               {unit && (
