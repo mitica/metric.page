@@ -2436,6 +2436,94 @@ export class LocalizyLocales {
     footer_tagline() {
         return this.v('footer_tagline');
     }
+
+    converter_sleep_title() {
+        return this.v('converter_sleep_title');
+    }
+
+    converter_sleep_description() {
+        return this.v('converter_sleep_description');
+    }
+
+    converter_sleep_hours_per_night() {
+        return this.v('converter_sleep_hours_per_night');
+    }
+
+    converter_sleep_total_hours() {
+        return this.v('converter_sleep_total_hours');
+    }
+
+    converter_sleep_total_days() {
+        return this.v('converter_sleep_total_days');
+    }
+
+    converter_sleep_total_years() {
+        return this.v('converter_sleep_total_years');
+    }
+
+    converter_sleep_hours_awake() {
+        return this.v('converter_sleep_hours_awake');
+    }
+
+    converter_sleep_percent_of_life() {
+        return this.v('converter_sleep_percent_of_life');
+    }
+
+    converter_blinks_title() {
+        return this.v('converter_blinks_title');
+    }
+
+    converter_blinks_description() {
+        return this.v('converter_blinks_description');
+    }
+
+    converter_blinks_waking_hours() {
+        return this.v('converter_blinks_waking_hours');
+    }
+
+    converter_blinks_total() {
+        return this.v('converter_blinks_total');
+    }
+
+    converter_blinks_per_day() {
+        return this.v('converter_blinks_per_day');
+    }
+
+    converter_blinks_per_year() {
+        return this.v('converter_blinks_per_year');
+    }
+
+    converter_blinks_hours_eyes_closed() {
+        return this.v('converter_blinks_hours_eyes_closed');
+    }
+
+    converter_earth_distance_title() {
+        return this.v('converter_earth_distance_title');
+    }
+
+    converter_earth_distance_description() {
+        return this.v('converter_earth_distance_description');
+    }
+
+    converter_earth_distance_orbit() {
+        return this.v('converter_earth_distance_orbit');
+    }
+
+    converter_earth_distance_rotation() {
+        return this.v('converter_earth_distance_rotation');
+    }
+
+    converter_earth_distance_galaxy() {
+        return this.v('converter_earth_distance_galaxy');
+    }
+
+    converter_earth_distance_total() {
+        return this.v('converter_earth_distance_total');
+    }
+
+    converter_earth_distance_trips_to_moon() {
+        return this.v('converter_earth_distance_trips_to_moon');
+    }
 }
 
 export type LocalesKey = 'site_title'
@@ -3037,4 +3125,26 @@ export type LocalesKey = 'site_title'
     | 'converter_typing_speed_professional'
     | 'footer_built_with'
     | 'footer_home'
-    | 'footer_tagline';
+    | 'footer_tagline'
+    | 'converter_sleep_title'
+    | 'converter_sleep_description'
+    | 'converter_sleep_hours_per_night'
+    | 'converter_sleep_total_hours'
+    | 'converter_sleep_total_days'
+    | 'converter_sleep_total_years'
+    | 'converter_sleep_hours_awake'
+    | 'converter_sleep_percent_of_life'
+    | 'converter_blinks_title'
+    | 'converter_blinks_description'
+    | 'converter_blinks_waking_hours'
+    | 'converter_blinks_total'
+    | 'converter_blinks_per_day'
+    | 'converter_blinks_per_year'
+    | 'converter_blinks_hours_eyes_closed'
+    | 'converter_earth_distance_title'
+    | 'converter_earth_distance_description'
+    | 'converter_earth_distance_orbit'
+    | 'converter_earth_distance_rotation'
+    | 'converter_earth_distance_galaxy'
+    | 'converter_earth_distance_total'
+    | 'converter_earth_distance_trips_to_moon';

@@ -135,4 +135,97 @@ export const typingSpeed: ConverterConfig = {
   },
 };
 
-export const funConverters = [lifetimeHeartbeats, lifetimeBreaths, hairGrowth, caffeineCalculator, typingSpeed];
+export const lifetimeSleep: ConverterConfig = {
+  slug: "lifetime-sleep",
+  category: "fun",
+  icon: "😴",
+  titleKey: "converter_sleep_title",
+  descriptionKey: "converter_sleep_description",
+  inputs: [
+    { id: "age", type: "number", labelKey: "converter_common_age", min: 0, max: 120, step: 1, defaultValue: 30 },
+    { id: "hoursPerNight", type: "number", labelKey: "converter_sleep_hours_per_night", min: 0, max: 24, step: 0.5, defaultValue: 8 },
+  ],
+  calculate: (inputs) => {
+    const age = Number(inputs.age) || 0;
+    const hoursPerNight = Number(inputs.hoursPerNight) || 0;
+    const totalHours = age * 365.25 * hoursPerNight;
+    const totalDays = totalHours / 24;
+    const totalYears = totalDays / 365.25;
+    const hoursAwake = age * 365.25 * 24 - totalHours;
+    const percentAsleep = age > 0 ? (hoursPerNight / 24) * 100 : 0;
+    return [
+      { labelKey: "converter_sleep_total_hours", value: Math.round(totalHours).toLocaleString(), unit: "common_hours" },
+      { labelKey: "converter_sleep_total_days", value: Math.round(totalDays).toLocaleString() },
+      { labelKey: "converter_sleep_total_years", value: Math.round(totalYears * 10) / 10, unit: "common_unit_years" },
+      { labelKey: "converter_sleep_hours_awake", value: Math.round(hoursAwake).toLocaleString(), unit: "common_hours" },
+      { labelKey: "converter_sleep_percent_of_life", value: Math.round(percentAsleep * 10) / 10, unit: "common_unit_percent" },
+    ];
+  },
+};
+
+export const lifetimeBlinks: ConverterConfig = {
+  slug: "lifetime-blinks",
+  category: "fun",
+  icon: "👁️",
+  titleKey: "converter_blinks_title",
+  descriptionKey: "converter_blinks_description",
+  inputs: [
+    { id: "age", type: "number", labelKey: "converter_common_age", min: 0, max: 120, step: 1, defaultValue: 30 },
+    { id: "wakingHours", type: "number", labelKey: "converter_blinks_waking_hours", min: 1, max: 24, step: 0.5, defaultValue: 16 },
+  ],
+  calculate: (inputs) => {
+    const age = Number(inputs.age) || 0;
+    const wakingHours = Number(inputs.wakingHours) || 16;
+    const blinksPerMinute = 17; // average while awake
+    const blinksPerDay = blinksPerMinute * 60 * wakingHours;
+    const totalBlinks = blinksPerDay * 365.25 * age;
+    const blinksPerYear = blinksPerDay * 365.25;
+    const secondsClosedPerBlink = 0.3;
+    const totalSecondsClosed = totalBlinks * secondsClosedPerBlink;
+    const hoursEyesClosed = totalSecondsClosed / 3600;
+    return [
+      { labelKey: "converter_blinks_total", value: Math.round(totalBlinks).toLocaleString() },
+      { labelKey: "converter_blinks_per_day", value: Math.round(blinksPerDay).toLocaleString() },
+      { labelKey: "converter_blinks_per_year", value: Math.round(blinksPerYear).toLocaleString() },
+      { labelKey: "converter_blinks_hours_eyes_closed", value: Math.round(hoursEyesClosed).toLocaleString(), unit: "common_hours" },
+    ];
+  },
+};
+
+export const earthDistanceTraveled: ConverterConfig = {
+  slug: "earth-distance-traveled",
+  category: "fun",
+  icon: "🌍",
+  titleKey: "converter_earth_distance_title",
+  descriptionKey: "converter_earth_distance_description",
+  inputs: [
+    { id: "age", type: "number", labelKey: "converter_common_age", min: 0, max: 120, step: 1, defaultValue: 30 },
+  ],
+  calculate: (inputs) => {
+    const age = Number(inputs.age) || 0;
+    // Earth orbital speed around Sun: ~107,000 km/h
+    const orbitKmPerYear = 107_000 * 24 * 365.25;
+    // Earth rotation at equator: ~1,670 km/h (upper bound)
+    const rotationKmPerYear = 1_670 * 24 * 365.25;
+    // Solar system through the Milky Way: ~828,000 km/h
+    const galaxyKmPerYear = 828_000 * 24 * 365.25;
+
+    const orbitTotal = orbitKmPerYear * age;
+    const rotationTotal = rotationKmPerYear * age;
+    const galaxyTotal = galaxyKmPerYear * age;
+    const grandTotal = orbitTotal + rotationTotal + galaxyTotal;
+
+    const moonDistanceKm = 384_400;
+    const tripsToMoon = grandTotal / moonDistanceKm;
+
+    return [
+      { labelKey: "converter_earth_distance_orbit", value: Math.round(orbitTotal).toLocaleString(), unit: "common_unit_km" },
+      { labelKey: "converter_earth_distance_rotation", value: Math.round(rotationTotal).toLocaleString(), unit: "common_unit_km" },
+      { labelKey: "converter_earth_distance_galaxy", value: Math.round(galaxyTotal).toLocaleString(), unit: "common_unit_km" },
+      { labelKey: "converter_earth_distance_total", value: Math.round(grandTotal).toLocaleString(), unit: "common_unit_km" },
+      { labelKey: "converter_earth_distance_trips_to_moon", value: Math.round(tripsToMoon).toLocaleString() },
+    ];
+  },
+};
+
+export const funConverters = [lifetimeHeartbeats, lifetimeBreaths, hairGrowth, caffeineCalculator, typingSpeed, lifetimeSleep, lifetimeBlinks, earthDistanceTraveled];
