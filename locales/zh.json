@@ -708,5 +708,18 @@
   "pdf_invalid": "无效的 PDF",
   "pdf_remove": "移除",
   "pdf_move_up": "上移",
-  "pdf_move_down": "下移"
+  "pdf_move_down": "下移",
+  "converter_image_to_pdf_title": "图片转 PDF — 在线免费将 JPG、PNG、HEIC 转为 PDF",
+  "converter_image_to_pdf_description": "将 JPG、PNG、HEIC 和 WebP 图片转换为单个 PDF — 在浏览器中即刻完成。合并照片，无需上传，无需注册，100%% 私密。",
+  "img2pdf_privacy_notice": "图片在您的浏览器中转换，不会上传任何内容。",
+  "img2pdf_drop_label": "拖放图片到此处或点击选择",
+  "img2pdf_drop_hint": "JPG、PNG、HEIC、WebP — 添加一张或多张",
+  "img2pdf_page_size_label": "页面大小",
+  "img2pdf_page_fit": "适应图片",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "加载中…",
+  "img2pdf_summary": "%d 张图片 → 1 个 PDF",
+  "img2pdf_build_button": "创建并下载 PDF",
+  "img2pdf_building": "正在创建 PDF…"
 }

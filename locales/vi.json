@@ -708,5 +708,18 @@
   "pdf_invalid": "PDF không hợp lệ",
   "pdf_remove": "Xóa",
   "pdf_move_up": "Lên",
-  "pdf_move_down": "Xuống"
+  "pdf_move_down": "Xuống",
+  "converter_image_to_pdf_title": "Ảnh sang PDF — Chuyển JPG, PNG, HEIC sang PDF Trực Tuyến Miễn Phí",
+  "converter_image_to_pdf_description": "Chuyển ảnh JPG, PNG, HEIC và WebP sang một tệp PDF, ngay lập tức trong trình duyệt. Gộp ảnh, không tải lên, không đăng ký, riêng tư 100%%.",
+  "img2pdf_privacy_notice": "Ảnh được chuyển đổi trong trình duyệt. Không có gì được tải lên.",
+  "img2pdf_drop_label": "Thả ảnh vào đây hoặc nhấn để chọn",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — thêm một hoặc nhiều",
+  "img2pdf_page_size_label": "Khổ giấy",
+  "img2pdf_page_fit": "Vừa với ảnh",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Đang tải…",
+  "img2pdf_summary": "%d ảnh → 1 PDF",
+  "img2pdf_build_button": "Tạo và tải PDF",
+  "img2pdf_building": "Đang tạo PDF…"
 }

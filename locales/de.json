@@ -708,5 +708,18 @@
   "pdf_invalid": "Ungültiges PDF",
   "pdf_remove": "Entfernen",
   "pdf_move_up": "Nach oben",
-  "pdf_move_down": "Nach unten"
+  "pdf_move_down": "Nach unten",
+  "converter_image_to_pdf_title": "Bild zu PDF — JPG, PNG, HEIC zu PDF Online Kostenlos",
+  "converter_image_to_pdf_description": "Konvertiere JPG-, PNG-, HEIC- und WebP-Bilder in eine einzige PDF — direkt im Browser. Fotos kombinieren, kein Upload, keine Anmeldung, 100%% privat.",
+  "img2pdf_privacy_notice": "Bilder werden in deinem Browser konvertiert. Nichts wird hochgeladen.",
+  "img2pdf_drop_label": "Bilder hier ablegen oder klicken zum Auswählen",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — eines oder mehrere hinzufügen",
+  "img2pdf_page_size_label": "Seitengröße",
+  "img2pdf_page_fit": "An Bild anpassen",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Lade…",
+  "img2pdf_summary": "%d Bilder → 1 PDF",
+  "img2pdf_build_button": "PDF erstellen & herunterladen",
+  "img2pdf_building": "PDF wird erstellt…"
 }

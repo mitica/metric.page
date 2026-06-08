@@ -708,5 +708,18 @@
   "pdf_invalid": "Geçersiz PDF",
   "pdf_remove": "Kaldır",
   "pdf_move_up": "Yukarı",
-  "pdf_move_down": "Aşağı"
+  "pdf_move_down": "Aşağı",
+  "converter_image_to_pdf_title": "Resim PDF Yap — JPG, PNG, HEIC'i PDF'e Online Ücretsiz Dönüştür",
+  "converter_image_to_pdf_description": "JPG, PNG, HEIC ve WebP resimlerini tek bir PDF'e dönüştür, anında tarayıcında. Fotoğrafları birleştir, yükleme yok, kayıt yok, %%100 gizli.",
+  "img2pdf_privacy_notice": "Resimler tarayıcında dönüştürülür. Hiçbir şey yüklenmez.",
+  "img2pdf_drop_label": "Resimleri buraya bırak veya seçmek için tıkla",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — bir veya daha fazla ekle",
+  "img2pdf_page_size_label": "Sayfa boyutu",
+  "img2pdf_page_fit": "Resme sığdır",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Yükleniyor…",
+  "img2pdf_summary": "%d resim → 1 PDF",
+  "img2pdf_build_button": "PDF oluştur ve indir",
+  "img2pdf_building": "PDF oluşturuluyor…"
 }

@@ -708,5 +708,18 @@
   "pdf_invalid": "अमान्य PDF",
   "pdf_remove": "हटाएँ",
   "pdf_move_up": "ऊपर ले जाएँ",
-  "pdf_move_down": "नीचे ले जाएँ"
+  "pdf_move_down": "नीचे ले जाएँ",
+  "converter_image_to_pdf_title": "इमेज से PDF — JPG, PNG, HEIC को PDF में ऑनलाइन मुफ़्त बदलें",
+  "converter_image_to_pdf_description": "JPG, PNG, HEIC और WebP इमेज को एक PDF में बदलें — तुरंत अपने ब्राउज़र में। फ़ोटो संयोजित करें, कोई अपलोड नहीं, कोई साइन-अप नहीं, 100%% प्राइवेट।",
+  "img2pdf_privacy_notice": "इमेज आपके ब्राउज़र में बदली जाती हैं। कुछ भी अपलोड नहीं होता।",
+  "img2pdf_drop_label": "यहाँ इमेज छोड़ें या चुनने के लिए क्लिक करें",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — एक या अधिक जोड़ें",
+  "img2pdf_page_size_label": "पेज साइज़",
+  "img2pdf_page_fit": "इमेज पर फ़िट",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "लोड हो रहा है…",
+  "img2pdf_summary": "%d इमेज → 1 PDF",
+  "img2pdf_build_button": "PDF बनाएँ और डाउनलोड करें",
+  "img2pdf_building": "PDF बना रहा है…"
 }

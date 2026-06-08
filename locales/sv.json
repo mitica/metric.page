@@ -708,5 +708,18 @@
   "pdf_invalid": "Ogiltig PDF",
   "pdf_remove": "Ta bort",
   "pdf_move_up": "Flytta upp",
-  "pdf_move_down": "Flytta ner"
+  "pdf_move_down": "Flytta ner",
+  "converter_image_to_pdf_title": "Bild till PDF — Konvertera JPG, PNG, HEIC till PDF Online",
+  "converter_image_to_pdf_description": "Konvertera JPG-, PNG-, HEIC- och WebP-bilder till en PDF, direkt i din webbläsare. Kombinera foton, ingen uppladdning, ingen registrering, 100%% privat.",
+  "img2pdf_privacy_notice": "Bilderna konverteras i din webbläsare. Inget laddas upp.",
+  "img2pdf_drop_label": "Släpp bilder här eller klicka för att välja",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — lägg till en eller flera",
+  "img2pdf_page_size_label": "Sidstorlek",
+  "img2pdf_page_fit": "Anpassa till bild",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Laddar…",
+  "img2pdf_summary": "%d bilder → 1 PDF",
+  "img2pdf_build_button": "Skapa & ladda ner PDF",
+  "img2pdf_building": "Skapar PDF…"
 }

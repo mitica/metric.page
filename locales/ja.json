@@ -708,5 +708,18 @@
   "pdf_invalid": "無効なPDF",
   "pdf_remove": "削除",
   "pdf_move_up": "上へ移動",
-  "pdf_move_down": "下へ移動"
+  "pdf_move_down": "下へ移動",
+  "converter_image_to_pdf_title": "画像をPDFに — JPG・PNG・HEICをPDFにオンライン無料変換",
+  "converter_image_to_pdf_description": "JPG、PNG、HEIC、WebP画像を1つのPDFに変換 — ブラウザで瞬時に。写真を結合、アップロード不要、登録不要、100%%プライベート。",
+  "img2pdf_privacy_notice": "画像はブラウザで変換されます。何もアップロードされません。",
+  "img2pdf_drop_label": "ここに画像をドロップまたはクリックして選択",
+  "img2pdf_drop_hint": "JPG、PNG、HEIC、WebP — 1つ以上を追加",
+  "img2pdf_page_size_label": "ページサイズ",
+  "img2pdf_page_fit": "画像に合わせる",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "レター",
+  "img2pdf_loading": "読み込み中…",
+  "img2pdf_summary": "%d枚の画像 → 1つのPDF",
+  "img2pdf_build_button": "PDFを作成してダウンロード",
+  "img2pdf_building": "PDF作成中…"
 }

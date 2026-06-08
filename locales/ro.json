@@ -708,5 +708,18 @@
   "pdf_invalid": "PDF invalid",
   "pdf_remove": "Elimină",
   "pdf_move_up": "Mută sus",
-  "pdf_move_down": "Mută jos"
+  "pdf_move_down": "Mută jos",
+  "converter_image_to_pdf_title": "Imagine în PDF — Convertește JPG, PNG, HEIC în PDF Online",
+  "converter_image_to_pdf_description": "Convertește imagini JPG, PNG, HEIC și WebP într-un singur PDF, instant în browser. Combină fotografii, fără încărcare, fără cont, 100%% privat.",
+  "img2pdf_privacy_notice": "Imaginile sunt convertite în browser. Nimic nu se încarcă.",
+  "img2pdf_drop_label": "Trage imaginile aici sau apasă pentru a alege",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — adaugă una sau mai multe",
+  "img2pdf_page_size_label": "Dimensiune pagină",
+  "img2pdf_page_fit": "Potrivire pe imagine",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Se încarcă…",
+  "img2pdf_summary": "%d imagini → 1 PDF",
+  "img2pdf_build_button": "Creează și descarcă PDF",
+  "img2pdf_building": "Se creează PDF…"
 }

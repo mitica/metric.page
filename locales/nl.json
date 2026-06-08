@@ -708,5 +708,18 @@
   "pdf_invalid": "Ongeldige PDF",
   "pdf_remove": "Verwijderen",
   "pdf_move_up": "Omhoog",
-  "pdf_move_down": "Omlaag"
+  "pdf_move_down": "Omlaag",
+  "converter_image_to_pdf_title": "Afbeelding naar PDF — JPG, PNG, HEIC naar PDF Online Gratis",
+  "converter_image_to_pdf_description": "Converteer JPG-, PNG-, HEIC- en WebP-afbeeldingen naar één PDF, direct in je browser. Combineer foto's, geen upload, geen aanmelding, 100%% privé.",
+  "img2pdf_privacy_notice": "Afbeeldingen worden in je browser geconverteerd. Niets wordt geüpload.",
+  "img2pdf_drop_label": "Sleep afbeeldingen hierheen of klik om te kiezen",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — voeg er een of meer toe",
+  "img2pdf_page_size_label": "Paginagrootte",
+  "img2pdf_page_fit": "Aanpassen aan afbeelding",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Laden…",
+  "img2pdf_summary": "%d afbeeldingen → 1 PDF",
+  "img2pdf_build_button": "PDF maken & downloaden",
+  "img2pdf_building": "PDF maken…"
 }

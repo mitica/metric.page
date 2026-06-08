@@ -708,5 +708,18 @@
   "pdf_invalid": "PDF ไม่ถูกต้อง",
   "pdf_remove": "ลบ",
   "pdf_move_up": "เลื่อนขึ้น",
-  "pdf_move_down": "เลื่อนลง"
+  "pdf_move_down": "เลื่อนลง",
+  "converter_image_to_pdf_title": "รูปภาพเป็น PDF — แปลง JPG, PNG, HEIC เป็น PDF ออนไลน์ฟรี",
+  "converter_image_to_pdf_description": "แปลงรูปภาพ JPG, PNG, HEIC และ WebP เป็น PDF เดียว ทันทีในเบราว์เซอร์ รวมรูปได้ ไม่ต้องอัปโหลด ไม่ต้องสมัคร ส่วนตัว 100%%",
+  "img2pdf_privacy_notice": "รูปภาพถูกแปลงในเบราว์เซอร์ของคุณ ไม่มีการอัปโหลด",
+  "img2pdf_drop_label": "ปล่อยรูปภาพที่นี่หรือคลิกเพื่อเลือก",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — เพิ่มหนึ่งรูปหรือมากกว่า",
+  "img2pdf_page_size_label": "ขนาดหน้ากระดาษ",
+  "img2pdf_page_fit": "พอดีกับรูป",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "กำลังโหลด…",
+  "img2pdf_summary": "%d รูป → 1 PDF",
+  "img2pdf_build_button": "สร้างและดาวน์โหลด PDF",
+  "img2pdf_building": "กำลังสร้าง PDF…"
 }

@@ -53,7 +53,8 @@ export type ToolKey =
   | "qr-generator"
   | "image-format-converter"
   | "image-compressor"
-  | "pdf-merge";
+  | "pdf-merge"
+  | "image-to-pdf";
 
 export interface ConverterConfig {
   slug: string;

@@ -708,5 +708,18 @@
   "pdf_invalid": "Недопустимый PDF",
   "pdf_remove": "Удалить",
   "pdf_move_up": "Вверх",
-  "pdf_move_down": "Вниз"
+  "pdf_move_down": "Вниз",
+  "converter_image_to_pdf_title": "Изображение в PDF — Конвертировать JPG, PNG, HEIC в PDF Онлайн",
+  "converter_image_to_pdf_description": "Конвертируйте изображения JPG, PNG, HEIC и WebP в один PDF мгновенно в вашем браузере. Объединяйте фото, без загрузки, без регистрации, 100%% конфиденциально.",
+  "img2pdf_privacy_notice": "Изображения конвертируются в вашем браузере. Ничего не загружается.",
+  "img2pdf_drop_label": "Перетащите изображения сюда или нажмите для выбора",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — добавьте одно или больше",
+  "img2pdf_page_size_label": "Размер страницы",
+  "img2pdf_page_fit": "По размеру изображения",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Загрузка…",
+  "img2pdf_summary": "%d изображений → 1 PDF",
+  "img2pdf_build_button": "Создать и скачать PDF",
+  "img2pdf_building": "Создание PDF…"
 }

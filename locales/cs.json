@@ -708,5 +708,18 @@
   "pdf_invalid": "Neplatný PDF",
   "pdf_remove": "Odebrat",
   "pdf_move_up": "Posunout nahoru",
-  "pdf_move_down": "Posunout dolů"
+  "pdf_move_down": "Posunout dolů",
+  "converter_image_to_pdf_title": "Obrázek do PDF — Převést JPG, PNG, HEIC do PDF Online",
+  "converter_image_to_pdf_description": "Převeďte obrázky JPG, PNG, HEIC a WebP do jediného PDF, okamžitě v prohlížeči. Kombinujte fotografie, bez nahrávání, bez registrace, 100%% soukromě.",
+  "img2pdf_privacy_notice": "Obrázky se převádějí ve vašem prohlížeči. Nic se nenahrává.",
+  "img2pdf_drop_label": "Přetáhněte obrázky sem nebo klikněte pro výběr",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — přidejte jeden nebo více",
+  "img2pdf_page_size_label": "Velikost stránky",
+  "img2pdf_page_fit": "Přizpůsobit obrázku",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Načítání…",
+  "img2pdf_summary": "%d obrázků → 1 PDF",
+  "img2pdf_build_button": "Vytvořit a stáhnout PDF",
+  "img2pdf_building": "Vytváření PDF…"
 }

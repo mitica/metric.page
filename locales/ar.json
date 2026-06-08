@@ -708,5 +708,18 @@
   "pdf_invalid": "PDF غير صالح",
   "pdf_remove": "إزالة",
   "pdf_move_up": "تحريك لأعلى",
-  "pdf_move_down": "تحريك لأسفل"
+  "pdf_move_down": "تحريك لأسفل",
+  "converter_image_to_pdf_title": "صورة إلى PDF — حوّل JPG وPNG وHEIC إلى PDF أونلاين مجانًا",
+  "converter_image_to_pdf_description": "حوّل صور JPG وPNG وHEIC وWebP إلى ملف PDF واحد — فورًا في متصفّحك. اجمع الصور، بدون رفع، بدون تسجيل، خصوصية 100٪.",
+  "img2pdf_privacy_notice": "تتم معالجة الصور في متصفّحك. لا يتم رفع أي شيء.",
+  "img2pdf_drop_label": "أفلت الصور هنا أو انقر للاختيار",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — أضف صورة أو أكثر",
+  "img2pdf_page_size_label": "حجم الصفحة",
+  "img2pdf_page_fit": "ملاءمة الصورة",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "جاري التحميل…",
+  "img2pdf_summary": "%d صور → ملف PDF واحد",
+  "img2pdf_build_button": "أنشئ ونزّل PDF",
+  "img2pdf_building": "جاري إنشاء PDF…"
 }

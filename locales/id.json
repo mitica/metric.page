@@ -708,5 +708,18 @@
   "pdf_invalid": "PDF tidak valid",
   "pdf_remove": "Hapus",
   "pdf_move_up": "Ke atas",
-  "pdf_move_down": "Ke bawah"
+  "pdf_move_down": "Ke bawah",
+  "converter_image_to_pdf_title": "Gambar ke PDF — Konversi JPG, PNG, HEIC ke PDF Online Gratis",
+  "converter_image_to_pdf_description": "Konversi gambar JPG, PNG, HEIC, dan WebP menjadi satu PDF, langsung di browser. Gabung foto, tanpa unggah, tanpa daftar, 100%% privat.",
+  "img2pdf_privacy_notice": "Gambar dikonversi di browser. Tidak ada yang diunggah.",
+  "img2pdf_drop_label": "Letakkan gambar di sini atau klik untuk memilih",
+  "img2pdf_drop_hint": "JPG, PNG, HEIC, WebP — tambahkan satu atau lebih",
+  "img2pdf_page_size_label": "Ukuran halaman",
+  "img2pdf_page_fit": "Sesuaikan ke gambar",
+  "img2pdf_page_a4": "A4",
+  "img2pdf_page_letter": "Letter",
+  "img2pdf_loading": "Memuat…",
+  "img2pdf_summary": "%d gambar → 1 PDF",
+  "img2pdf_build_button": "Buat & unduh PDF",
+  "img2pdf_building": "Membuat PDF…"
 }
