@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "클래스 E (예약됨)",
   "footer_built_with": "몰도바에서 ❤️ 로 만들었습니다.",
   "footer_home": "홈",
-  "footer_tagline": "빠름. 비공개. 가입 불필요."
+  "footer_tagline": "빠름. 비공개. 가입 불필요.",
+  "converter_sleep_cycle_title": "수면 주기 계산기",
+  "converter_sleep_cycle_description": "90분 수면 주기를 기준으로 최적의 취침 시간 또는 기상 시간을 찾으세요",
+  "converter_sleep_cycle_mode": "원하는 것",
+  "converter_sleep_cycle_mode_wake": "기상 시간",
+  "converter_sleep_cycle_mode_bed": "취침 시간",
+  "converter_sleep_cycle_time": "시간",
+  "converter_sleep_cycle_latency": "잠드는 데 걸리는 분",
+  "converter_sleep_cycle_row_6": "9시간 · 6주기 — 추천",
+  "converter_sleep_cycle_row_5": "7.5시간 · 5주기 — 추천",
+  "converter_sleep_cycle_row_4": "6시간 · 4주기",
+  "converter_sleep_cycle_row_3": "4.5시간 · 3주기"
 }

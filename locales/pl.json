@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Klasa E (zarezerwowana)",
   "footer_built_with": "Stworzone z ❤️ w Mołdawii.",
   "footer_home": "Strona główna",
-  "footer_tagline": "Szybko. Prywatnie. Bez rejestracji."
+  "footer_tagline": "Szybko. Prywatnie. Bez rejestracji.",
+  "converter_sleep_cycle_title": "Kalkulator cykli snu",
+  "converter_sleep_cycle_description": "Znajdź najlepszy czas na zaśnięcie lub pobudkę w oparciu o 90-minutowe cykle snu",
+  "converter_sleep_cycle_mode": "Chcę",
+  "converter_sleep_cycle_mode_wake": "Obudzić się o",
+  "converter_sleep_cycle_mode_bed": "Pójść spać o",
+  "converter_sleep_cycle_time": "Godzina",
+  "converter_sleep_cycle_latency": "Minuty na zaśnięcie",
+  "converter_sleep_cycle_row_6": "9 godzin · 6 cykli — Zalecane",
+  "converter_sleep_cycle_row_5": "7,5 godziny · 5 cykli — Zalecane",
+  "converter_sleep_cycle_row_4": "6 godzin · 4 cykle",
+  "converter_sleep_cycle_row_3": "4,5 godziny · 3 cykle"
 }

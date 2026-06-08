@@ -145,6 +145,22 @@ export default function ConverterInput({
     );
   }
 
+  if (field.type === "time") {
+    return (
+      <div className="space-y-2">
+        <label className="block text-sm font-medium text-text-secondary">
+          {label}
+        </label>
+        <input
+          type="time"
+          value={value}
+          onChange={handleChange}
+          className="w-full"
+        />
+      </div>
+    );
+  }
+
   const hasUnits = !!(
     field.unitOptions &&
     field.unitOptions.length > 1 &&

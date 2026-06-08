@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Class E (reserved)",
   "footer_built_with": "Built with ❤️ in Moldova.",
   "footer_home": "Home",
-  "footer_tagline": "Fast. Private. No sign-up."
+  "footer_tagline": "Fast. Private. No sign-up.",
+  "converter_sleep_cycle_title": "Sleep Cycle Calculator",
+  "converter_sleep_cycle_description": "Find the best bedtime or wake-up time based on 90-minute sleep cycles",
+  "converter_sleep_cycle_mode": "I want to",
+  "converter_sleep_cycle_mode_wake": "Wake up at",
+  "converter_sleep_cycle_mode_bed": "Go to bed at",
+  "converter_sleep_cycle_time": "Time",
+  "converter_sleep_cycle_latency": "Minutes to fall asleep",
+  "converter_sleep_cycle_row_6": "9 hours · 6 cycles — Recommended",
+  "converter_sleep_cycle_row_5": "7.5 hours · 5 cycles — Recommended",
+  "converter_sleep_cycle_row_4": "6 hours · 4 cycles",
+  "converter_sleep_cycle_row_3": "4.5 hours · 3 cycles"
 }

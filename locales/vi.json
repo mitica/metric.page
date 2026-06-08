@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Lớp E (dành riêng)",
   "footer_built_with": "Tạo với ❤️ tại Moldova.",
   "footer_home": "Trang chủ",
-  "footer_tagline": "Nhanh. Riêng tư. Không cần đăng ký."
+  "footer_tagline": "Nhanh. Riêng tư. Không cần đăng ký.",
+  "converter_sleep_cycle_title": "Máy tính chu kỳ giấc ngủ",
+  "converter_sleep_cycle_description": "Tìm thời gian tốt nhất để đi ngủ hoặc thức dậy, dựa trên chu kỳ giấc ngủ 90 phút",
+  "converter_sleep_cycle_mode": "Tôi muốn",
+  "converter_sleep_cycle_mode_wake": "Thức dậy lúc",
+  "converter_sleep_cycle_mode_bed": "Đi ngủ lúc",
+  "converter_sleep_cycle_time": "Giờ",
+  "converter_sleep_cycle_latency": "Số phút để chìm vào giấc ngủ",
+  "converter_sleep_cycle_row_6": "9 giờ · 6 chu kỳ — Được khuyến nghị",
+  "converter_sleep_cycle_row_5": "7,5 giờ · 5 chu kỳ — Được khuyến nghị",
+  "converter_sleep_cycle_row_4": "6 giờ · 4 chu kỳ",
+  "converter_sleep_cycle_row_3": "4,5 giờ · 3 chu kỳ"
 }

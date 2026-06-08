@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "الفئة E (محجوز)",
   "footer_built_with": "صُنع بـ ❤️ في مولدوفا.",
   "footer_home": "الرئيسية",
-  "footer_tagline": "سريع. خاص. بدون تسجيل."
+  "footer_tagline": "سريع. خاص. بدون تسجيل.",
+  "converter_sleep_cycle_title": "حاسبة دورة النوم",
+  "converter_sleep_cycle_description": "اعثر على أفضل وقت للنوم أو الاستيقاظ بناءً على دورات نوم مدتها 90 دقيقة",
+  "converter_sleep_cycle_mode": "أريد أن",
+  "converter_sleep_cycle_mode_wake": "أستيقظ في",
+  "converter_sleep_cycle_mode_bed": "أنام في",
+  "converter_sleep_cycle_time": "الوقت",
+  "converter_sleep_cycle_latency": "دقائق للنوم",
+  "converter_sleep_cycle_row_6": "9 ساعات · 6 دورات — موصى به",
+  "converter_sleep_cycle_row_5": "7.5 ساعة · 5 دورات — موصى به",
+  "converter_sleep_cycle_row_4": "6 ساعات · 4 دورات",
+  "converter_sleep_cycle_row_3": "4.5 ساعة · 3 دورات"
 }

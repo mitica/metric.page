@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Klass E (reserverad)",
   "footer_built_with": "Gjord med ❤️ i Moldavien.",
   "footer_home": "Hem",
-  "footer_tagline": "Snabbt. Privat. Ingen registrering."
+  "footer_tagline": "Snabbt. Privat. Ingen registrering.",
+  "converter_sleep_cycle_title": "Sömncykelkalkylator",
+  "converter_sleep_cycle_description": "Hitta bästa tiden att somna eller vakna, baserat på 90-minuters sömncykler",
+  "converter_sleep_cycle_mode": "Jag vill",
+  "converter_sleep_cycle_mode_wake": "Vakna kl.",
+  "converter_sleep_cycle_mode_bed": "Lägga mig kl.",
+  "converter_sleep_cycle_time": "Tid",
+  "converter_sleep_cycle_latency": "Minuter att somna",
+  "converter_sleep_cycle_row_6": "9 timmar · 6 cykler — Rekommenderas",
+  "converter_sleep_cycle_row_5": "7,5 timmar · 5 cykler — Rekommenderas",
+  "converter_sleep_cycle_row_4": "6 timmar · 4 cykler",
+  "converter_sleep_cycle_row_3": "4,5 timmar · 3 cykler"
 }

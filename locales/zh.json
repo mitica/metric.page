@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "E 类 (保留)",
   "footer_built_with": "用 ❤️ 在摩尔多瓦制作。",
   "footer_home": "首页",
-  "footer_tagline": "快速。私密。无需注册。"
+  "footer_tagline": "快速。私密。无需注册。",
+  "converter_sleep_cycle_title": "睡眠周期计算器",
+  "converter_sleep_cycle_description": "基于 90 分钟睡眠周期，找出最佳就寝或起床时间",
+  "converter_sleep_cycle_mode": "我想",
+  "converter_sleep_cycle_mode_wake": "起床时间",
+  "converter_sleep_cycle_mode_bed": "就寝时间",
+  "converter_sleep_cycle_time": "时间",
+  "converter_sleep_cycle_latency": "入睡所需分钟数",
+  "converter_sleep_cycle_row_6": "9 小时 · 6 个周期 — 推荐",
+  "converter_sleep_cycle_row_5": "7.5 小时 · 5 个周期 — 推荐",
+  "converter_sleep_cycle_row_4": "6 小时 · 4 个周期",
+  "converter_sleep_cycle_row_3": "4.5 小时 · 3 个周期"
 }

@@ -719,6 +719,87 @@ export const macroCalculator: ConverterConfig = {
   },
 };
 
+function parseHHMM(s: string): number | null {
+  const match = /^(\d{1,2}):(\d{2})$/.exec(s.trim());
+  if (!match) return null;
+  const h = Number(match[1]);
+  const m = Number(match[2]);
+  if (h < 0 || h > 23 || m < 0 || m > 59) return null;
+  return h * 60 + m;
+}
+
+function formatHHMM(totalMinutes: number): string {
+  const mod = ((totalMinutes % 1440) + 1440) % 1440;
+  const h = Math.floor(mod / 60);
+  const m = mod % 60;
+  return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+}
+
+export const sleepCycleCalculator: ConverterConfig = {
+  slug: "sleep-cycle-calculator",
+  category: "health",
+  icon: "😴",
+  titleKey: "converter_sleep_cycle_title",
+  descriptionKey: "converter_sleep_cycle_description",
+  keywords: [
+    "sleep",
+    "sleep cycle",
+    "bedtime",
+    "wake up",
+    "90 minute",
+    "REM",
+    "what time should I go to sleep",
+    "what time should I wake up",
+  ],
+  inputs: [
+    {
+      id: "mode",
+      type: "switcher",
+      labelKey: "converter_sleep_cycle_mode",
+      defaultValue: "wake",
+      options: [
+        { value: "wake", labelKey: "converter_sleep_cycle_mode_wake" },
+        { value: "bed", labelKey: "converter_sleep_cycle_mode_bed" },
+      ],
+    },
+    {
+      id: "time",
+      type: "time",
+      labelKey: "converter_sleep_cycle_time",
+      defaultValue: "07:00",
+    },
+    {
+      id: "latency",
+      type: "number",
+      labelKey: "converter_sleep_cycle_latency",
+      min: 0,
+      max: 60,
+      step: 1,
+      defaultValue: 14,
+      unit: "common_minutes",
+    },
+  ],
+  calculate: (inputs) => {
+    const cycleMin = 90;
+    const cycles: Array<{ count: number; key: LocalesKey }> = [
+      { count: 6, key: "converter_sleep_cycle_row_6" },
+      { count: 5, key: "converter_sleep_cycle_row_5" },
+      { count: 4, key: "converter_sleep_cycle_row_4" },
+      { count: 3, key: "converter_sleep_cycle_row_3" },
+    ];
+    const base = parseHHMM(String(inputs.time || ""));
+    if (base == null) {
+      return cycles.map((c) => ({ labelKey: c.key, value: "-" }));
+    }
+    const latency = Math.max(0, Number(inputs.latency) || 0);
+    const sign = String(inputs.mode || "wake") === "wake" ? -1 : 1;
+    return cycles.map((c) => ({
+      labelKey: c.key,
+      value: formatHHMM(base + sign * (c.count * cycleMin + latency)),
+    }));
+  },
+};
+
 export const healthConverters = [
   bmiCalculator,
   bodyFatCalculator,
@@ -730,4 +811,5 @@ export const healthConverters = [
   waterIntake,
   heartRateZones,
   macroCalculator,
+  sleepCycleCalculator,
 ];

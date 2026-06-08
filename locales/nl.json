@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Klasse E (gereserveerd)",
   "footer_built_with": "Gemaakt met ❤️ in Moldavië.",
   "footer_home": "Home",
-  "footer_tagline": "Snel. Privé. Geen aanmelding."
+  "footer_tagline": "Snel. Privé. Geen aanmelding.",
+  "converter_sleep_cycle_title": "Slaapcyclus-calculator",
+  "converter_sleep_cycle_description": "Vind het beste tijdstip om te gaan slapen of wakker te worden, gebaseerd op slaapcycli van 90 minuten",
+  "converter_sleep_cycle_mode": "Ik wil",
+  "converter_sleep_cycle_mode_wake": "Wakker worden om",
+  "converter_sleep_cycle_mode_bed": "Gaan slapen om",
+  "converter_sleep_cycle_time": "Tijd",
+  "converter_sleep_cycle_latency": "Minuten om in slaap te vallen",
+  "converter_sleep_cycle_row_6": "9 uur · 6 cycli — Aanbevolen",
+  "converter_sleep_cycle_row_5": "7,5 uur · 5 cycli — Aanbevolen",
+  "converter_sleep_cycle_row_4": "6 uur · 4 cycli",
+  "converter_sleep_cycle_row_3": "4,5 uur · 3 cycli"
 }

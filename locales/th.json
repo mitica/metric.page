@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "คลาส E (สงวนไว้)",
   "footer_built_with": "สร้างด้วย ❤️ ในมอลโดวา",
   "footer_home": "หน้าแรก",
-  "footer_tagline": "เร็ว ส่วนตัว ไม่ต้องสมัคร"
+  "footer_tagline": "เร็ว ส่วนตัว ไม่ต้องสมัคร",
+  "converter_sleep_cycle_title": "เครื่องคำนวณวงจรการนอน",
+  "converter_sleep_cycle_description": "หาเวลาเข้านอนหรือตื่นที่ดีที่สุดตามวงจรการนอน 90 นาที",
+  "converter_sleep_cycle_mode": "ฉันต้องการ",
+  "converter_sleep_cycle_mode_wake": "ตื่นเวลา",
+  "converter_sleep_cycle_mode_bed": "เข้านอนเวลา",
+  "converter_sleep_cycle_time": "เวลา",
+  "converter_sleep_cycle_latency": "นาทีก่อนหลับ",
+  "converter_sleep_cycle_row_6": "9 ชั่วโมง · 6 วงจร — แนะนำ",
+  "converter_sleep_cycle_row_5": "7.5 ชั่วโมง · 5 วงจร — แนะนำ",
+  "converter_sleep_cycle_row_4": "6 ชั่วโมง · 4 วงจร",
+  "converter_sleep_cycle_row_3": "4.5 ชั่วโมง · 3 วงจร"
 }

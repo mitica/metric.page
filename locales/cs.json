@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Třída E (rezervovaná)",
   "footer_built_with": "Vytvořeno s ❤️ v Moldavsku.",
   "footer_home": "Domů",
-  "footer_tagline": "Rychlé. Soukromé. Bez registrace."
+  "footer_tagline": "Rychlé. Soukromé. Bez registrace.",
+  "converter_sleep_cycle_title": "Kalkulačka spánkových cyklů",
+  "converter_sleep_cycle_description": "Najděte nejlepší čas pro spánek nebo probuzení podle 90minutových spánkových cyklů",
+  "converter_sleep_cycle_mode": "Chci",
+  "converter_sleep_cycle_mode_wake": "Probudit se v",
+  "converter_sleep_cycle_mode_bed": "Jít spát v",
+  "converter_sleep_cycle_time": "Čas",
+  "converter_sleep_cycle_latency": "Minuty na usnutí",
+  "converter_sleep_cycle_row_6": "9 hodin · 6 cyklů — Doporučeno",
+  "converter_sleep_cycle_row_5": "7,5 hodiny · 5 cyklů — Doporučeno",
+  "converter_sleep_cycle_row_4": "6 hodin · 4 cykly",
+  "converter_sleep_cycle_row_3": "4,5 hodiny · 3 cykly"
 }

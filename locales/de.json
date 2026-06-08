@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Klasse E (reserviert)",
   "footer_built_with": "Gemacht mit ❤️ in Moldau.",
   "footer_home": "Startseite",
-  "footer_tagline": "Schnell. Privat. Keine Anmeldung."
+  "footer_tagline": "Schnell. Privat. Keine Anmeldung.",
+  "converter_sleep_cycle_title": "Schlafzyklen-Rechner",
+  "converter_sleep_cycle_description": "Finde die beste Schlafens- oder Aufwachzeit basierend auf 90-Minuten-Schlafzyklen",
+  "converter_sleep_cycle_mode": "Ich möchte",
+  "converter_sleep_cycle_mode_wake": "Aufwachen um",
+  "converter_sleep_cycle_mode_bed": "Schlafen gehen um",
+  "converter_sleep_cycle_time": "Uhrzeit",
+  "converter_sleep_cycle_latency": "Minuten zum Einschlafen",
+  "converter_sleep_cycle_row_6": "9 Stunden · 6 Zyklen — Empfohlen",
+  "converter_sleep_cycle_row_5": "7,5 Stunden · 5 Zyklen — Empfohlen",
+  "converter_sleep_cycle_row_4": "6 Stunden · 4 Zyklen",
+  "converter_sleep_cycle_row_3": "4,5 Stunden · 3 Zyklen"
 }

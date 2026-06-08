@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Клас E (зарезервована)",
   "footer_built_with": "Створено з ❤️ у Молдові.",
   "footer_home": "Головна",
-  "footer_tagline": "Швидко. Приватно. Без реєстрації."
+  "footer_tagline": "Швидко. Приватно. Без реєстрації.",
+  "converter_sleep_cycle_title": "Калькулятор циклів сну",
+  "converter_sleep_cycle_description": "Знайдіть найкращий час для сну або пробудження на основі 90-хвилинних циклів сну",
+  "converter_sleep_cycle_mode": "Я хочу",
+  "converter_sleep_cycle_mode_wake": "Прокинутися о",
+  "converter_sleep_cycle_mode_bed": "Лягти спати о",
+  "converter_sleep_cycle_time": "Час",
+  "converter_sleep_cycle_latency": "Хвилин на засинання",
+  "converter_sleep_cycle_row_6": "9 годин · 6 циклів — Рекомендовано",
+  "converter_sleep_cycle_row_5": "7,5 години · 5 циклів — Рекомендовано",
+  "converter_sleep_cycle_row_4": "6 годин · 4 цикли",
+  "converter_sleep_cycle_row_3": "4,5 години · 3 цикли"
 }

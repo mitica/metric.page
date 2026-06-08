@@ -2644,6 +2644,50 @@ export class LocalizyLocales {
     footer_tagline() {
         return this.v('footer_tagline');
     }
+
+    converter_sleep_cycle_title() {
+        return this.v('converter_sleep_cycle_title');
+    }
+
+    converter_sleep_cycle_description() {
+        return this.v('converter_sleep_cycle_description');
+    }
+
+    converter_sleep_cycle_mode() {
+        return this.v('converter_sleep_cycle_mode');
+    }
+
+    converter_sleep_cycle_mode_wake() {
+        return this.v('converter_sleep_cycle_mode_wake');
+    }
+
+    converter_sleep_cycle_mode_bed() {
+        return this.v('converter_sleep_cycle_mode_bed');
+    }
+
+    converter_sleep_cycle_time() {
+        return this.v('converter_sleep_cycle_time');
+    }
+
+    converter_sleep_cycle_latency() {
+        return this.v('converter_sleep_cycle_latency');
+    }
+
+    converter_sleep_cycle_row_6() {
+        return this.v('converter_sleep_cycle_row_6');
+    }
+
+    converter_sleep_cycle_row_5() {
+        return this.v('converter_sleep_cycle_row_5');
+    }
+
+    converter_sleep_cycle_row_4() {
+        return this.v('converter_sleep_cycle_row_4');
+    }
+
+    converter_sleep_cycle_row_3() {
+        return this.v('converter_sleep_cycle_row_3');
+    }
 }
 
 export type LocalesKey = 'site_title'
@@ -3297,4 +3341,15 @@ export type LocalesKey = 'site_title'
     | 'converter_cidr_class_e'
     | 'footer_built_with'
     | 'footer_home'
-    | 'footer_tagline';
+    | 'footer_tagline'
+    | 'converter_sleep_cycle_title'
+    | 'converter_sleep_cycle_description'
+    | 'converter_sleep_cycle_mode'
+    | 'converter_sleep_cycle_mode_wake'
+    | 'converter_sleep_cycle_mode_bed'
+    | 'converter_sleep_cycle_time'
+    | 'converter_sleep_cycle_latency'
+    | 'converter_sleep_cycle_row_6'
+    | 'converter_sleep_cycle_row_5'
+    | 'converter_sleep_cycle_row_4'
+    | 'converter_sleep_cycle_row_3';

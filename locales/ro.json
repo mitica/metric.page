@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Clasa E (rezervată)",
   "footer_built_with": "Făcut cu ❤️ în Moldova.",
   "footer_home": "Acasă",
-  "footer_tagline": "Rapid. Privat. Fără înregistrare."
+  "footer_tagline": "Rapid. Privat. Fără înregistrare.",
+  "converter_sleep_cycle_title": "Calculator de cicluri de somn",
+  "converter_sleep_cycle_description": "Găsește cea mai bună oră pentru somn sau trezire, pe baza ciclurilor de somn de 90 de minute",
+  "converter_sleep_cycle_mode": "Vreau să",
+  "converter_sleep_cycle_mode_wake": "Mă trezesc la",
+  "converter_sleep_cycle_mode_bed": "Mă culc la",
+  "converter_sleep_cycle_time": "Ora",
+  "converter_sleep_cycle_latency": "Minute pentru a adormi",
+  "converter_sleep_cycle_row_6": "9 ore · 6 cicluri — Recomandat",
+  "converter_sleep_cycle_row_5": "7,5 ore · 5 cicluri — Recomandat",
+  "converter_sleep_cycle_row_4": "6 ore · 4 cicluri",
+  "converter_sleep_cycle_row_3": "4,5 ore · 3 cicluri"
 }

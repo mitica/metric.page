@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Classe E (riservata)",
   "footer_built_with": "Realizzato con ❤️ in Moldavia.",
   "footer_home": "Home",
-  "footer_tagline": "Veloce. Privato. Senza registrazione."
+  "footer_tagline": "Veloce. Privato. Senza registrazione.",
+  "converter_sleep_cycle_title": "Calcolatore dei cicli del sonno",
+  "converter_sleep_cycle_description": "Trova l'orario migliore per dormire o svegliarti, basato su cicli di sonno di 90 minuti",
+  "converter_sleep_cycle_mode": "Voglio",
+  "converter_sleep_cycle_mode_wake": "Svegliarmi alle",
+  "converter_sleep_cycle_mode_bed": "Andare a letto alle",
+  "converter_sleep_cycle_time": "Ora",
+  "converter_sleep_cycle_latency": "Minuti per addormentarsi",
+  "converter_sleep_cycle_row_6": "9 ore · 6 cicli — Consigliato",
+  "converter_sleep_cycle_row_5": "7,5 ore · 5 cicli — Consigliato",
+  "converter_sleep_cycle_row_4": "6 ore · 4 cicli",
+  "converter_sleep_cycle_row_3": "4,5 ore · 3 cicli"
 }

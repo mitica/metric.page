@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Classe E (reservada)",
   "footer_built_with": "Feito com ❤️ na Moldávia.",
   "footer_home": "Início",
-  "footer_tagline": "Rápido. Privado. Sem registro."
+  "footer_tagline": "Rápido. Privado. Sem registro.",
+  "converter_sleep_cycle_title": "Calculadora de ciclos de sono",
+  "converter_sleep_cycle_description": "Encontre o melhor horário para dormir ou acordar, com base em ciclos de sono de 90 minutos",
+  "converter_sleep_cycle_mode": "Quero",
+  "converter_sleep_cycle_mode_wake": "Acordar às",
+  "converter_sleep_cycle_mode_bed": "Dormir às",
+  "converter_sleep_cycle_time": "Hora",
+  "converter_sleep_cycle_latency": "Minutos para adormecer",
+  "converter_sleep_cycle_row_6": "9 horas · 6 ciclos — Recomendado",
+  "converter_sleep_cycle_row_5": "7,5 horas · 5 ciclos — Recomendado",
+  "converter_sleep_cycle_row_4": "6 horas · 4 ciclos",
+  "converter_sleep_cycle_row_3": "4,5 horas · 3 ciclos"
 }

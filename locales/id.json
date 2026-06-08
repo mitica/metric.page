@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Kelas E (dicadangkan)",
   "footer_built_with": "Dibuat dengan ❤️ di Moldova.",
   "footer_home": "Beranda",
-  "footer_tagline": "Cepat. Pribadi. Tanpa pendaftaran."
+  "footer_tagline": "Cepat. Pribadi. Tanpa pendaftaran.",
+  "converter_sleep_cycle_title": "Kalkulator Siklus Tidur",
+  "converter_sleep_cycle_description": "Temukan waktu terbaik untuk tidur atau bangun berdasarkan siklus tidur 90 menit",
+  "converter_sleep_cycle_mode": "Saya ingin",
+  "converter_sleep_cycle_mode_wake": "Bangun pukul",
+  "converter_sleep_cycle_mode_bed": "Tidur pukul",
+  "converter_sleep_cycle_time": "Waktu",
+  "converter_sleep_cycle_latency": "Menit untuk tertidur",
+  "converter_sleep_cycle_row_6": "9 jam · 6 siklus — Direkomendasikan",
+  "converter_sleep_cycle_row_5": "7,5 jam · 5 siklus — Direkomendasikan",
+  "converter_sleep_cycle_row_4": "6 jam · 4 siklus",
+  "converter_sleep_cycle_row_3": "4,5 jam · 3 siklus"
 }

@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Classe E (réservée)",
   "footer_built_with": "Conçu avec ❤️ en Moldavie.",
   "footer_home": "Accueil",
-  "footer_tagline": "Rapide. Privé. Sans inscription."
+  "footer_tagline": "Rapide. Privé. Sans inscription.",
+  "converter_sleep_cycle_title": "Calculateur de cycles de sommeil",
+  "converter_sleep_cycle_description": "Trouvez la meilleure heure pour vous coucher ou vous réveiller, basée sur des cycles de sommeil de 90 minutes",
+  "converter_sleep_cycle_mode": "Je veux",
+  "converter_sleep_cycle_mode_wake": "Me réveiller à",
+  "converter_sleep_cycle_mode_bed": "Me coucher à",
+  "converter_sleep_cycle_time": "Heure",
+  "converter_sleep_cycle_latency": "Minutes pour s'endormir",
+  "converter_sleep_cycle_row_6": "9 heures · 6 cycles — Recommandé",
+  "converter_sleep_cycle_row_5": "7,5 heures · 5 cycles — Recommandé",
+  "converter_sleep_cycle_row_4": "6 heures · 4 cycles",
+  "converter_sleep_cycle_row_3": "4,5 heures · 3 cycles"
 }

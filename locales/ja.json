@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "クラス E (予約済み)",
   "footer_built_with": "モルドバから ❤️ を込めて。",
   "footer_home": "ホーム",
-  "footer_tagline": "高速。プライベート。登録不要。"
+  "footer_tagline": "高速。プライベート。登録不要。",
+  "converter_sleep_cycle_title": "睡眠サイクル計算機",
+  "converter_sleep_cycle_description": "90分の睡眠サイクルに基づいて、最適な就寝・起床時刻を見つけます",
+  "converter_sleep_cycle_mode": "希望",
+  "converter_sleep_cycle_mode_wake": "起きる時刻",
+  "converter_sleep_cycle_mode_bed": "寝る時刻",
+  "converter_sleep_cycle_time": "時刻",
+  "converter_sleep_cycle_latency": "入眠までの分数",
+  "converter_sleep_cycle_row_6": "9時間・6サイクル — 推奨",
+  "converter_sleep_cycle_row_5": "7.5時間・5サイクル — 推奨",
+  "converter_sleep_cycle_row_4": "6時間・4サイクル",
+  "converter_sleep_cycle_row_3": "4.5時間・3サイクル"
 }

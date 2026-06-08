@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "क्लास E (आरक्षित)",
   "footer_built_with": "मोल्दोवा में ❤️ के साथ बनाया गया।",
   "footer_home": "होम",
-  "footer_tagline": "तेज़। निजी। साइन-अप नहीं।"
+  "footer_tagline": "तेज़। निजी। साइन-अप नहीं।",
+  "converter_sleep_cycle_title": "स्लीप साइकल कैलकुलेटर",
+  "converter_sleep_cycle_description": "90 मिनट के स्लीप साइकल के आधार पर सोने या जागने का सबसे अच्छा समय खोजें",
+  "converter_sleep_cycle_mode": "मैं चाहता हूं",
+  "converter_sleep_cycle_mode_wake": "जागना",
+  "converter_sleep_cycle_mode_bed": "सोना",
+  "converter_sleep_cycle_time": "समय",
+  "converter_sleep_cycle_latency": "सोने में लगने वाले मिनट",
+  "converter_sleep_cycle_row_6": "9 घंटे · 6 साइकल — अनुशंसित",
+  "converter_sleep_cycle_row_5": "7.5 घंटे · 5 साइकल — अनुशंसित",
+  "converter_sleep_cycle_row_4": "6 घंटे · 4 साइकल",
+  "converter_sleep_cycle_row_3": "4.5 घंटे · 3 साइकल"
 }

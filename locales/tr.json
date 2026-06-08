@@ -650,5 +650,16 @@
   "converter_cidr_class_e": "Sınıf E (rezerve)",
   "footer_built_with": "Moldova'da ❤️ ile yapıldı.",
   "footer_home": "Ana sayfa",
-  "footer_tagline": "Hızlı. Gizli. Kayıt yok."
+  "footer_tagline": "Hızlı. Gizli. Kayıt yok.",
+  "converter_sleep_cycle_title": "Uyku Döngüsü Hesaplayıcı",
+  "converter_sleep_cycle_description": "90 dakikalık uyku döngülerine dayanarak en iyi uyuma veya uyanma saatini bulun",
+  "converter_sleep_cycle_mode": "İstiyorum",
+  "converter_sleep_cycle_mode_wake": "Uyanma saati",
+  "converter_sleep_cycle_mode_bed": "Yatma saati",
+  "converter_sleep_cycle_time": "Saat",
+  "converter_sleep_cycle_latency": "Uykuya dalma süresi (dk)",
+  "converter_sleep_cycle_row_6": "9 saat · 6 döngü — Önerilen",
+  "converter_sleep_cycle_row_5": "7,5 saat · 5 döngü — Önerilen",
+  "converter_sleep_cycle_row_4": "6 saat · 4 döngü",
+  "converter_sleep_cycle_row_3": "4,5 saat · 3 döngü"
 }
