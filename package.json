@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "locales": "localizy -d locales -o src/lib/locales/generated-locales.ts"
+    "locales": "localizy -d locales -o src/lib/locales/generated-locales.ts",
+    "og": "tsx scripts/generate-og.tsx"
   },
   "dependencies": {
     "localizy": "^0.1.9",
@@ -16,6 +17,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -23,8 +25,10 @@
     "commander": "^14.0.3",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "satori": "^0.26.0",
     "sprintf-ts": "^0.1.0",
     "tailwindcss": "^4",
+    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }
