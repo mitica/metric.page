@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { localesProvider } from "@/lib/locales";
+import { trackEvent } from "@/lib/analytics";
 
 interface ShareButtonProps {
   title: string;
@@ -25,6 +26,7 @@ export default function ShareButton({ title, text, lang }: ShareButtonProps) {
     try {
       if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
         await navigator.share({ title, text, url });
+        trackEvent("share", { method: "native" });
         return;
       }
     } catch {
@@ -33,6 +35,7 @@ export default function ShareButton({ title, text, lang }: ShareButtonProps) {
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
+      trackEvent("share", { method: "copy" });
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       timeoutRef.current = setTimeout(() => setCopied(false), 1800);
     } catch {

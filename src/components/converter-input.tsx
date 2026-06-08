@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { InputField, SelectOption, UnitOption } from "@/converters/types";
 import { localesProvider } from "@/lib/locales";
 import { LocalesKey } from "@/lib/locales/generated-locales";
+import { trackEvent } from "@/lib/analytics";
 import NumberInput from "./number-input";
 
 function translate(
@@ -49,6 +50,9 @@ export default function ConverterInput({
       const val =
         field.type === "number" ? Number(e.target.value) : e.target.value;
       onChange(field.id, val);
+      if (field.type === "select") {
+        trackEvent("select_change", { field: field.id, value: String(val) });
+      }
     },
     [field.id, field.type, onChange],
   );
@@ -94,15 +98,19 @@ export default function ConverterInput({
         >
           {field.options.map((opt: SelectOption) => {
             const isActive = String(value) === opt.value;
+            const pick = () => {
+              onChange(field.id, opt.value);
+              trackEvent("switcher_change", { field: field.id, value: opt.value });
+            };
             return (
               <div
                 key={opt.value}
                 role="button"
                 tabIndex={0}
-                onClick={() => onChange(field.id, opt.value)}
+                onClick={pick}
                 onTouchEnd={(e) => {
                   e.preventDefault();
-                  onChange(field.id, opt.value);
+                  pick();
                 }}
                 className="flex-1 cursor-pointer select-none rounded-md px-3 py-2 text-center text-sm font-medium"
                 style={{
@@ -235,6 +243,7 @@ function UnitPills({
   const handleTap = (opt: UnitOption) => {
     setLocalSelected(opt.value);
     onSelect(opt);
+    trackEvent("unit_change", { unit: opt.value });
   };
 
   const active =
