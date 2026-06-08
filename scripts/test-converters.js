@@ -15,6 +15,9 @@ async function main() {
 
   for (const converter of allConverters) {
     try {
+      // Tool-mode converters (e.g. QR generator) provide their own component
+      // and have no scalar calculate fn — nothing to test here.
+      if (converter.tool) continue;
       // Build default inputs
       const inputs = {};
       for (const field of converter.inputs) {

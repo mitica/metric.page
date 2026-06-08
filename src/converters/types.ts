@@ -46,7 +46,10 @@ export type Category =
   | "digital-tech"
   | "finance"
   | "everyday"
-  | "fun";
+  | "fun"
+  | "files-media";
+
+export type ToolKey = "qr-generator" | "image-format-converter";
 
 export interface ConverterConfig {
   slug: string;
@@ -54,8 +57,11 @@ export interface ConverterConfig {
   icon: string;
   titleKey: LocalesKey;
   descriptionKey: LocalesKey;
-  inputs: InputField[];
-  calculate: CalculateFn;
+  // Standard scalar-form converter. Required unless `tool` is set.
+  inputs?: InputField[];
+  calculate?: CalculateFn;
+  // Custom tool component — replaces the generic form when set.
+  tool?: ToolKey;
   keywords?: string[];
   faqKeys?: string[];
 }
@@ -70,4 +76,5 @@ export const categoryMeta: Record<Category, { icon: string; labelKey: LocalesKey
   finance: { icon: "💰", labelKey: "category_finance", order: 6 },
   everyday: { icon: "🏠", labelKey: "category_everyday", order: 7 },
   fun: { icon: "🎉", labelKey: "category_fun", order: 8 },
+  "files-media": { icon: "📁", labelKey: "category_files_media", order: 9 },
 };

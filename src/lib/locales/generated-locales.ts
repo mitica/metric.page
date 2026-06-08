@@ -61,6 +61,10 @@ export class LocalizyLocales {
         return this.v('common_copied');
     }
 
+    common_download() {
+        return this.v('common_download');
+    }
+
     common_unit_years() {
         return this.v('common_unit_years');
     }
@@ -459,6 +463,10 @@ export class LocalizyLocales {
 
     category_fun() {
         return this.v('category_fun');
+    }
+
+    category_files_media() {
+        return this.v('category_files_media');
     }
 
     converter_common_gender() {
@@ -2688,6 +2696,102 @@ export class LocalizyLocales {
     converter_sleep_cycle_row_3() {
         return this.v('converter_sleep_cycle_row_3');
     }
+
+    converter_qr_code_generator_title() {
+        return this.v('converter_qr_code_generator_title');
+    }
+
+    converter_qr_code_generator_description() {
+        return this.v('converter_qr_code_generator_description');
+    }
+
+    qr_text_label() {
+        return this.v('qr_text_label');
+    }
+
+    qr_text_placeholder() {
+        return this.v('qr_text_placeholder');
+    }
+
+    qr_error_correction_label() {
+        return this.v('qr_error_correction_label');
+    }
+
+    qr_ec_low() {
+        return this.v('qr_ec_low');
+    }
+
+    qr_ec_medium() {
+        return this.v('qr_ec_medium');
+    }
+
+    qr_ec_quartile() {
+        return this.v('qr_ec_quartile');
+    }
+
+    qr_ec_high() {
+        return this.v('qr_ec_high');
+    }
+
+    qr_download_svg() {
+        return this.v('qr_download_svg');
+    }
+
+    qr_download_png() {
+        return this.v('qr_download_png');
+    }
+
+    converter_image_format_converter_title() {
+        return this.v('converter_image_format_converter_title');
+    }
+
+    converter_image_format_converter_description() {
+        return this.v('converter_image_format_converter_description');
+    }
+
+    image_drop_label() {
+        return this.v('image_drop_label');
+    }
+
+    image_drop_hint() {
+        return this.v('image_drop_hint');
+    }
+
+    image_format_label() {
+        return this.v('image_format_label');
+    }
+
+    image_format_jpg() {
+        return this.v('image_format_jpg');
+    }
+
+    image_format_png() {
+        return this.v('image_format_png');
+    }
+
+    image_format_webp() {
+        return this.v('image_format_webp');
+    }
+
+    image_quality_label() {
+        return this.v('image_quality_label');
+    }
+
+    image_download() {
+        return this.v('image_download');
+    }
+
+    image_privacy_notice() {
+        return this.v('image_privacy_notice');
+    }
+
+    image_unsupported_format() {
+        return this.v('image_unsupported_format');
+    }
+
+    image_converting() {
+        return this.v('image_converting');
+    }
 }
 
 export type LocalesKey = 'site_title'
@@ -2696,6 +2800,7 @@ export type LocalesKey = 'site_title'
     | 'common_back'
     | 'common_share'
     | 'common_copied'
+    | 'common_download'
     | 'common_unit_years'
     | 'common_unit_months'
     | 'common_unit_weeks'
@@ -2796,6 +2901,7 @@ export type LocalesKey = 'site_title'
     | 'category_finance'
     | 'category_everyday'
     | 'category_fun'
+    | 'category_files_media'
     | 'converter_common_gender'
     | 'converter_common_male'
     | 'converter_common_female'
@@ -3352,4 +3458,28 @@ export type LocalesKey = 'site_title'
     | 'converter_sleep_cycle_row_6'
     | 'converter_sleep_cycle_row_5'
     | 'converter_sleep_cycle_row_4'
-    | 'converter_sleep_cycle_row_3';
+    | 'converter_sleep_cycle_row_3'
+    | 'converter_qr_code_generator_title'
+    | 'converter_qr_code_generator_description'
+    | 'qr_text_label'
+    | 'qr_text_placeholder'
+    | 'qr_error_correction_label'
+    | 'qr_ec_low'
+    | 'qr_ec_medium'
+    | 'qr_ec_quartile'
+    | 'qr_ec_high'
+    | 'qr_download_svg'
+    | 'qr_download_png'
+    | 'converter_image_format_converter_title'
+    | 'converter_image_format_converter_description'
+    | 'image_drop_label'
+    | 'image_drop_hint'
+    | 'image_format_label'
+    | 'image_format_jpg'
+    | 'image_format_png'
+    | 'image_format_webp'
+    | 'image_quality_label'
+    | 'image_download'
+    | 'image_privacy_notice'
+    | 'image_unsupported_format'
+    | 'image_converting';

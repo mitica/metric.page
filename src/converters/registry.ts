@@ -8,6 +8,7 @@ import { digitalTechConverters } from "./digital-tech";
 import { financeConverters } from "./finance";
 import { everydayConverters } from "./everyday";
 import { funConverters } from "./fun";
+import { filesMediaConverters } from "./files-media";
 
 export const allConverters: ConverterConfig[] = [
   ...animalAgeConverters,
@@ -19,7 +20,18 @@ export const allConverters: ConverterConfig[] = [
   ...financeConverters,
   ...everydayConverters,
   ...funConverters,
+  ...filesMediaConverters,
 ];
+
+for (const converter of allConverters) {
+  const hasForm = !!(converter.inputs && converter.calculate);
+  const hasTool = !!converter.tool;
+  if (hasForm === hasTool) {
+    throw new Error(
+      `Converter "${converter.slug}" must have either (inputs + calculate) or tool, not both or neither.`,
+    );
+  }
+}
 
 const converterMap = new Map<string, ConverterConfig>();
 for (const converter of allConverters) {

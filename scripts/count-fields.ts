@@ -2,6 +2,7 @@ async function main() {
   const mod = await import('../src/converters/registry');
   const allConverters = mod.allConverters;
   for (const c of allConverters) {
+    if (!c.inputs || !c.calculate) continue;
     const inputs: Record<string, string | number> = {};
     for (const f of c.inputs) inputs[f.id] = f.defaultValue ?? (f.type === 'date' ? '2000-01-01' : 0);
     try {
