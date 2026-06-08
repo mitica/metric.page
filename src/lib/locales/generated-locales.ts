@@ -2521,6 +2521,118 @@ export class LocalizyLocales {
         return this.v('converter_earth_distance_trips_to_moon');
     }
 
+    converter_cidr_title() {
+        return this.v('converter_cidr_title');
+    }
+
+    converter_cidr_description() {
+        return this.v('converter_cidr_description');
+    }
+
+    converter_cidr_ip_input() {
+        return this.v('converter_cidr_ip_input');
+    }
+
+    converter_cidr_prefix_input() {
+        return this.v('converter_cidr_prefix_input');
+    }
+
+    converter_cidr_cidr_notation() {
+        return this.v('converter_cidr_cidr_notation');
+    }
+
+    converter_cidr_network() {
+        return this.v('converter_cidr_network');
+    }
+
+    converter_cidr_broadcast() {
+        return this.v('converter_cidr_broadcast');
+    }
+
+    converter_cidr_subnet_mask() {
+        return this.v('converter_cidr_subnet_mask');
+    }
+
+    converter_cidr_wildcard_mask() {
+        return this.v('converter_cidr_wildcard_mask');
+    }
+
+    converter_cidr_first_host() {
+        return this.v('converter_cidr_first_host');
+    }
+
+    converter_cidr_last_host() {
+        return this.v('converter_cidr_last_host');
+    }
+
+    converter_cidr_total_addresses() {
+        return this.v('converter_cidr_total_addresses');
+    }
+
+    converter_cidr_usable_hosts() {
+        return this.v('converter_cidr_usable_hosts');
+    }
+
+    converter_cidr_ip_class() {
+        return this.v('converter_cidr_ip_class');
+    }
+
+    converter_cidr_ip_type() {
+        return this.v('converter_cidr_ip_type');
+    }
+
+    converter_cidr_invalid() {
+        return this.v('converter_cidr_invalid');
+    }
+
+    converter_cidr_type_public() {
+        return this.v('converter_cidr_type_public');
+    }
+
+    converter_cidr_type_private() {
+        return this.v('converter_cidr_type_private');
+    }
+
+    converter_cidr_type_loopback() {
+        return this.v('converter_cidr_type_loopback');
+    }
+
+    converter_cidr_type_link_local() {
+        return this.v('converter_cidr_type_link_local');
+    }
+
+    converter_cidr_type_multicast() {
+        return this.v('converter_cidr_type_multicast');
+    }
+
+    converter_cidr_type_reserved() {
+        return this.v('converter_cidr_type_reserved');
+    }
+
+    converter_cidr_type_documentation() {
+        return this.v('converter_cidr_type_documentation');
+    }
+
+    converter_cidr_class_a() {
+        return this.v('converter_cidr_class_a');
+    }
+
+    converter_cidr_class_b() {
+        return this.v('converter_cidr_class_b');
+    }
+
+    converter_cidr_class_c() {
+        return this.v('converter_cidr_class_c');
+    }
+
+    converter_cidr_class_d() {
+        return this.v('converter_cidr_class_d');
+    }
+
+    converter_cidr_class_e() {
+        return this.v('converter_cidr_class_e');
+    }
+
     footer_built_with() {
         return this.v('footer_built_with');
     }
@@ -3155,6 +3267,34 @@ export type LocalesKey = 'site_title'
     | 'converter_earth_distance_galaxy'
     | 'converter_earth_distance_total'
     | 'converter_earth_distance_trips_to_moon'
+    | 'converter_cidr_title'
+    | 'converter_cidr_description'
+    | 'converter_cidr_ip_input'
+    | 'converter_cidr_prefix_input'
+    | 'converter_cidr_cidr_notation'
+    | 'converter_cidr_network'
+    | 'converter_cidr_broadcast'
+    | 'converter_cidr_subnet_mask'
+    | 'converter_cidr_wildcard_mask'
+    | 'converter_cidr_first_host'
+    | 'converter_cidr_last_host'
+    | 'converter_cidr_total_addresses'
+    | 'converter_cidr_usable_hosts'
+    | 'converter_cidr_ip_class'
+    | 'converter_cidr_ip_type'
+    | 'converter_cidr_invalid'
+    | 'converter_cidr_type_public'
+    | 'converter_cidr_type_private'
+    | 'converter_cidr_type_loopback'
+    | 'converter_cidr_type_link_local'
+    | 'converter_cidr_type_multicast'
+    | 'converter_cidr_type_reserved'
+    | 'converter_cidr_type_documentation'
+    | 'converter_cidr_class_a'
+    | 'converter_cidr_class_b'
+    | 'converter_cidr_class_c'
+    | 'converter_cidr_class_d'
+    | 'converter_cidr_class_e'
     | 'footer_built_with'
     | 'footer_home'
     | 'footer_tagline';

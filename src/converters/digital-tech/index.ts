@@ -209,4 +209,81 @@ export const megapixel: ConverterConfig = {
   },
 };
 
-export const digitalTechConverters = [colorConverter, downloadTime, screenPPI, aspectRatio, dataStorage, bandwidth, megapixel];
+export const cidrCalculator: ConverterConfig = {
+  slug: "cidr-calculator",
+  category: "digital-tech",
+  icon: "🌐",
+  titleKey: "converter_cidr_title",
+  descriptionKey: "converter_cidr_description",
+  inputs: [
+    { id: "ip", type: "text", labelKey: "converter_cidr_ip_input", defaultValue: "192.168.1.0" },
+    { id: "prefix", type: "number", labelKey: "converter_cidr_prefix_input", min: 0, max: 32, step: 1, defaultValue: 24 },
+  ],
+  calculate: (inputs) => {
+    const ipStr = String(inputs.ip || "").trim();
+    const prefix = Math.max(0, Math.min(32, Math.floor(Number(inputs.prefix) || 0)));
+
+    const parts = ipStr.split(".");
+    if (parts.length !== 4) return [{ labelKey: "converter_cidr_invalid", value: ipStr || "-" }];
+    let ipNum = 0;
+    for (const p of parts) {
+      if (!/^\d{1,3}$/.test(p)) return [{ labelKey: "converter_cidr_invalid", value: ipStr }];
+      const v = parseInt(p, 10);
+      if (v < 0 || v > 255) return [{ labelKey: "converter_cidr_invalid", value: ipStr }];
+      ipNum = ipNum * 256 + v;
+    }
+    ipNum = ipNum >>> 0;
+
+    const mask = prefix === 0 ? 0 : (0xffffffff << (32 - prefix)) >>> 0;
+    const wildcard = (~mask) >>> 0;
+    const network = (ipNum & mask) >>> 0;
+    const broadcast = (network | wildcard) >>> 0;
+    const total = prefix === 0 ? 4294967296 : Math.pow(2, 32 - prefix);
+    const usable = prefix >= 31 ? total : total - 2;
+    const firstHost = prefix >= 31 ? network : (network + 1) >>> 0;
+    const lastHost = prefix >= 31 ? broadcast : (broadcast - 1) >>> 0;
+
+    const toStr = (n: number) =>
+      [(n >>> 24) & 0xff, (n >>> 16) & 0xff, (n >>> 8) & 0xff, n & 0xff].join(".");
+
+    const firstOctet = (network >>> 24) & 0xff;
+    let classKey: string;
+    if (firstOctet < 128) classKey = "converter_cidr_class_a";
+    else if (firstOctet < 192) classKey = "converter_cidr_class_b";
+    else if (firstOctet < 224) classKey = "converter_cidr_class_c";
+    else if (firstOctet < 240) classKey = "converter_cidr_class_d";
+    else classKey = "converter_cidr_class_e";
+
+    const inBlock = (a: number, b: number, c: number, d: number, p: number) => {
+      const blockIp = ((a * 256 + b) * 256 + c) * 256 + d;
+      const blockMask = p === 0 ? 0 : (0xffffffff << (32 - p)) >>> 0;
+      return (ipNum & blockMask) === (blockIp & blockMask) >>> 0;
+    };
+    let typeKey: string;
+    if (inBlock(127, 0, 0, 0, 8)) typeKey = "converter_cidr_type_loopback";
+    else if (inBlock(10, 0, 0, 0, 8) || inBlock(172, 16, 0, 0, 12) || inBlock(192, 168, 0, 0, 16))
+      typeKey = "converter_cidr_type_private";
+    else if (inBlock(169, 254, 0, 0, 16)) typeKey = "converter_cidr_type_link_local";
+    else if (inBlock(192, 0, 2, 0, 24) || inBlock(198, 51, 100, 0, 24) || inBlock(203, 0, 113, 0, 24))
+      typeKey = "converter_cidr_type_documentation";
+    else if (firstOctet >= 224 && firstOctet < 240) typeKey = "converter_cidr_type_multicast";
+    else if (firstOctet >= 240) typeKey = "converter_cidr_type_reserved";
+    else typeKey = "converter_cidr_type_public";
+
+    return [
+      { labelKey: "converter_cidr_cidr_notation", value: `${toStr(network)}/${prefix}` },
+      { labelKey: "converter_cidr_network", value: toStr(network) },
+      { labelKey: "converter_cidr_broadcast", value: toStr(broadcast) },
+      { labelKey: "converter_cidr_subnet_mask", value: toStr(mask) },
+      { labelKey: "converter_cidr_wildcard_mask", value: toStr(wildcard) },
+      { labelKey: "converter_cidr_first_host", value: toStr(firstHost) },
+      { labelKey: "converter_cidr_last_host", value: toStr(lastHost) },
+      { labelKey: "converter_cidr_total_addresses", value: total.toLocaleString("en") },
+      { labelKey: "converter_cidr_usable_hosts", value: usable.toLocaleString("en") },
+      { labelKey: "converter_cidr_ip_class", value: classKey },
+      { labelKey: "converter_cidr_ip_type", value: typeKey },
+    ];
+  },
+};
+
+export const digitalTechConverters = [colorConverter, downloadTime, screenPPI, aspectRatio, dataStorage, bandwidth, megapixel, cidrCalculator];
