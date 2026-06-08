@@ -210,11 +210,30 @@ function template({
 
 async function main() {
   const startedAt = Date.now();
+
+  const { allConverters } = await import("../src/converters/registry");
+
+  // Positional args are converter slugs to render. No args → render all.
+  // Usage: pnpm og                       (all converters, all languages)
+  //        pnpm og image-to-pdf          (one slug)
+  //        pnpm og image-to-pdf pdf-merge (multiple slugs)
+  const slugFilter = process.argv.slice(2);
+  const knownSlugs = new Set(allConverters.map((c) => c.slug));
+  const unknown = slugFilter.filter((s) => !knownSlugs.has(s));
+  if (unknown.length) {
+    console.error(`Unknown slug(s): ${unknown.join(", ")}`);
+    process.exit(1);
+  }
+  const converters = slugFilter.length
+    ? allConverters.filter((c) => slugFilter.includes(c.slug))
+    : allConverters;
+  if (slugFilter.length) {
+    console.log(`Filter: ${slugFilter.join(", ")} (${converters.length} converters)`);
+  }
+
   console.log("Loading fonts…");
   const fontMap = await loadFonts();
   console.log(`  ${fontMap.size} font families ready.`);
-
-  const { allConverters } = await import("../src/converters/registry");
 
   await ensureDir(OUT_DIR);
 
@@ -222,7 +241,7 @@ async function main() {
   const logoDataUri = svgToDataUri(logoSvg);
 
   let count = 0;
-  const total = allConverters.length * languageCodes.length;
+  const total = converters.length * languageCodes.length;
 
   for (const lang of languageCodes) {
     const langDir = path.join(OUT_DIR, lang);
@@ -237,7 +256,7 @@ async function main() {
     ];
     const t = localesProvider.lang(renderLang);
 
-    for (const converter of allConverters) {
+    for (const converter of converters) {
       const title = t.v(converter.titleKey);
       const outPath = path.join(langDir, `${converter.slug}.png`);
 
