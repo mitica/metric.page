@@ -20,6 +20,23 @@ export const filesMediaConverters: ConverterConfig[] = [
     keywords: ["heic to jpg", "heic to png", "webp converter", "image converter", "png to jpg"],
   },
   {
+    slug: "pdf-merge",
+    category: "files-media",
+    icon: "📑",
+    titleKey: "converter_pdf_merge_title",
+    descriptionKey: "converter_pdf_merge_description",
+    tool: "pdf-merge",
+    keywords: [
+      "merge pdf",
+      "combine pdf",
+      "pdf merger",
+      "join pdf",
+      "merge pdf files",
+      "combine pdf files",
+      "pdf joiner",
+    ],
+  },
+  {
     slug: "image-compressor",
     category: "files-media",
     icon: "🗜️",

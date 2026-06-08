@@ -2820,6 +2820,62 @@ export class LocalizyLocales {
     image_compressing() {
         return this.v('image_compressing');
     }
+
+    converter_pdf_merge_title() {
+        return this.v('converter_pdf_merge_title');
+    }
+
+    converter_pdf_merge_description() {
+        return this.v('converter_pdf_merge_description');
+    }
+
+    pdf_privacy_notice() {
+        return this.v('pdf_privacy_notice');
+    }
+
+    pdf_drop_label() {
+        return this.v('pdf_drop_label');
+    }
+
+    pdf_drop_hint() {
+        return this.v('pdf_drop_hint');
+    }
+
+    pdf_pages_count(_p1: number) {
+        return this.v('pdf_pages_count', Array.from(arguments));
+    }
+
+    pdf_merge_summary(_p1: number, _p2: number) {
+        return this.v('pdf_merge_summary', Array.from(arguments));
+    }
+
+    pdf_merge_button() {
+        return this.v('pdf_merge_button');
+    }
+
+    pdf_merging() {
+        return this.v('pdf_merging');
+    }
+
+    pdf_loading() {
+        return this.v('pdf_loading');
+    }
+
+    pdf_invalid() {
+        return this.v('pdf_invalid');
+    }
+
+    pdf_remove() {
+        return this.v('pdf_remove');
+    }
+
+    pdf_move_up() {
+        return this.v('pdf_move_up');
+    }
+
+    pdf_move_down() {
+        return this.v('pdf_move_down');
+    }
 }
 
 export type LocalesKey = 'site_title'
@@ -3517,4 +3573,18 @@ export type LocalesKey = 'site_title'
     | 'compress_format_keep'
     | 'compress_resize_max_width'
     | 'compress_resize_off'
-    | 'image_compressing';
+    | 'image_compressing'
+    | 'converter_pdf_merge_title'
+    | 'converter_pdf_merge_description'
+    | 'pdf_privacy_notice'
+    | 'pdf_drop_label'
+    | 'pdf_drop_hint'
+    | 'pdf_pages_count'
+    | 'pdf_merge_summary'
+    | 'pdf_merge_button'
+    | 'pdf_merging'
+    | 'pdf_loading'
+    | 'pdf_invalid'
+    | 'pdf_remove'
+    | 'pdf_move_up'
+    | 'pdf_move_down';
