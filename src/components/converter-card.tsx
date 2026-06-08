@@ -3,6 +3,7 @@
 import { useState, useCallback, useMemo, useRef } from "react";
 import { ConverterConfig, ResultField, UnitOption } from "@/converters/types";
 import ConverterInput, { ConverterResult } from "./converter-input";
+import ShareButton from "./share-button";
 import { addRecent } from "@/lib/recents";
 import { localesProvider } from "@/lib/locales";
 
@@ -109,12 +110,15 @@ export default function ConverterCard({ converter, lang }: ConverterCardProps) {
   return (
     <div className="mx-auto w-full max-w-lg px-4 py-8">
       {/* Header */}
-      <div className="mb-6 text-center">
+      <div className="relative mb-6 text-center">
         <span className="text-4xl" role="img" aria-label={title}>
           {converter.icon}
         </span>
         <h1 className="mt-3 text-2xl font-bold text-text-primary">{title}</h1>
         <p className="mt-1 text-sm text-text-secondary">{description}</p>
+        <div className="absolute right-0 top-0">
+          <ShareButton title={title} text={description} lang={lang} />
+        </div>
       </div>
 
       {/* Inputs */}

@@ -53,6 +53,14 @@ export class LocalizyLocales {
         return this.v('common_back');
     }
 
+    common_share() {
+        return this.v('common_share');
+    }
+
+    common_copied() {
+        return this.v('common_copied');
+    }
+
     common_unit_years() {
         return this.v('common_unit_years');
     }
@@ -2425,18 +2433,6 @@ export class LocalizyLocales {
         return this.v('converter_typing_speed_professional');
     }
 
-    footer_built_with() {
-        return this.v('footer_built_with');
-    }
-
-    footer_home() {
-        return this.v('footer_home');
-    }
-
-    footer_tagline() {
-        return this.v('footer_tagline');
-    }
-
     converter_sleep_title() {
         return this.v('converter_sleep_title');
     }
@@ -2524,12 +2520,26 @@ export class LocalizyLocales {
     converter_earth_distance_trips_to_moon() {
         return this.v('converter_earth_distance_trips_to_moon');
     }
+
+    footer_built_with() {
+        return this.v('footer_built_with');
+    }
+
+    footer_home() {
+        return this.v('footer_home');
+    }
+
+    footer_tagline() {
+        return this.v('footer_tagline');
+    }
 }
 
 export type LocalesKey = 'site_title'
     | 'site_description'
     | 'common_results'
     | 'common_back'
+    | 'common_share'
+    | 'common_copied'
     | 'common_unit_years'
     | 'common_unit_months'
     | 'common_unit_weeks'
@@ -3123,9 +3133,6 @@ export type LocalesKey = 'site_title'
     | 'converter_typing_speed_intermediate'
     | 'converter_typing_speed_advanced'
     | 'converter_typing_speed_professional'
-    | 'footer_built_with'
-    | 'footer_home'
-    | 'footer_tagline'
     | 'converter_sleep_title'
     | 'converter_sleep_description'
     | 'converter_sleep_hours_per_night'
@@ -3147,4 +3154,7 @@ export type LocalesKey = 'site_title'
     | 'converter_earth_distance_rotation'
     | 'converter_earth_distance_galaxy'
     | 'converter_earth_distance_total'
-    | 'converter_earth_distance_trips_to_moon';
+    | 'converter_earth_distance_trips_to_moon'
+    | 'footer_built_with'
+    | 'footer_home'
+    | 'footer_tagline';
