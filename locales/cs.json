@@ -687,5 +687,12 @@
   "image_download": "Stáhnout",
   "image_privacy_notice": "Soubory se převádějí ve vašem prohlížeči. Nic se nenahrává.",
   "image_unsupported_format": "Nepodporovaný formát souboru",
-  "image_converting": "Převádím…"
+  "image_converting": "Převádím…",
+  "converter_image_compressor_title": "Kompresor Obrázků — Zmenšit JPG, PNG, WebP",
+  "converter_image_compressor_description": "Komprimujte obrázky JPG, PNG, HEIC a WebP v prohlížeči. Zmenšete fotografie až o 90%% — bez nahrávání, bez registrace, 100%% soukromě.",
+  "compress_privacy_notice": "Obrázky se komprimují ve vašem prohlížeči. Nic se nenahrává.",
+  "compress_format_keep": "Zachovat originál",
+  "compress_resize_max_width": "Max. šířka (px)",
+  "compress_resize_off": "Bez změny velikosti",
+  "image_compressing": "Komprimuji…"
 }

@@ -49,7 +49,7 @@ export type Category =
   | "fun"
   | "files-media";
 
-export type ToolKey = "qr-generator" | "image-format-converter";
+export type ToolKey = "qr-generator" | "image-format-converter" | "image-compressor";
 
 export interface ConverterConfig {
   slug: string;

@@ -687,5 +687,12 @@
   "image_download": "ダウンロード",
   "image_privacy_notice": "ファイルはブラウザで変換されます。何もアップロードされません。",
   "image_unsupported_format": "サポートされていないファイル形式",
-  "image_converting": "変換中…"
+  "image_converting": "変換中…",
+  "converter_image_compressor_title": "画像圧縮 — JPG・PNG・WebPサイズを縮小",
+  "converter_image_compressor_description": "JPG、PNG、HEIC、WebP画像をブラウザで圧縮。最大90%%まで縮小 — アップロード不要、登録不要、100%%プライベート。",
+  "compress_privacy_notice": "画像はブラウザで圧縮されます。何もアップロードされません。",
+  "compress_format_keep": "元の形式を維持",
+  "compress_resize_max_width": "最大幅 (px)",
+  "compress_resize_off": "リサイズなし",
+  "image_compressing": "圧縮中…"
 }

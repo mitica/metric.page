@@ -11,4 +11,5 @@ export const toolRegistry: Record<ToolKey, ComponentType<ToolProps>> = {
   "image-format-converter": dynamic(
     () => import("./image-format-converter/image-format-converter"),
   ),
+  "image-compressor": dynamic(() => import("./image-compressor/image-compressor")),
 };

@@ -687,5 +687,12 @@
   "image_download": "İndir",
   "image_privacy_notice": "Dosyalar tarayıcında dönüştürülür. Hiçbir şey yüklenmez.",
   "image_unsupported_format": "Desteklenmeyen dosya formatı",
-  "image_converting": "Dönüştürülüyor…"
+  "image_converting": "Dönüştürülüyor…",
+  "converter_image_compressor_title": "Resim Sıkıştırıcı — JPG, PNG, WebP Boyutunu Düşür",
+  "converter_image_compressor_description": "JPG, PNG, HEIC ve WebP resimlerini tarayıcında sıkıştır. Fotoğrafları %%90'a kadar küçült — yükleme yok, kayıt yok, %%100 gizli.",
+  "compress_privacy_notice": "Resimler tarayıcında sıkıştırılır. Hiçbir şey yüklenmez.",
+  "compress_format_keep": "Orijinali koru",
+  "compress_resize_max_width": "Maks. genişlik (px)",
+  "compress_resize_off": "Yeniden boyutlandırma yok",
+  "image_compressing": "Sıkıştırılıyor…"
 }

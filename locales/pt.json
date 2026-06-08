@@ -687,5 +687,12 @@
   "image_download": "Baixar",
   "image_privacy_notice": "Os arquivos são convertidos no seu navegador. Nada é enviado.",
   "image_unsupported_format": "Formato de arquivo não suportado",
-  "image_converting": "Convertendo…"
+  "image_converting": "Convertendo…",
+  "converter_image_compressor_title": "Compressor de Imagens — Reduzir JPG, PNG, WebP",
+  "converter_image_compressor_description": "Comprima imagens JPG, PNG, HEIC e WebP no seu navegador. Reduza fotos em até 90%% — sem upload, sem cadastro, 100%% privado.",
+  "compress_privacy_notice": "As imagens são comprimidas no seu navegador. Nada é enviado.",
+  "compress_format_keep": "Manter original",
+  "compress_resize_max_width": "Largura máx (px)",
+  "compress_resize_off": "Sem redimensionar",
+  "image_compressing": "Comprimindo…"
 }

@@ -19,4 +19,22 @@ export const filesMediaConverters: ConverterConfig[] = [
     tool: "image-format-converter",
     keywords: ["heic to jpg", "heic to png", "webp converter", "image converter", "png to jpg"],
   },
+  {
+    slug: "image-compressor",
+    category: "files-media",
+    icon: "🗜️",
+    titleKey: "converter_image_compressor_title",
+    descriptionKey: "converter_image_compressor_description",
+    tool: "image-compressor",
+    keywords: [
+      "compress image",
+      "compress jpg",
+      "compress png",
+      "compress webp",
+      "reduce image size",
+      "shrink image",
+      "optimize image",
+      "image compressor",
+    ],
+  },
 ];

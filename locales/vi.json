@@ -687,5 +687,12 @@
   "image_download": "Tải xuống",
   "image_privacy_notice": "Tệp được chuyển đổi trong trình duyệt. Không có gì được tải lên.",
   "image_unsupported_format": "Định dạng tệp không được hỗ trợ",
-  "image_converting": "Đang chuyển đổi…"
+  "image_converting": "Đang chuyển đổi…",
+  "converter_image_compressor_title": "Nén Ảnh — Giảm Kích Thước JPG, PNG, WebP",
+  "converter_image_compressor_description": "Nén ảnh JPG, PNG, HEIC và WebP ngay trên trình duyệt. Giảm ảnh tới 90%% — không tải lên, không đăng ký, riêng tư 100%%.",
+  "compress_privacy_notice": "Ảnh được nén trong trình duyệt. Không có gì được tải lên.",
+  "compress_format_keep": "Giữ định dạng gốc",
+  "compress_resize_max_width": "Chiều rộng tối đa (px)",
+  "compress_resize_off": "Không thay đổi kích thước",
+  "image_compressing": "Đang nén…"
 }

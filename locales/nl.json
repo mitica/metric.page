@@ -687,5 +687,12 @@
   "image_download": "Downloaden",
   "image_privacy_notice": "Bestanden worden in je browser geconverteerd. Niets wordt geüpload.",
   "image_unsupported_format": "Niet-ondersteund bestandsformaat",
-  "image_converting": "Bezig met converteren…"
+  "image_converting": "Bezig met converteren…",
+  "converter_image_compressor_title": "Afbeeldingscompressor — JPG, PNG, WebP verkleinen",
+  "converter_image_compressor_description": "Comprimeer JPG-, PNG-, HEIC- en WebP-afbeeldingen in je browser. Verklein foto's tot 90%% — geen upload, geen aanmelding, 100%% privé.",
+  "compress_privacy_notice": "Afbeeldingen worden in je browser gecomprimeerd. Niets wordt geüpload.",
+  "compress_format_keep": "Origineel behouden",
+  "compress_resize_max_width": "Max breedte (px)",
+  "compress_resize_off": "Niet schalen",
+  "image_compressing": "Comprimeren…"
 }

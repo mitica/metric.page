@@ -687,5 +687,12 @@
   "image_download": "Ladda ner",
   "image_privacy_notice": "Filerna konverteras i din webbläsare. Inget laddas upp.",
   "image_unsupported_format": "Filformatet stöds inte",
-  "image_converting": "Konverterar…"
+  "image_converting": "Konverterar…",
+  "converter_image_compressor_title": "Bildkomprimerare — Minska JPG, PNG, WebP",
+  "converter_image_compressor_description": "Komprimera JPG-, PNG-, HEIC- och WebP-bilder i din webbläsare. Minska foton upp till 90%% — ingen uppladdning, ingen registrering, 100%% privat.",
+  "compress_privacy_notice": "Bilderna komprimeras i din webbläsare. Inget laddas upp.",
+  "compress_format_keep": "Behåll original",
+  "compress_resize_max_width": "Max bredd (px)",
+  "compress_resize_off": "Ingen storleksändring",
+  "image_compressing": "Komprimerar…"
 }

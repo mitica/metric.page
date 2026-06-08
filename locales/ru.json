@@ -687,5 +687,12 @@
   "image_download": "Скачать",
   "image_privacy_notice": "Файлы конвертируются в вашем браузере. Ничего не загружается.",
   "image_unsupported_format": "Неподдерживаемый формат файла",
-  "image_converting": "Конвертирование…"
+  "image_converting": "Конвертирование…",
+  "converter_image_compressor_title": "Сжатие Изображений — Уменьшить JPG, PNG, WebP",
+  "converter_image_compressor_description": "Сжимайте изображения JPG, PNG, HEIC и WebP в браузере. Уменьшайте фото до 90%% — без загрузки, без регистрации, 100%% конфиденциально.",
+  "compress_privacy_notice": "Изображения сжимаются в вашем браузере. Ничего не загружается.",
+  "compress_format_keep": "Сохранить оригинал",
+  "compress_resize_max_width": "Макс. ширина (px)",
+  "compress_resize_off": "Без изменения размера",
+  "image_compressing": "Сжатие…"
 }

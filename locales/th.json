@@ -687,5 +687,12 @@
   "image_download": "ดาวน์โหลด",
   "image_privacy_notice": "ไฟล์จะถูกแปลงในเบราว์เซอร์ของคุณ ไม่มีการอัปโหลด",
   "image_unsupported_format": "รูปแบบไฟล์ไม่รองรับ",
-  "image_converting": "กำลังแปลง…"
+  "image_converting": "กำลังแปลง…",
+  "converter_image_compressor_title": "บีบอัดรูปภาพ — ลดขนาดไฟล์ JPG, PNG, WebP",
+  "converter_image_compressor_description": "บีบอัดรูปภาพ JPG, PNG, HEIC และ WebP ในเบราว์เซอร์ ลดขนาดรูปได้สูงสุด 90%% — ไม่ต้องอัปโหลด ไม่ต้องสมัคร ส่วนตัว 100%%",
+  "compress_privacy_notice": "ภาพถูกบีบอัดในเบราว์เซอร์ของคุณ ไม่มีการอัปโหลด",
+  "compress_format_keep": "เก็บรูปแบบเดิม",
+  "compress_resize_max_width": "ความกว้างสูงสุด (px)",
+  "compress_resize_off": "ไม่ปรับขนาด",
+  "image_compressing": "กำลังบีบอัด…"
 }

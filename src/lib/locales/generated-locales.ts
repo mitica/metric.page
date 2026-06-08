@@ -2792,6 +2792,34 @@ export class LocalizyLocales {
     image_converting() {
         return this.v('image_converting');
     }
+
+    converter_image_compressor_title() {
+        return this.v('converter_image_compressor_title');
+    }
+
+    converter_image_compressor_description() {
+        return this.v('converter_image_compressor_description');
+    }
+
+    compress_privacy_notice() {
+        return this.v('compress_privacy_notice');
+    }
+
+    compress_format_keep() {
+        return this.v('compress_format_keep');
+    }
+
+    compress_resize_max_width() {
+        return this.v('compress_resize_max_width');
+    }
+
+    compress_resize_off() {
+        return this.v('compress_resize_off');
+    }
+
+    image_compressing() {
+        return this.v('image_compressing');
+    }
 }
 
 export type LocalesKey = 'site_title'
@@ -3482,4 +3510,11 @@ export type LocalesKey = 'site_title'
     | 'image_download'
     | 'image_privacy_notice'
     | 'image_unsupported_format'
-    | 'image_converting';
+    | 'image_converting'
+    | 'converter_image_compressor_title'
+    | 'converter_image_compressor_description'
+    | 'compress_privacy_notice'
+    | 'compress_format_keep'
+    | 'compress_resize_max_width'
+    | 'compress_resize_off'
+    | 'image_compressing';

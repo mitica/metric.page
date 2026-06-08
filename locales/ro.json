@@ -687,5 +687,12 @@
   "image_download": "Descarcă",
   "image_privacy_notice": "Fișierele sunt convertite în browser. Nimic nu se încarcă.",
   "image_unsupported_format": "Format de fișier neacceptat",
-  "image_converting": "Se convertește…"
+  "image_converting": "Se convertește…",
+  "converter_image_compressor_title": "Compresor de Imagini — Reduce JPG, PNG, WebP",
+  "converter_image_compressor_description": "Comprimă imagini JPG, PNG, HEIC și WebP în browser. Redu fotografiile cu până la 90%% — fără încărcare, fără cont, 100%% privat.",
+  "compress_privacy_notice": "Imaginile sunt comprimate în browser. Nimic nu se încarcă.",
+  "compress_format_keep": "Păstrează originalul",
+  "compress_resize_max_width": "Lățime max (px)",
+  "compress_resize_off": "Fără redimensionare",
+  "image_compressing": "Se comprimă…"
 }

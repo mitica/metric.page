@@ -687,5 +687,12 @@
   "image_download": "下载",
   "image_privacy_notice": "文件在您的浏览器中转换，不会上传任何内容。",
   "image_unsupported_format": "不支持的文件格式",
-  "image_converting": "转换中…"
+  "image_converting": "转换中…",
+  "converter_image_compressor_title": "图片压缩 — 减小 JPG、PNG、WebP 文件大小",
+  "converter_image_compressor_description": "在浏览器中压缩 JPG、PNG、HEIC 和 WebP 图片。照片可缩小高达 90%% — 无需上传，无需注册，100%% 私密。",
+  "compress_privacy_notice": "图片在您的浏览器中压缩，不会上传任何内容。",
+  "compress_format_keep": "保持原格式",
+  "compress_resize_max_width": "最大宽度 (像素)",
+  "compress_resize_off": "不调整大小",
+  "image_compressing": "压缩中…"
 }

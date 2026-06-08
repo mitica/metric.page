@@ -687,5 +687,12 @@
   "image_download": "تنزيل",
   "image_privacy_notice": "تتم معالجة الملفات في متصفّحك. لا يتم رفع أي شيء.",
   "image_unsupported_format": "تنسيق ملف غير مدعوم",
-  "image_converting": "جاري التحويل…"
+  "image_converting": "جاري التحويل…",
+  "converter_image_compressor_title": "ضاغط الصور — تقليل حجم JPG وPNG وWebP",
+  "converter_image_compressor_description": "اضغط صور JPG وPNG وHEIC وWebP في متصفحك. قلّص الصور حتى 90٪ — بدون رفع، بدون تسجيل، خصوصية 100٪.",
+  "compress_privacy_notice": "تتم معالجة الصور في متصفّحك. لا يتم رفع أي شيء.",
+  "compress_format_keep": "إبقاء الأصلي",
+  "compress_resize_max_width": "أقصى عرض (بكسل)",
+  "compress_resize_off": "بدون تغيير الحجم",
+  "image_compressing": "جاري الضغط…"
 }

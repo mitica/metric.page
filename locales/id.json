@@ -687,5 +687,12 @@
   "image_download": "Unduh",
   "image_privacy_notice": "Berkas dikonversi di browser. Tidak ada yang diunggah.",
   "image_unsupported_format": "Format berkas tidak didukung",
-  "image_converting": "Mengonversi…"
+  "image_converting": "Mengonversi…",
+  "converter_image_compressor_title": "Kompresor Gambar — Kurangi Ukuran JPG, PNG, WebP",
+  "converter_image_compressor_description": "Kompres gambar JPG, PNG, HEIC, dan WebP di browser. Perkecil foto hingga 90%% — tanpa unggah, tanpa daftar, 100%% privat.",
+  "compress_privacy_notice": "Gambar dikompresi di browser. Tidak ada yang diunggah.",
+  "compress_format_keep": "Pertahankan asli",
+  "compress_resize_max_width": "Lebar maks (px)",
+  "compress_resize_off": "Tanpa ubah ukuran",
+  "image_compressing": "Mengompresi…"
 }

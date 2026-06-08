@@ -687,5 +687,12 @@
   "image_download": "डाउनलोड",
   "image_privacy_notice": "फ़ाइलें आपके ब्राउज़र में बदली जाती हैं। कुछ भी अपलोड नहीं होता।",
   "image_unsupported_format": "असमर्थित फ़ाइल फ़ॉर्मेट",
-  "image_converting": "बदला जा रहा है…"
+  "image_converting": "बदला जा रहा है…",
+  "converter_image_compressor_title": "इमेज कंप्रेसर — JPG, PNG, WebP का साइज़ कम करें",
+  "converter_image_compressor_description": "ब्राउज़र में JPG, PNG, HEIC और WebP इमेज को कंप्रेस करें। फ़ोटो को 90%% तक छोटा करें — कोई अपलोड नहीं, कोई साइन-अप नहीं, 100%% प्राइवेट।",
+  "compress_privacy_notice": "इमेज आपके ब्राउज़र में कंप्रेस होती हैं। कुछ भी अपलोड नहीं होता।",
+  "compress_format_keep": "मूल रखें",
+  "compress_resize_max_width": "अधिकतम चौड़ाई (px)",
+  "compress_resize_off": "साइज़ न बदलें",
+  "image_compressing": "कंप्रेस हो रहा है…"
 }
